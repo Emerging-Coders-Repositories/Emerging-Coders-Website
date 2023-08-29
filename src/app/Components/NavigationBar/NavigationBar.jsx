@@ -18,7 +18,7 @@ export default function NavigationBar() {
               className="h-8 mr-3"
               alt="Emerging Coders Logo"
             />
-            <div className={`${window.screen.width <= 300 ? "hidden" : "" }`}>
+            <div>
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                 Emerging Coders
               </span>
