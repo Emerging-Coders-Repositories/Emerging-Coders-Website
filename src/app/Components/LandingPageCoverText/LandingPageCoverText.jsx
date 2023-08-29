@@ -1,5 +1,5 @@
 import React from "react"; 
-import {Button} from "../../Lib/nextui.js";
+import { Button } from "@nextui-org/react";
 import FadeInAnimation from "../FadeInAnimation/FadeInAnimation.jsx";
 
 export default function LandingPageCoverText() {
