@@ -75,6 +75,8 @@ export default function UpcomingEventsComponent() {
 
 
 
+    
+
     // useEffect to fetch all of the upcoming events
     useEffect(() => {
         fetchUpcomingEvents();
