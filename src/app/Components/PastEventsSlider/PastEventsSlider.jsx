@@ -16,9 +16,9 @@ export default function PastEventsSlider({
     return (
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    {images.map((image) => (
+    {images.map((image, index) => (
         <div>
-            <img class="h-auto max-w-full rounded-lg" src={image} alt="" />
+            <img key={index} class="h-auto max-w-full rounded-lg" src={image} alt="" />
         </div>
     ))}
 </div>
