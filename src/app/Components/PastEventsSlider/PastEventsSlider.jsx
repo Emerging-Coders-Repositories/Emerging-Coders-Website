@@ -8,7 +8,7 @@ export default function PastEventsSlider({
         "/Apple.JPG", 
         "/EmergingLeetCoders.JPG", 
         "/IceCreamSocial.JPG", 
-        "/ProfHeadshot.jpg", 
+        "/ProfHeadshot.JPG", 
         "/ResumeWorkshop.JPG",
         "/ScavengerHunt.JPG",
     ];

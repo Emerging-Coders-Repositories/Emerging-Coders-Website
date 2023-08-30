@@ -7,7 +7,7 @@ export default function KeyPoints() {
         <div class="container my-24 mx-auto md:px-6">
             <FadeInAnimation>
                 <section class="mb-32 text-center">
-                    <h2 class="mb-16 text-3xl font-bold">
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-black my-11">
                         What We Do At Emerging Coders
                     </h2>
                     <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
