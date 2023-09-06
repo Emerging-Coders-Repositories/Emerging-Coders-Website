@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react"; 
 import ExecBoardCards from "../ExecBoardCards/ExecBoardCards";
 // import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
-import "./haha.css"
 
 export default function ExecBoard() {
 
@@ -50,7 +49,7 @@ export default function ExecBoard() {
             classStanding: "Junior",
             linkedin: "https://www.linkedin.com/in/attzy-rodriguez-887917206/",
             img: "https://media.licdn.com/dms/image/D5603AQEMAiIM1nHhnA/profile-displayphoto-shrink_400_400/0/1692469675231?e=1698278400&v=beta&t=R37l4RS2h7hyXmcDFKj8HsVH56xQnM5Btt38euYPC-8",
-            email: "attzyrr@gmail.com",
+            email: "attzyrodriguez2025@u.northwestern.edu",
             website: "", 
         },
         {
@@ -121,7 +120,6 @@ export default function ExecBoard() {
 
     return (
         <div>
-            {/* <FadeInAnimation> */}
                 <section class="bg-white dark:bg-gray-900">
                     <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
                         <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
@@ -150,7 +148,6 @@ export default function ExecBoard() {
                         </div>  
                     </div>
                 </section>
-        {/* </FadeInAnimation> */}
-    </div>
+        </div>
     )
 }

@@ -8,6 +8,7 @@ export default function UpcomingEventsComponent() {
     // state to hold all of the upcoming events
     const [events, setEvents] = useState([]);
     const [fetchingError, setIsFetchingError] = useState(false);
+    const [isFetching, setIsFetching] = useState(true);
 
     // function to fetch all of the upcoming events
     const fetchUpcomingEvents = async () => {
@@ -27,6 +28,7 @@ export default function UpcomingEventsComponent() {
             .then((results) => {
                 console.log(results.data); 
                 setEvents(results.data);
+                setIsFetching(false); 
             })
             // error handling
             .catch((err) => {
@@ -82,6 +84,7 @@ export default function UpcomingEventsComponent() {
         fetchUpcomingEvents();
     }, []);
 
+    // case for if there is an error fetching the upcoming events
     if (fetchingError) {
         return (
             <div class="m-0 mx-auto">
@@ -94,11 +97,12 @@ export default function UpcomingEventsComponent() {
         );
     };
 
-    if (events.length === 0) {
+    // case for if we are fetching the upcoming events
+    if (isFetching) {
 
         return (
             <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
-                <h2 class="mb-4 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+                <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
                     Fetching upcoming events...
                 </h2>
                 <Progress
@@ -112,7 +116,20 @@ export default function UpcomingEventsComponent() {
         );
     };
 
+    // case for if there are no upcoming events
+    if (events.length === 0 && !isFetching) {
+        
+        return (
+            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
+            <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
+                We don't have any upcoming events at the moment. Please check back later!
+            </h2>
+        </div>
+        )
+    }
 
+
+    // case for if there are upcoming events
     return (
         <div class="bg-white dark:bg-gray-900 min-h-screen">
             <div class="py-2 lg:py-16 px-4 mx-auto max-w-screen-md">

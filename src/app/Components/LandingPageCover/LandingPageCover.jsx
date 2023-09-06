@@ -3,7 +3,7 @@ import React from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import LandingPageCoverText from "../LandingPageCoverText/LandingPageCoverText";
-// import "./LandingPageCover.css"
+
 export default function LandingPageCover()  {
 
     const particlesInit = async (main) => {

@@ -1,3 +1,9 @@
+This is the repository for the live website for Northwestern Universities EmergingCoders student organization. 
+
+EmergingCoders is a community and student organization catered for First-Generation and Low-income (FGLI) students at Northwestern that are interested in careers and professional opportunities in the technology space. EmergingCoders empowers it's members by improving members technical skills (e.g. coding projects, networking etc), provide mentorship and resources throughout members college experience, and to create a meaningful and powerful community that members feel safe and empowered within. 
+
+This website was built by [Ethan Pineda](https://www.linkedin.com/in/ethanpineda/), the current Webmaster for Emerging Coders and third year Computer Science student at Northwestern. 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

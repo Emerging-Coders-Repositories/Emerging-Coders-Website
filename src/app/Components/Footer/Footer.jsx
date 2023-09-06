@@ -1,16 +1,37 @@
 import React from "react";
-import {
-    Box,
-    Container,
-    Stack,
-    Text,
-    VisuallyHidden,
-    chakra,
-    useColorModeValue,
-} from '@chakra-ui/react';
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
+
+    const links = [
+        {
+            name: "Home",
+            url: "/",
+        },
+        {
+            name: "Upcoming Events",
+            url: "/UpcomingEvents",
+        },
+        {
+            name: "Board", 
+            url: "/ExecutiveBoard",
+        },
+        {
+            name: "Contact Us", 
+            url: "/Contact",
+        },
+        {
+            name: "FAQ",
+            url: "/FAQ", 
+        },
+        {
+            name: "Resources",
+            url: "/AdditionalResources"
+        },
+        {
+            name: "Opportunities",
+            url: "/Opportunities", 
+        },
+    ]
 
     return (
     <footer class="p-4 bg-gray-800 md:p-8 lg:p-10 dark:bg-gray-800 z-100">
@@ -21,21 +42,20 @@ export default function Footer() {
       </a>
       <p class="my-6 text-white dark:text-gray-400">Your community of First-Generation and Low-Income Technologist at Northwestern University</p>
       <ul class="flex flex-wrap justify-center items-center mb-6 text-white dark:text-white">
-          <li>
-              <a href="/FAQ" class="mr-4 hover:underline md:mr-6">FAQ</a>
-          </li>
-          <li>
-              <a href="ExecutiveBoard" class="mr-4 hover:underline md:mr-6">Executive Board</a>
-          </li>
-          <li>
-              <a href="Contact" class="mr-4 hover:underline md:mr-6">Contact</a>
-          </li>
+        {links.map((link, index) => (
+            <li key={index}>
+            <a href={link.url} class="mr-4 hover:underline md:mr-6">{link.name}</a>
+            </li>
+        ))}
       </ul>
       <div class="flex flex-col justify-center mt-6 space-x-4 gap-2">
         <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">Emerging Coders™</a>. All Rights Reserved.</span>
         <span class="text-sm text-white sm:text-center dark:text-gray-400">Built and Designed By: <a href="https://www.linkedin.com/in/ethanpineda/" target="blank" class="hover:underline">Ethan Pineda</a></span>
+        <span class="text-sm text-white sm:text-center dark:text-gray-400">
+            This project is open source, contribute <a href="https://github.com/ethanpaneraa/Emerging-Coders-Website" target="blank" class="hover:underline">here</a></span>
     </div>
 </div>
 </footer>
     );
 };
+

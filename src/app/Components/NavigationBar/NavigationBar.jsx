@@ -1,6 +1,7 @@
 // "use client"
 import React from "react";
 import { useState } from "react"; 
+
 export default function NavigationBar() {
 
     const [isExpanded, toggleExpansion] = useState(false);
@@ -8,6 +9,37 @@ export default function NavigationBar() {
     const handleToggle = () => {
         toggleExpansion(!isExpanded);
     };
+
+    const links = [
+        {
+            name: "Home",
+            url: "/",
+        },
+        {
+            name: "Upcoming Events",
+            url: "/UpcomingEvents",
+        },
+        {
+            name: "Board", 
+            url: "/ExecutiveBoard",
+        },
+        {
+            name: "Contact Us", 
+            url: "/Contact",
+        },
+        {
+            name: "FAQ",
+            url: "/FAQ", 
+        },
+        {
+            name: "Resources",
+            url: "/AdditionalResources"
+        },
+        {
+            name: "Opportunities",
+            url: "/Opportunities", 
+        },
+    ]
 
     return (
       <nav className="bg-white border-gray-200 dark:bg-gray-900" >
@@ -55,47 +87,16 @@ export default function NavigationBar() {
             id="navbar-default"
           >
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a
-                  href="/"
-                  className="block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:hover:text-purple-700 md:p-0 dark:text-white md:dark:text-purple-500"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/UpcomingEvents"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Upcoming Events
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/ExecutiveBoard"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Board
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/Contact"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/FAQ"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  FAQ
-                </a>
-              </li>
+              {links.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.url}
+                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
