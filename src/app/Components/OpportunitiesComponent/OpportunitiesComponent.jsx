@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
 import { Progress, Tab } from "@nextui-org/react";
 import {Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
+import { filter } from "@chakra-ui/react";
 export default function OpportunitiesComponent() {
 
     const [readmeData, setReadmeData] = useState("");
@@ -12,6 +13,7 @@ export default function OpportunitiesComponent() {
     const [page,setPage] = useState(1);
     const [pages, setPages] = useState(0); 
     const [tableItems, setTableItems] = useState([]);
+    const [search, setSearch] = useState("");
     const rowsPerPage = 20; 
     
     // Fetch README.md file from SWE Tracker
@@ -62,7 +64,24 @@ export default function OpportunitiesComponent() {
         setPages(Math.ceil(jobsListLength / rowsPerPage))
         setJobsList(jobList);
         setIsFetching(false);
-    }
+    };
+
+    const handleSearch = (event) => {
+        setSearch(event.target.value);
+    };
+
+    const filteredJobs = useMemo(() => {
+        const lowerSearch = search.toLowerCase();
+        if (!lowerSearch) {
+            return jobsList;
+        }
+        return jobsList.filter((job) => {
+            return (
+                job.title.toLowerCase().includes(lowerSearch) ||
+                job.company.toLowerCase().includes(lowerSearch)
+            );
+        });
+    }, [jobsList, search]);
 
     useEffect(() => {
         fetchREADME();
@@ -117,10 +136,24 @@ export default function OpportunitiesComponent() {
                             We are constantly updating this list, so check back often!
                         </p>
                 </div> 
+                <div>
+                <form class="py-5">   
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Search Job titles..." required onChange={
+                            (event) => handleSearch(event)
+                        } />
+                    </div>
+                </form>
+                </div>
                 {jobsList.length > 0 && !isFetching && (
                     <NextTable
                     aria-label="Summer 2024 Internships Tracker"
-                    removeWrapper
                     bottomContent = {
                         <div class="flex w-full justify-center">
                             <Pagination 
@@ -129,23 +162,14 @@ export default function OpportunitiesComponent() {
                             showShadow
                             color = "secondary"
                             page = {page}
-                            total = {pages}
+                            total = {Math.ceil(filteredJobs.length / rowsPerPage)}
                             onChange = {(page) => setPage(page)}
                             />
                         </div>
                     }
                     bottomContentPlacement="outside"
                     isStriped
-                    hideHeader
-                    topContent = {
-                        <div class="flex w-full justify-center">
-                            <TableColumn key="company" align='center'>COMPANY</TableColumn>
-                        <TableColumn key="title" align='center'>TITLE</TableColumn>
-                        <TableColumn key="link" align='center'>LINK</TableColumn>
-                        <TableColumn key="addedOn" align='center'>ADDED ON</TableColumn>
-                        </div>
-                        
-                    }
+                    // hideHeader
                     >
                     <TableHeader>
                         <TableColumn key="company" align='center'>COMPANY</TableColumn>
@@ -154,7 +178,7 @@ export default function OpportunitiesComponent() {
                         <TableColumn key="addedOn" align='center'>ADDED ON</TableColumn>
                     </TableHeader>
                     <TableBody items={jobsList}>
-                        {jobsList.slice((page - 1) * rowsPerPage, page * rowsPerPage).map((job, index) => (
+                        {filteredJobs.slice((page - 1) * rowsPerPage, page * rowsPerPage).map((job, index) => (
                             <TableRow key={index}>
                                 <TableCell key="company">{job.company}</TableCell>
                                 <TableCell key="title">{job.title}</TableCell>
