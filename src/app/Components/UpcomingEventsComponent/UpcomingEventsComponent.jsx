@@ -101,17 +101,19 @@ export default function UpcomingEventsComponent() {
     if (isFetching) {
 
         return (
-            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
-                <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                    Fetching upcoming events...
-                </h2>
-                <Progress
-                size="sm"
-                isIndeterminate
-                aria-label="Loading..."
-                className="max-w-md"
-                color="secondary"
-                />
+            <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
+                <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
+                    <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
+                        Fetching upcoming events...
+                    </h2>
+                    <Progress
+                    size="sm"
+                    isIndeterminate
+                    aria-label="Loading..."
+                    className="max-w-md"
+                    color="secondary"
+                    />
+                </div>
             </div>
         );
     };

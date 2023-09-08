@@ -17,7 +17,7 @@ export default function FAQComponent() {
     ]; 
 
     return (
-        <div class="m-0 mx-auto">
+        <div class="py-8 px-5 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
             <div class="py-2 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Frequently Asked Questions</h2>
                 <p class="mb-8 lg:mb-4 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">

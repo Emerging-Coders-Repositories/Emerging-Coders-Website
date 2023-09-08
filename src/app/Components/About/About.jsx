@@ -15,7 +15,7 @@ export default function About() {
                                 <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-black">
                                 About Emerging Coders
                                 </h2>
-                                <p class="my-8 text-gray-600 dark:text-gray-300">
+                                <p class="my-8 text-gray-600 dark:text-gray-300 py-8 mx-auto max-w-screen-2xl text-center lg:px-6">
                                     Emerging Coders is a community for FGLI (First-generation, Low-income) students who are interested in Tech. Our purpose is to enable students in the club improve their skills (e.g., coding projects, networking etc.), provide mentorship and resources throughout your college experience, and to create meaningful projects.  
                                 </p>
                             </div>

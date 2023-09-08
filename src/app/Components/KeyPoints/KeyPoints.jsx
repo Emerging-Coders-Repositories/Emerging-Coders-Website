@@ -4,7 +4,7 @@ import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
 export default function KeyPoints() {
 
     return (
-        <div class="container my-24 mx-auto md:px-6">
+        <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
             <FadeInAnimation>
                 <section class="mb-32 text-center">
                     <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-black my-11">

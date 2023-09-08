@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
 import { Progress, Tab } from "@nextui-org/react";
 import {Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
-import { filter } from "@chakra-ui/react";
+
 export default function OpportunitiesComponent() {
 
     const [readmeData, setReadmeData] = useState("");
@@ -101,17 +101,19 @@ export default function OpportunitiesComponent() {
 
     if (isFetching) {
         return (
-            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
-                <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                    Fetching Summer 2024 Internships... this may take a while 
-                </h2>
-                <Progress
-                size="sm"
-                isIndeterminate
-                aria-label="Loading..."
-                className="max-w-md"
-                color="secondary"
-                />
+            <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
+                <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
+                    <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
+                        Fetching Summer 2024 Internships... this may take a while 
+                    </h2>
+                    <Progress
+                    size="sm"
+                    isIndeterminate
+                    aria-label="Loading..."
+                    className="max-w-md"
+                    color="secondary"
+                    />
+                </div>
             </div>
         );
     }; 
