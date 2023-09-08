@@ -10,32 +10,29 @@ export default function ContactComponent() {
     const [message, setMessage] = useState("");
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+    const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+    const [formError, setFormError] = useState(false);
     
     const handleSubmit = (e) => {
-        
         e.preventDefault();
-
-        const GOOGLE_FORM_INPUT_EMAIL_ID = process.env.NEXT_PUBLIC_GOOGLE_FORM_INPUT_EMAIL; 
-        const GOOGLE_FORM_INPUT_SUBJECT_ID = process.env.NEXT_PUBLIC_GOOGLE_FORM_INPUT_SUBJECT;
-        const GOOGLE_FORM_INPUT_MESSAGE_ID = process.env.NEXT_PUBLIC_GOOGLE_FORM_INPUT_MESSAGE;
-        
-        const appendedFormData = {
-            [GOOGLE_FORM_INPUT_EMAIL_ID]: email,
-            [GOOGLE_FORM_INPUT_SUBJECT_ID]: subject, 
-            [GOOGLE_FORM_INPUT_MESSAGE_ID]: message,
-        }
-        try {
-            axios({
-                method: "post",
-                url: `${process.env.NEXT_PUBLIC_CORS_PROXY + process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}`,  
-                data: new URLSearchParams(appendedFormData),
-            })
-            .then((response) => {
-                setIsFormSubmitted(true);
-            })              
-        } catch (error) {
+        setIsFormSubmitting(true);
+        axios.post(
+            process.env.NEXT_PUBLIC_SERVER_URL, 
+            {
+                email: email,
+                subject: subject,
+                message: message,
+            }
+        ).then((response) => {
+            setIsFormSubmitting(false);
+            // resetForm();
+            setIsFormSubmitted(true);
+        })
+        .catch ((error) => {
             console.log(error);
-        };
+            setIsFormSubmitting(false);
+            setFormError(true);
+        }); 
     };
 
     const handleEmailChange = (e) => {
@@ -71,37 +68,67 @@ export default function ContactComponent() {
                                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
                                 <textarea onChange={handleMessageChange} id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
                             </div>
-                            <button type="submit" onClick={onOpen} class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-secondary-500 sm:w-fit hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
-                                {isFormSubmitted && (
-                                    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                                    <ModalContent>
-                                    {(onClose) => (
-                                        <>
-                                        <ModalHeader className="flex flex-col gap-1">Your message was sent!</ModalHeader>
-                                        <ModalBody>
-                                            <p> 
-                                            Thank you for reaching out to us! We will get back to you as soon as possible.
-                                            </p>
-                                            <p>
-                                            If you would like to learn more about our organization, please visit our <a class="text-secondary-400" href="/">home page </a>to learn more about us! 
-                                            </p>
-                                            <p>
-                                            If a member of our team does not get back to you within 48 hours, please email us <a class="text-secondary-400" href="mailto:nuemergingcoders@gmail.com">directly</a>
-                                            </p>
-                                        </ModalBody>
-                                        <ModalFooter>
-                                            <Button color="danger" variant="light" onClick={onClose}>
-                                            Close
-                                            </Button>
-                                            <Button color="primary" onPress={onClose}>
-                                                <a href="/">Home</a>
-                                            </Button>
-                                        </ModalFooter>
-                                        </>
-                                    )}
-                                    </ModalContent>
-                                    </Modal>
+                            <Button onPress={onOpen} type="submit" color="secondary" size="md" isLoading={isFormSubmitting} spinnerPlacement="end">Send Message</Button>
+                            {isFormSubmitted && (
+                                <Modal isOpen={onOpen} onOpenChange={onOpenChange} hideCloseButton>
+                                <ModalContent>
+                                {(onClose) => (
+                                    <>
+                                    <ModalHeader className="flex flex-col gap-1">Your message was sent!</ModalHeader>
+                                    <ModalBody>
+                                        <p> 
+                                        Thank you for reaching out to us! We will get back to you as soon as possible.
+                                        </p>
+                                        <p>
+                                        If you would like to learn more about our organization, please visit our <a class="text-secondary-400" href="/">home page </a>to learn more about us! 
+                                        </p>
+                                        <p>
+                                        If a member of our team does not get back to you within 48 hours, please email us <a class="text-secondary-400" href="mailto:nuemergingcoders@gmail.com">directly</a>
+                                        </p>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button color="danger" variant="light" onClick={() => setIsFormSubmitted(false)}>
+                                        Close
+                                        </Button>
+                                        <Button color="secondary" onPress={onClose}>
+                                            <a href="/">Home</a>
+                                        </Button>
+                                    </ModalFooter>
+                                    </>
                                 )}
+                                </ModalContent>
+                                </Modal>
+                            )}
+                            {formError && (
+                                <Modal isOpen={onOpen} onOpenChange={onOpenChange} hideCloseButton>
+                                <ModalContent>
+                                {(onClose) => (
+                                    <>
+                                    <ModalHeader className="flex flex-col gap-1">There was an issue with sending your message</ModalHeader>
+                                    <ModalBody>
+                                        <p>
+                                        Please email us <a class="text-secondary-400" href="mailto:nuemergingcoders@gmail.com">directly</a>
+                                        </p>
+                                        <p>
+                                        We apologize for the inconvenience.
+                                        </p>
+                                        <p>
+                                        - The Emerging Coders Team
+                                        </p>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button color="danger" variant="light" onClick={() => setFormError(false)}>
+                                        Close
+                                        </Button>
+                                        <Button color="secondary" onPress={onClose}>
+                                            <a href="/">Home</a>
+                                        </Button>
+                                    </ModalFooter>
+                                    </>
+                                )}
+                                </ModalContent>
+                                </Modal>
+                            )}
                         </form>
                     </div>
                 </section>
