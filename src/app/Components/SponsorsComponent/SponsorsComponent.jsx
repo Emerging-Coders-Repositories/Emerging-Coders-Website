@@ -17,12 +17,12 @@ export default function SponsorsComponent() {
                             </p>
                         </div>
                         <div>
-                            {/* we need sponsors :( */}
+                            <h3 class="font-extrabold text-2xl text-gray-900 dark:text-white">We are currently seeking our first sponsors!</h3>
                         </div>
-                        <p class="text-gray-500 font-light">
+                        {/* <p class="text-gray-500 font-light">
                             EmergingCoders is the only and largest student organization at Northwestern University that is dedicated to serving first-generation and low-income students who are passionate about technology and helping others. 
                             We are a community of over 150 students across different majors, departments, and schools. Our community is filled with diverse and eager students ready to learn more and apply their skills to the real world.
-                        </p>
+                        </p> */}
                     </div>
                     <Link isBlock showAnchorIcon href="/emerging_coders_sponsorship_package.pdf" color="secondary" target="_blank" size="lg">View the 2023-2024 Emerging Coders Sponsorship Packet</Link>
                 </div>
