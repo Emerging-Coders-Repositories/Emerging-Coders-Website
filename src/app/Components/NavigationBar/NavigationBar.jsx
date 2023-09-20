@@ -39,6 +39,10 @@ export default function NavigationBar() {
             name: "Opportunities",
             url: "/Opportunities", 
         },
+        {
+          name: "Sponsors", 
+          url: "/Sponsors", 
+        },
     ]
 
     return (
