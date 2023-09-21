@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios"; 
 import { useState, useEffect, useMemo } from "react";
 import { Progress, Tab } from "@nextui-org/react";
-import {Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
+import { Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, } from "@nextui-org/react";
 
 export default function OpportunitiesComponent() {
 
