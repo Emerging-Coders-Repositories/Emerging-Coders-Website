@@ -106,70 +106,70 @@ export default function NavigationBar() {
             } w-full md:block md:w-auto`}
             id="navbar-default"
           >
-<ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          {links.map((link, index) => (
-            <li key={index}>
-              {link.name === "Resources" ? (
-                <>
-                  <button
-                    id="dropdownNavbarLink"
-                    data-dropdown-toggle="dropdownNavbar"
-                    onClick={handleDropdownToggle}
-                    className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-                  >
-                    {link.name}
-                    <svg
-                      className={`w-2.5 h-2.5 ml-2.5 transform transition-transform ${
-                        isDropdownVisible ? "rotate-180" : ""
-                      }`}
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 10 6"
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            {links.map((link, index) => (
+              <li key={index}>
+                {link.name === "Resources" ? (
+                  <>
+                    <button
+                      id="dropdownNavbarLink"
+                      data-dropdown-toggle="dropdownNavbar"
+                      onClick={handleDropdownToggle}
+                      className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m1 1 4 4 4-4"
-                      />
-                    </svg>
-                  </button>
-                  <div
-                    id="dropdownNavbar"
-                    className={`z-10 ${
-                      isDropdownVisible ? "block" : "hidden"
-                    } absolute my-2 z-100 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
-                  >
-                    <ul
-                      className="py-2 text-sm text-gray-700 dark:text-gray-400"
-                      aria-labelledby="dropdownLargeButton"
+                      {link.name}
+                      <svg
+                        className={`w-2.5 h-2.5 ml-2.5 transform transition-transform ${
+                          isDropdownVisible ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="m1 1 4 4 4-4"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      id="dropdownNavbar"
+                      className={`z-10 ${
+                        isDropdownVisible ? "block" : "hidden"
+                      } absolute my-2 z-100 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700`}
                     >
-                      {link.dropdown.map((dropdownLink) => (
-                        <li>
-                        <a
-                          href={`/AdditionalResources/${dropdownLink.url}`}
-                          className="block px-4 py-2 text-gray-700"
-                        >
-                          {dropdownLink.name}
-                        </a>
-                      </li>
-                      ))}
-                    </ul>
-                  </div>
-                </>
-              ) : (
-                    <a
-                    href={link.url}
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    {link.name}
-                  </a>
-                  )
-                  }
-                </li>
-              ))}
+                      <ul
+                        className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                        aria-labelledby="dropdownLargeButton"
+                      >
+                        {link.dropdown.map((dropdownLink) => (
+                          <li>
+                          <a
+                            href={`/AdditionalResources/${dropdownLink.url}`}
+                            className="block px-4 py-2 text-gray-700"
+                          >
+                            {dropdownLink.name}
+                          </a>
+                        </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                ) : (
+                      <a
+                      href={link.url}
+                      className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    >
+                      {link.name}
+                    </a>
+                    )
+                    }
+                  </li>
+                ))}
             </ul>
           </div>
         </div>

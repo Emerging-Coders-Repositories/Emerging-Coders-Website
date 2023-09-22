@@ -1,7 +1,6 @@
 import React from "react"; 
 import { useState, useEffect } from "react"; 
 import ExecBoardCards from "../ExecBoardCards/ExecBoardCards";
-// import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
 
 export default function ExecBoard() {
 
