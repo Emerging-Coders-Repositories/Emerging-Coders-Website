@@ -41,6 +41,9 @@ export default function TechnicalsGuide() {
                       <p class="font-normal text-gray-700 dark:text-gray-400">
                           👋 Hey there, on this page, you will find a general handbook and guide to preparing and tackling software engineer technical interviews. The purpose of this page is to provide you with the resources and knowledge you need to start getting ready to ace your next technical interview!
                           If you have any suggestions to improve this page, please make a PR on the <Link showAnchorIcon href="https://github.com/ethanpaneraa/Emerging-Coders-Website" color="secondary" target="_blank" size="md">EmergingCoders Website Repo</Link>
+                          <br />
+                          <br />
+                          Authors: <Link showAnchorIcon href="https://www.linkedin.com/in/ethanpineda/" target="_blank" color="secondary">Ethan Pineda</Link>, <Link showAnchorIcon href="https://www.linkedin.com/in/dopineda/" target="_blank" color="secondary">Danny Pineda</Link>
                       </p>
                   </div>
               </div>
@@ -210,11 +213,12 @@ export default function TechnicalsGuide() {
                     </div>
                     <div class="mb-5">
                       <h5 class="text-xl font-bold mb-5">
-                        2. Think out loud and verbalize your thought process
+                        2. Communicate, Communicate, and Communicate
                       </h5>
                       <p class="text-gray-700 dark:text-gray-400 mb-5">
-                        The interviewer is not a mind reader. They can't see what you are thinking. So, it's important to verbalize your thought process and think out loud. This allows the interviewer to understand your thought process and see how you are approaching the problem. 
-                        It's also important to think out loud because it shows that you are engaged and that you are actively thinking about the problem. It also allows the interviewer to help you out if you get stuck. If you need time to think quietly, let your interviewer know that you need a minute to think.
+                        It's important to communicate your thought process and what you are thinking to your interviewer. The emphasis of the technical interview is <strong>not always </strong> going to be on solving the problem. 
+                        It's vital that during the interview you are constantly communicating your though process and problem solving over anything else. This is because the interviewer wants to see how you think and how you approach problems.
+                        If you are are able to communicate well, <strong>you can actually get better help to solve the problem</strong>.
                       </p>
                     </div>
                     <div class="mb-5">
@@ -232,7 +236,7 @@ export default function TechnicalsGuide() {
                       </h5>
                       <p class="text-gray-700 dark:text-gray-400 mb-5">
                         If you don’t know the answer, take a few minutes to think about it. Say that you have not encountered a similar scenario, but you are going to try to work through a process to solve the problem. Think out loud, ask for some direction.
-                        <strong>If you're really stuck</strong>, you can as to go through examples of the problem. This will help you understand the problem better and will help you come up with a solution.
+                        <strong> If you're really stuck</strong>, you can as to go through examples of the problem. This will help you understand the problem better and will help you come up with a solution.
                       </p>
                     </div>
                     <div class="mb-5">
