@@ -96,7 +96,7 @@ export default function TechnicalsGuide() {
                       </p>
                     </div>
                   </section>
-                <section class="mb-8">
+                <section class="mb-10">
                   <div class="max-w-3xl mx-auto text-left">
                     <h3 class="text-3xl font-bold mb-10">
                       Studying and Preparing for Technical Interviews
@@ -172,14 +172,14 @@ export default function TechnicalsGuide() {
                       </div>
                     </div>
                     <div>
-                      <h4 class="text-2xl font-bold mb-5">
+                      <h4 class="text-xl font-bold mb-5">
                         Mock Interviews
                       </h4>
                       <p class="text-gray-700 dark:text-gray-400 mb-5">
                         Mock interviews are arguably the best and most efficient way to prepare for technical interviews. Mock interviews are essentially practice interviews that you do with someone else such as a friend, an upperclassmen, or your roommate. 
                         The purpose of mock interviews is to simulate the experience of a real technical interview. This allows you to get a feel for what a real technical interview is like and allows you to practice your problem solving skills in a more realistic environment.
                         The best thing about doing mock interviews is that you are able to gain insights into your strengths and weaknesses. This allows you to focus on improving your weaknesses and building on your strengths. You can also become comfortable with having to solve technical problems on a time crunch and pressure. 
-                        Overall, it is <strong>strongly</strong> suggested that you do at least a couple of mock interviews while preparing for an interview. 
+                        Overall, it is <strong>strongly</strong> suggested that you do at least a couple of mock interviews while preparing for an interview. When you doing a mock interview, we recommend using this <a href="https://www.algoexpert.io/mock-interviews/feedback?id=fake_feedback_form" class="text-purple-700" target="_blank">scorecard</a> to provide quantitative feedback to the interviewee.
                       </p>
                       <p class="text-gray-700 dark:text-gray-400 mb-5">
                         If you're unsure what a mock interview should look like, here is a video of a mock interview between software engineers. 
@@ -187,6 +187,69 @@ export default function TechnicalsGuide() {
                       <a href="https://www.youtube.com/watch?v=1qw5ITr3k9E" target="_blank">
                         <Image src="https://www.freecodecamp.org/news/content/images/2023/03/software-mock.png" />
                       </a>
+                    </div>
+                  </div>
+                </section>
+                <section class="mb-8">
+                  <div class="mx-auto max-w-3xl text-left">
+                    <h4 class="text-3xl font-bold mb-10">
+                      During the Technical Interview
+                    </h4>
+                    <p class="text-gray-700 dark:text-gray-400 mb-5">
+                      The technical interview can be scary and daunting. We've been there! But, we're here to help you out and offer some tips and tricks that we've picked up along the way to help you during the interview. 
+                    </p>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        1. Ask Questions
+                      </h5>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        Asking questions is one of the most important things that you can do during a technical interview. It shows that you are engaged and interested in the problem that you are solving. It also shows that you are able to think critically and ask the right questions to get the information that you need to solve the problem.
+                        It's important to ask questions throughout the interview to make sure that you are on the right track and that you are solving the problem correctly. It's also important to ask questions to clarify any ambiguities in the problem statement.
+                        <strong> do not</strong> make assumptions about the problem statement. If you are unsure about something, ask the interviewer.
+                      </p>
+                    </div>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        2. Think out loud and verbalize your thought process
+                      </h5>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        The interviewer is not a mind reader. They can't see what you are thinking. So, it's important to verbalize your thought process and think out loud. This allows the interviewer to understand your thought process and see how you are approaching the problem. 
+                        It's also important to think out loud because it shows that you are engaged and that you are actively thinking about the problem. It also allows the interviewer to help you out if you get stuck. If you need time to think quietly, let your interviewer know that you need a minute to think.
+                      </p>
+                    </div>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        3. Listen to your interviewer and to their suggestions
+                      </h5>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        It's important to listen to your interviewer and to their suggestions. They are there to help you and want you to succeed. If they are giving you suggestions, it's because they want you to succeed and want to help you out. 
+                        It's also important to listen to your interviewer because they may give you hints or tips that can help you solve the problem.
+                      </p>
+                    </div>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        4. Don’t bluff
+                      </h5>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        If you don’t know the answer, take a few minutes to think about it. Say that you have not encountered a similar scenario, but you are going to try to work through a process to solve the problem. Think out loud, ask for some direction.
+                        <strong>If you're really stuck</strong>, you can as to go through examples of the problem. This will help you understand the problem better and will help you come up with a solution.
+                      </p>
+                    </div>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        5. Try a Brute Force Solution
+                      </h5>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        It's okay if you don't immediately see the most optimal solution to the problem, you can always start out with a brute force solution to the problem and then optimize it later.
+                      </p>
+                    </div>
+                    <div class="mb-5">
+                      <h5 class="text-xl font-bold mb-5">
+                        6. Dress Code
+                      </h5>
+                      <p class="text-gray-700 dark:text-400 mb-5">
+                      For most interviews, business professional attire is expected. This is true for many engineering and technology firms. But there are exceptions, particularly in the startup/tech space, some west coast firms, and for some software focused roles. Please dress according to pre-interview guidelines provided by the company. If in doubt, ask the recruiter.
+                      </p>
                     </div>
                   </div>
                 </section>
