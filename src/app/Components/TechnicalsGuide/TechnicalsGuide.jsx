@@ -44,19 +44,19 @@ export default function TechnicalsGuide() {
                       </p>
                   </div>
               </div>
-              <div className="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
-                <section className="mb-8">
-                    <div className="max-w-3xl mx-auto text-left">
-                      <h3 className="text-3xl font-bold mb-5">
+              <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
+                <section class="mb-8">
+                    <div class="max-w-3xl mx-auto text-left">
+                      <h3 class="text-3xl font-bold mb-5">
                         Introduction to Technical Interviews
                       </h3>
-                      <p className="text-gray-700 dark:text-gray-400 mb-10">
+                      <p class="text-gray-700 dark:text-gray-400 mb-10">
                         In the fast-paced world of software engineering, technical interviews play a crucial role in assessing a candidate's skills and suitability for a role. These interviews are designed to evaluate not just your coding abilities but also your problem-solving skills, algorithmic thinking, and, in some cases, your ability to design scalable systems.
                       </p>
                       <h4 class="text-2xl font-bold text-gray-900 mb-5">
                         Why are technical interviews important?
                       </h4>
-                      <ul className="list-disc pl-6">
+                      <ul class="list-disc pl-6">
                         <li>
                           They help companies gauge your technical skills, ensuring that you can meet the demands of the job.
                         </li>
@@ -72,10 +72,10 @@ export default function TechnicalsGuide() {
                       </ul>
                   </div>
                   </section>
-                  <section className="mb-8">
-                    <div className="max-w-3xl mx-auto text-left">
-                      <h3 className="text-3xl font-bold mb-5">Types of Technical Interviews</h3>
-                      <p className="text-gray-700 dark:text-gray-400">
+                  <section class="mb-8">
+                    <div class="max-w-3xl mx-auto text-left">
+                      <h3 class="text-3xl font-bold mb-5">Types of Technical Interviews</h3>
+                      <p class="text-gray-700 dark:text-gray-400">
                         Technical interviews come in various forms, each serving a specific purpose in evaluating a candidate's capabilities. Here are some common types:
                       </p>
                       <div class="my-5 mb-5 flex w-full flex-col">
@@ -91,7 +91,7 @@ export default function TechnicalsGuide() {
                           )}
                         </Tabs>
                       </div>
-                      <p className="text-gray-700 dark:text-gray-400">
+                      <p class="text-gray-700 dark:text-gray-400">
                         These are just a few examples of the most Common examples of the types of technical interviews that you may encounter throughout your career. It's essential to understand the specific requirements of the job that you're applying for to be able to prepare effectively. 
                       </p>
                     </div>
@@ -129,18 +129,45 @@ export default function TechnicalsGuide() {
                       <h5 class="text-xl font-bold mb-5">
                         Books
                       </h5>
-                      <div className="mb-5">
+                      <div class="mb-5">
                         <Link showAnchorIcon href="https://github.com/Avinash987/Coding/blob/master/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf" color="secondary" target="_blank" size="lg">
                             Cracking the Coding Interview
                         </Link>
-                      <p className="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                      <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
                         "Cracking the Coding Interview" is a renowned book by Gayle Laakmann McDowell. It offers a comprehensive collection of 189 programming questions and solutions, making it an invaluable resource for interview preparation. This book covers various coding topics and provides detailed explanations to help you understand the concepts better.
                       </p>
-                    </div>
-                      <div className="mb-5">
+                      </div>
+                      <div class="mb-5">
                         <Link showAnchorIcon href="https://github.com/lakhbawa/PDF---Grokking-the-Coding-Interview-Patterns-for-Coding-Questions/blob/main/Grokking%20the%20Coding%20Interview%20in%2016%20Patterns.pdf" color="secondary" target="_blank" size="lg" >Grokking the Coding Interview</Link>
-                        <p className="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                        <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
                           "Grokking the Coding Interview" is a book that focuses on problem-solving patterns for coding questions. It helps you understand common patterns and techniques used in technical interviews, making it easier to tackle a wide range of coding challenges.
+                        </p>
+                      </div>
+                      <h5 class="text-xl font-bold mb-5">
+                        Coding Practice Websites
+                      </h5>
+                      <div class="mb-5">
+                        <Link showAnchorIcon href="https://leetcode.com/" color="secondary" target="_blank" size="lg">
+                            LeetCode
+                        </Link>
+                        <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                          LeetCode is the most popular and widely-used platform that provides coding challenges and mock interviews. Leetcode is most known for its large and extensive collection of practice problems ranging in various difficulties that are frequently asked in technical interviews.
+                        </p>
+                      </div>
+                      <div class="mb-5">
+                        <Link showAnchorIcon href="https://neetcode.io/" color="secondary" target="_blank" size="lg">
+                            NeetCode
+                        </Link>
+                        <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                          NeetCode is very similar to LeetCode in that it provides a large collection of practice problems that are frequently asked in technical interviews. However, NeetCode is unique in that it provides list of curated problems that are organized by topic and difficulty. This makes it easier to find problems that you want to practice. This helps balance off the fact that LeetCode can get overwhelming with the amount of problems that it has whereas NeetCode gives you more structure and insight into what you should be focusing on. 
+                        </p>
+                      </div>
+                      <div class="mb-5">
+                        <Link showAnchorIcon href="https://www.codewars.com/" color="secondary" target="_blank" size="lg">
+                            CodeWars
+                        </Link>
+                        <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                          CodeWars offers a unique approach to coding challenges by using kata, which are small coding exercises that you can complete to improve your skills. It's a fun and interactive way to practice coding.
                         </p>
                       </div>
                     </div>
