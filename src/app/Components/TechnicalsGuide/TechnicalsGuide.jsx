@@ -102,7 +102,7 @@ export default function TechnicalsGuide() {
                       Studying and Preparing for Technical Interviews
                     </h3>
                     <div class="mb-5">
-                      <h4 class="text-2xl font-bold">
+                      <h4 class="text-2xl font-bold mb-5">
                         Choosing a Programming Language
                       </h4>
                       <p class="text-gray-700 dark:text-gray-400 mb-5">
@@ -122,6 +122,27 @@ export default function TechnicalsGuide() {
                       <h4 class="text-2xl font-bold mb-5">
                         Practicing and Studying
                       </h4>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        Nowadays, there are a lot of resources that exists on the internet that can help you prepare for technical interviews. These resources can range from books, to online courses, to practice problems, and more.
+                        Unfortunately, some resources are mostly just trying to make money off of you and don't offer anything useful behind their paywalls. So, we've compiled a list of resources and tools that we've used in our studying and preparing that we felt were the most helpful while accommodating for various learning styles! 
+                      </p>
+                      <h5 class="text-xl font-bold mb-5">
+                        Books
+                      </h5>
+                      <div className="mb-5">
+                        <Link showAnchorIcon href="https://github.com/Avinash987/Coding/blob/master/Cracking-the-Coding-Interview-6th-Edition-189-Programming-Questions-and-Solutions.pdf" color="secondary" target="_blank" size="lg">
+                            Cracking the Coding Interview
+                        </Link>
+                      <p className="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                        "Cracking the Coding Interview" is a renowned book by Gayle Laakmann McDowell. It offers a comprehensive collection of 189 programming questions and solutions, making it an invaluable resource for interview preparation. This book covers various coding topics and provides detailed explanations to help you understand the concepts better.
+                      </p>
+                    </div>
+                      <div className="mb-5">
+                        <Link showAnchorIcon href="https://github.com/lakhbawa/PDF---Grokking-the-Coding-Interview-Patterns-for-Coding-Questions/blob/main/Grokking%20the%20Coding%20Interview%20in%2016%20Patterns.pdf" color="secondary" target="_blank" size="lg" >Grokking the Coding Interview</Link>
+                        <p className="text-gray-700 dark:text-gray-400 mb-2 my-3">
+                          "Grokking the Coding Interview" is a book that focuses on problem-solving patterns for coding questions. It helps you understand common patterns and techniques used in technical interviews, making it easier to tackle a wide range of coding challenges.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </section>
