@@ -1,5 +1,5 @@
 import React from "react"; 
-import { Tabs, Tab, Card, CardBody, Link } from "@nextui-org/react"; 
+import { Tabs, Tab, Card, CardBody, Link, Image } from "@nextui-org/react"; 
 
 export default function TechnicalsGuide() {
 
@@ -170,6 +170,23 @@ export default function TechnicalsGuide() {
                           CodeWars offers a unique approach to coding challenges by using kata, which are small coding exercises that you can complete to improve your skills. It's a fun and interactive way to practice coding.
                         </p>
                       </div>
+                    </div>
+                    <div>
+                      <h4 class="text-2xl font-bold mb-5">
+                        Mock Interviews
+                      </h4>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        Mock interviews are arguably the best and most efficient way to prepare for technical interviews. Mock interviews are essentially practice interviews that you do with someone else such as a friend, an upperclassmen, or your roommate. 
+                        The purpose of mock interviews is to simulate the experience of a real technical interview. This allows you to get a feel for what a real technical interview is like and allows you to practice your problem solving skills in a more realistic environment.
+                        The best thing about doing mock interviews is that you are able to gain insights into your strengths and weaknesses. This allows you to focus on improving your weaknesses and building on your strengths. You can also become comfortable with having to solve technical problems on a time crunch and pressure. 
+                        Overall, it is <strong>strongly</strong> suggested that you do at least a couple of mock interviews while preparing for an interview. 
+                      </p>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        If you're unsure what a mock interview should look like, here is a video of a mock interview between software engineers. 
+                      </p>
+                      <a href="https://www.youtube.com/watch?v=1qw5ITr3k9E" target="_blank">
+                        <Image src="https://www.freecodecamp.org/news/content/images/2023/03/software-mock.png" />
+                      </a>
                     </div>
                   </div>
                 </section>
