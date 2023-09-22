@@ -47,15 +47,15 @@ export default function TechnicalsGuide() {
               <div className="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
                 <section className="mb-8">
                     <div className="max-w-3xl mx-auto text-left">
-                      <h3 className="text-2xl font-bold mb-4">
+                      <h3 className="text-3xl font-bold mb-5">
                         Introduction to Technical Interviews
                       </h3>
-                      <p className="text-gray-700 dark:text-gray-400">
+                      <p className="text-gray-700 dark:text-gray-400 mb-10">
                         In the fast-paced world of software engineering, technical interviews play a crucial role in assessing a candidate's skills and suitability for a role. These interviews are designed to evaluate not just your coding abilities but also your problem-solving skills, algorithmic thinking, and, in some cases, your ability to design scalable systems.
                       </p>
-                      <p className="text-gray-700 dark:text-gray-400 my-5">
-                        <strong>Why Are Technical Interviews Important?</strong>
-                      </p>
+                      <h4 class="text-2xl font-bold text-gray-900 mb-5">
+                        Why are technical interviews important?
+                      </h4>
                       <ul className="list-disc pl-6">
                         <li>
                           They help companies gauge your technical skills, ensuring that you can meet the demands of the job.
@@ -70,11 +70,11 @@ export default function TechnicalsGuide() {
                           Preparing for technical interviews can be a valuable learning experience, helping you grow as a software engineer.
                         </li>
                       </ul>
-                    </div>
+                  </div>
                   </section>
                   <section className="mb-8">
                     <div className="max-w-3xl mx-auto text-left">
-                      <h3 className="text-2xl font-bold mb-4">Types of Technical Interviews</h3>
+                      <h3 className="text-3xl font-bold mb-5">Types of Technical Interviews</h3>
                       <p className="text-gray-700 dark:text-gray-400">
                         Technical interviews come in various forms, each serving a specific purpose in evaluating a candidate's capabilities. Here are some common types:
                       </p>
@@ -98,10 +98,31 @@ export default function TechnicalsGuide() {
                   </section>
                 <section class="mb-8">
                   <div class="max-w-3xl mx-auto text-left">
-                    <h3 class="text-2xl font-bold mb-4">
-                      Preparing for Technical Interviews
+                    <h3 class="text-3xl font-bold mb-10">
+                      Studying and Preparing for Technical Interviews
                     </h3>
-                    
+                    <div class="mb-5">
+                      <h4 class="text-2xl font-bold">
+                        Choosing a Programming Language
+                      </h4>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        The first step in preparing for technical interviews is to choose a programming Language to study with. Generally, your interviewers will allow you to choose between popular coding languages such as Python, C, C++, and JavaScript. While you could technically do your technical interviews in a language such as Racket, it is not recommended as it is not a popular language and is not used in industry. 
+                        Unless you are interviewing for a more specific role such as a mobile app developer or a front-end developer position,  you should be able to have free reign over the coding language that you do your interviews in.
+                      </p>
+                      <p class="text-gray-700 dark:text-gray-400 mb-5">
+                        Ideally, you should a choose a programming language that you already have some experience with or at least used in one of your classes. This will allow you to focus more in studying the problem solving aspects of the technical interview more than the syntax of the language.
+                        However, if you are not familiar with any of the popular programming languages, it is recommended that you choose a language that is easy to learn and has a lot of resources available online such as Python.
+                      </p>
+                      <p class="text-gray-700 dark:text-gray-400 mb-10">
+                        Our recommendation based on what we've seen and used ourselves, is to use a language such as Python or JavaScript. This is due to the fact that these languages are easy to learn and have a lot of resources available online.
+                        Additionally, they already have a lot of built in functions, data structures, and libraries that you can use to solve problems. This makes your job during the interview a lot easier as you don't have to worry about implementing these things yourself. Thus, giving you more time to focus on the problem solving aspect of the interview.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="text-2xl font-bold mb-5">
+                        Practicing and Studying
+                      </h4>
+                    </div>
                   </div>
                 </section>
               </div>
