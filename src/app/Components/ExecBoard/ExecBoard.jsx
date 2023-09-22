@@ -108,13 +108,10 @@ export default function ExecBoard() {
             }
           });
         }, 80);
-    
-        console.log(visibleMembers)
-
         return () => {
           clearInterval(animationInterval);
         };
-      }, []);
+      }, [execBoardMembers, visibleMembers]);
 
 
     return (

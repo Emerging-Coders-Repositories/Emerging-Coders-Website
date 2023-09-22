@@ -146,8 +146,8 @@ export default function NavigationBar() {
                         className="py-2 text-sm text-gray-700 dark:text-gray-400"
                         aria-labelledby="dropdownLargeButton"
                       >
-                        {link.dropdown.map((dropdownLink) => (
-                          <li>
+                        {link.dropdown.map((dropdownLink, key) => (
+                          <li key={index}>
                           <a
                             href={`/AdditionalResources/${dropdownLink.url}`}
                             className="block px-4 py-2 text-gray-700"

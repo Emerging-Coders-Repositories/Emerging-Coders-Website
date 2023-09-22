@@ -1,7 +1,7 @@
 import React from "react"; 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-
+// import {Image} from "@nextui-org/react";
 
 export default function ExecBoardCards({
     role,
@@ -24,6 +24,7 @@ export default function ExecBoardCards({
           }`}>
             <div class="text-center text-gray-500 dark:text-gray-400">
                                 <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={img} alt={`Picture of ${name}`} />
+                                {/* <Image class="mx-auto mb-4 w-36 h-36 rounded-full" src={img} /> */}
                                 <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     <a href={website ? website : linkedin} target="blank">{name}</a>
                                 </h3>
