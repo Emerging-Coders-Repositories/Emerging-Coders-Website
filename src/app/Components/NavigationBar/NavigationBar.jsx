@@ -40,13 +40,15 @@ export default function NavigationBar() {
         {
           name: "Resources",
           url: "/AdditionalResources",
-          // Add a dropdown property with an array of dropdown items
           dropdown: [
             {
-              name: "First-Year",
+              name: "First Year",
               url: "/First-Year",
             },
-            // Add more dropdown items as needed
+            {
+              name: "Technical Interviews",
+              url: "/Technical-Interview",
+            },
           ],
         },
         {
@@ -112,7 +114,7 @@ export default function NavigationBar() {
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
-                    onClick={handleDropdownToggle} // Toggle dropdown visibility
+                    onClick={handleDropdownToggle}
                     className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                   >
                     {link.name}
@@ -138,20 +140,22 @@ export default function NavigationBar() {
                     id="dropdownNavbar"
                     className={`z-10 ${
                       isDropdownVisible ? "block" : "hidden"
-                    } absolute z-100 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
+                    } absolute my-2 z-100 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
                   >
                     <ul
                       className="py-2 text-sm text-gray-700 dark:text-gray-400"
                       aria-labelledby="dropdownLargeButton"
                     >
-                      <li>
+                      {link.dropdown.map((dropdownLink) => (
+                        <li>
                         <a
-                          href="/AdditionalResources/First-Year"
-                          className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          href={`/AdditionalResources/${dropdownLink.url}`}
+                          className="block px-4 py-2 text-gray-700"
                         >
-                          First-Year
+                          {dropdownLink.name}
                         </a>
                       </li>
+                      ))}
                     </ul>
                   </div>
                 </>
