@@ -190,7 +190,7 @@ export default function TechnicalsGuide() {
                     </div>
                   </div>
                 </section>
-                <section class="mb-8">
+                <section>
                   <div class="mx-auto max-w-3xl text-left">
                     <h4 class="text-3xl font-bold mb-10">
                       During the Technical Interview
@@ -253,6 +253,13 @@ export default function TechnicalsGuide() {
                     </div>
                   </div>
                 </section>
+              </div>
+              <div class="flex justify-center mb-10">
+                  <div class="block max-w-3xl p-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                      <p class="font-normal text-gray-700 dark:text-gray-400">
+                        That's all we have for this guide, we hope that you found the information on this page useful and that it helps you prepare for your next technical interview! Best of luck to you on your technical interviews! 🫶🏽🫶🏽
+                      </p>
+                  </div>
               </div>
           </div>
         </>
