@@ -22,8 +22,8 @@ export default function NavigationBar() {
             url: "/",
         },
         {
-            name: "Upcoming Events",
-            url: "/UpcomingEvents",
+            name: "Events",
+            url: "/Events",
         },
         {
             name: "Board", 

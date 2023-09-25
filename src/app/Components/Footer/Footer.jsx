@@ -9,7 +9,7 @@ export default function Footer() {
         },
         {
             name: "Upcoming Events",
-            url: "/UpcomingEvents",
+            url: "/Events",
         },
         {
             name: "Board", 
