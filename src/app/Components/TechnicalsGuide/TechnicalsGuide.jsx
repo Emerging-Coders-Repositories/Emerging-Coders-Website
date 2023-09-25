@@ -1,5 +1,5 @@
 import React from "react"; 
-import { Tabs, Tab, Card, CardBody, Link, Image } from "@nextui-org/react"; 
+import { Link, } from "@nextui-org/react"; 
 import TechnicalInterviewsIntro from "../TechnicalInterviewsIntro/TechnicalInterviewsIntro";
 import TechnicalInterviewsTypes from "../TechnicalInterviewsTypes/TechnicalInterviewsTypes";
 import TechnicalInterviewStudying from "../TechnicalInterviewStudying/TechnicalInterviewStudying";
@@ -9,7 +9,7 @@ export default function TechnicalsGuide() {
 
     return (
         <>
-          <div class="bg-white dark:bg-gray-900 min-h-screen">
+        <div class="bg-white dark:bg-gray-900 min-h-screen">
               <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
                   <div class="mx-auto max-w-screen-sm">
                       <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">

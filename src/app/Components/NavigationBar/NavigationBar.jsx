@@ -42,8 +42,8 @@ export default function NavigationBar() {
           url: "/AdditionalResources",
           dropdown: [
             {
-              name: "First Year",
-              url: "/First-Year",
+              name: "Underclassmen",
+              url: "/Underclassmen-Guide",
             },
             {
               name: "Technical Interviews",
