@@ -1,6 +1,45 @@
 import React from "react"; 
-import { Link } from "@nextui-org/react"
+import { 
+    Accordion, 
+    AccordionItem, 
+    Table, 
+    TableHeader, 
+    TableColumn, 
+    TableBody, 
+    TableRow, 
+    TableCell, 
+    Link,
+    Tooltip } from "@nextui-org/react";
+
 export default function UnderclassmenGuide() {
+
+    const accordionItems = [
+        {
+            key: "1",
+            title: "Core Classes",
+            text: "There are 6 total core classes for the CS major. You can think of these are being the foundational classes for the major. If you come into Northwestern CS with AP CS credit, then you can skip one of the core classes, COMP_SCI 150. But the rest of the core classes are required for the major. The core classes are as follows: COMP_SCI 111, COMP_SCI 150, COMP_SCI 211, COMP_SCI 212 COMP_SCI 213, COMP_SCI 214. NOTE: COMP_SCI 110, does not count for either the CS major or minor! It is a class that is meant to be an introduction to programming for non-CS majors. Though, you could still take the class if you're unsure about Computer Science",
+        },
+        {
+            key: "2", 
+            title: "Breadth Courses",
+            text: "The Breadth Courses you can think of as being extensions of the core classes but with more flexibility in terms of the options that you have. There are 5 breadth areas: Theory, Systems, Artificial Intelligence, Interfaces, and Software Development and Programming Languages. You only have to take one class from each breadth area. (More on this later)"
+        },
+        {
+            key: "3", 
+            title: "Technical Electives",
+            text: "Tech electives are classes you take that are at the 300 level or above. You have to take a total of 6 technical electives in total. So in short, once you finish your breadth or project classes, the additional classes that you take will count as electives. Keep in mind that it may be wise to save some tech electives slots open on your schedule since classes like COMP_SCI 396's (special topics in Computer Science) and COMP_SCI 399 (independent research) don't fullfil any of the breadth requirements and can only satisfy technical electives."
+        },
+        {
+            key: "4",
+            title: "Project Courses",
+            text: "Project courses are essentially classes that focus on a specific topic or project. These classes are meant to be more hands-on and project-based. You have to take 2 project courses in total. The project courses that are offered vary from year to year, but some examples of project courses are: COMP_SCI 330 (Human-Computer Interaction) and COMP_SCI 329 (HCI Studio)."
+        },
+        {
+            key: "5",
+            title: "Math Courses",
+            text: "As a component of the CS majors, all Computer Sciences are required to take classes in both math and statistics. The classes and order that you take these classes largely depends on again, how many AP credits you came into Northwestern with. Likewise, between Weinberg and McCormick, some of the classes may be different (Math 230-1 vs. Math 228-1) but the general content is the same. In general, you must take Calc 1, Calc 2, Calc 3, Linear Algebra, and an introductory statistics course. You can take these classes in any order that you want, but it is recommended that you take Calc 1 and Calc 2 first, then Linear Algebra, and then Calc 3. You can take the statistics course whenever you want (since it's a pre-req for only a couple of classes)."
+        },
+    ];
 
     return (
         <>
@@ -96,7 +135,6 @@ export default function UnderclassmenGuide() {
                                         <br />
                                         Of course, if you choose to work in technology, you'll be joining a fast-growing industry with a lot of opportunities for career growth and advancement. The tech industry is also known for its competitive salaries and benefits, as well as its flexible work arrangements.
                                     </p>
-
                                 </div>
                             </div>
                             <div class="mb-5">
@@ -105,8 +143,85 @@ export default function UnderclassmenGuide() {
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-400 mb-10">
                                     The Computer Science major at Northwestern is a very diverse and versatile major. Because of the quarter system, its possible to take classes in a variety of different fields and topics in CS from systems/hardware, game development, human-computer interaction, artificial intelligence, and theory.  
-                                    <br />
+                                    The depending on your planning and how many credits you come into Northwestern with, it's even possible to double major or minor in another field or even graduate with a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/combined-bs-ba-ms-program.html" target="_blank" color="secondary">Masters in Computer Science in 4 years</Link>. 
                                 </p>
+                                <div class="mb-5">
+                                    <h4 class="text-xl font-bold mb-5">
+                                        What are the requirements for the CS major?
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 mb-5">
+                                        The Computer Science already has a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-ba-curriculum" target="_blank" color="secondary">general overview of the curriculum</Link> that you could use to get a better understanding of the requirements for the major. 
+                                        <br />
+                                        <br />
+                                        But, the curriculum can be broken down into the following: 
+                                    </p>
+                                    <Accordion variant="splitted">
+                                        {accordionItems.map((item) => (
+                                            <AccordionItem key={item.key} aria-label={`Accordion ${item.key}`} title={item.title} subtitle="Press to expand">
+                                                {item.text}
+                                            </AccordionItem>
+                                        ))}
+                                    </Accordion>
+                                    <h4 class="text-xl font-bold my-10 mb-5">
+                                        Okay, but what does this all mean?
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 my-10">
+                                        This is a lot of information! And for the most part, a lot of this information you could have just found online through the department website. Let's now break down some of the components of the major and what they mean.
+                                    </p>
+                                    <h4 class="text-xl font-bold mb-5">
+                                        Should I do the BA or BS in Computer Science?
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 mb-10">
+                                        If you choose to pursue Computer Science in either McCormick or Weinberg, the difference is only in the classes that you need to take outside of Computer Science (your graduation requirements) albeit, some of the specific math classes are different between the two schools. But, in terms of just Computer Science classes, both degrees have the <strong>same</strong> requirements. 
+                                        <br />
+                                        <br />
+                                        The McCormick version of Computer Science is more geared towards students who want to learn more about "engineering" side of Computer Science. This just means that you'll take more engineering-focused classes such as DTC, and EA. 
+                                        <br />
+                                        <br />
+                                        On the contrary, the Weinberg route in CS is good if you want a more holistic education since you'll have more opportunities to take classes outside of CS such as humanities, social sciences, and other STEM classes. It's also worth nothing that a lot of people choose Weinberg CS because it's a lot easier to double-major in CS and another "fun" field such as Creative Writing or Economics. 
+                                        <br />
+                                        <br />
+                                        <strong>It's important to emphasize that between the two schools, there is not difference in terms of job placement. Technology companies do not care if you graduate with a BS or BA in CS, what matters most is if you have the technical skills and background that they are looking for! Not what your degree type is. </strong>
+                                    </p>
+                                    <h4 class="text-xl font-bold mb-5">
+                                        What Order should I Take The Core Classes In? 
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 mb-10">
+                                        Before we begin, it's important to note that the CS department already has sample 4-year schedules for both <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/documents/students/undergraduate/mcc-cs-4-year-plan.pdf" target="_blank" color="secondary">McCormick</Link> and <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/documents/students/undergraduate/wcas-cs-4-year-plan.pdf" target="_blank" color="secondary">Weinberg</Link> students. 
+                                        And while these sample 4-year planners are useful, they don't provide as much context as to why you should take classes in a certain order. Likewise, there's a lot of subjectiveness in terms of what classes you should take first and what classes you should take later.
+                                        So let's talk through some of the suggestions that we have. 
+                                    </p>
+                                    <Table aria-label="Sample CS Classes Schedule">
+                                        <TableHeader>
+                                            <TableColumn key="fall" align="center">Fall</TableColumn>
+                                            <TableColumn key="winter" align="center">Winter</TableColumn>
+                                            <TableColumn key="spring" align="center">Spring</TableColumn>
+                                            {/* <TableColumn key="summer">Summer</TableColumn> */}
+                                        </TableHeader>
+                                        <TableBody>
+                                            <TableRow>
+                                                <TableCell key="fall"><Tooltip placement="top" content="testing"><p>COMP_SCI 111</p></Tooltip></TableCell>
+                                                <TableCell key="winter">COMP_SCI 150</TableCell>
+                                                <TableCell key="spring">COMP_SCI 214</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell key="fall">MATH 220-1</TableCell>
+                                                <TableCell key="winter">MATH 220-2</TableCell>
+                                                <TableCell key="spring">MATH 230-1</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell key="fall">SEMINAR/DISTRO</TableCell>
+                                                <TableCell key="winter">SEMINAR/DISTRO</TableCell>
+                                                <TableCell key="spring">SEMINAR/DISTRO</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell key="fall">Unrestricted</TableCell>
+                                                <TableCell key="winter">Unrestricted</TableCell>
+                                                <TableCell key="spring">Unrestricted</TableCell>
+                                            </TableRow>
+                                        </TableBody>
+                                    </Table>
+                                </div>
                             </div>
                         </div>
                     </section>
