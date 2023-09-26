@@ -1,5 +1,5 @@
 import React from "react"; 
-import PastEventsSlider from "../PastEventsSlider/PastEventsSlider";
+import PastEventsGrid from "../PastEventsGrid/PastEventsGrid";
 import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
 
 export default function PastEventsComponent() {
@@ -10,8 +10,7 @@ export default function PastEventsComponent() {
                 <div class="container mx-auto">
                     <div id="#PastEvents" class="mb-32 text-center">
                         <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-10 md:space-y-0 lg:gap-12 lg:items-center">
-                            <PastEventsSlider
-                            />
+                            <PastEventsGrid/>
                             <div class="md:7/12 lg:w:-1/2">
                                 <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-black">
                                     What We've Done
