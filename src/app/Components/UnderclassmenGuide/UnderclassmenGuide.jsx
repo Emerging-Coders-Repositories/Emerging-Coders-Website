@@ -1,4 +1,5 @@
 import React from "react"; 
+import { useState } from "react"; 
 import { 
     Accordion, 
     AccordionItem, 
@@ -12,6 +13,8 @@ import {
     Tooltip } from "@nextui-org/react";
 
 export default function UnderclassmenGuide() {
+
+    const [page, setPage] = useState(1);
 
     const accordionItems = [
         {
@@ -191,36 +194,88 @@ export default function UnderclassmenGuide() {
                                         And while these sample 4-year planners are useful, they don't provide as much context as to why you should take classes in a certain order. Likewise, there's a lot of subjectiveness in terms of what classes you should take first and what classes you should take later.
                                         So let's talk through some of the suggestions that we have. 
                                     </p>
-                                    <Table aria-label="Sample CS Classes Schedule">
-                                        <TableHeader>
-                                            <TableColumn key="fall" align="center">Fall</TableColumn>
-                                            <TableColumn key="winter" align="center">Winter</TableColumn>
-                                            <TableColumn key="spring" align="center">Spring</TableColumn>
-                                            {/* <TableColumn key="summer">Summer</TableColumn> */}
-                                        </TableHeader>
-                                        <TableBody>
-                                            <TableRow>
-                                                <TableCell key="fall"><Tooltip placement="top" content="testing"><p>COMP_SCI 111</p></Tooltip></TableCell>
-                                                <TableCell key="winter">COMP_SCI 150</TableCell>
-                                                <TableCell key="spring">COMP_SCI 214</TableCell>
-                                            </TableRow>
-                                            <TableRow>
-                                                <TableCell key="fall">MATH 220-1</TableCell>
-                                                <TableCell key="winter">MATH 220-2</TableCell>
-                                                <TableCell key="spring">MATH 230-1</TableCell>
-                                            </TableRow>
-                                            <TableRow>
-                                                <TableCell key="fall">SEMINAR/DISTRO</TableCell>
-                                                <TableCell key="winter">SEMINAR/DISTRO</TableCell>
-                                                <TableCell key="spring">SEMINAR/DISTRO</TableCell>
-                                            </TableRow>
-                                            <TableRow>
-                                                <TableCell key="fall">Unrestricted</TableCell>
-                                                <TableCell key="winter">Unrestricted</TableCell>
-                                                <TableCell key="spring">Unrestricted</TableCell>
-                                            </TableRow>
-                                        </TableBody>
-                                    </Table>
+                                    <h5 class="text-lg font-bold mb-5">
+                                        Weinberg Students
+                                    </h5>
+                                    <div class="mb-10">
+                                        <Table aria-label="Sample CS Classes Schedule">
+                                            <TableHeader>
+                                                <TableColumn key="fall" align="center">Fall</TableColumn>
+                                                <TableColumn key="winter" align="center">Winter</TableColumn>
+                                                <TableColumn key="spring" align="center">Spring</TableColumn>
+                                            </TableHeader>
+                                            <TableBody>
+                                                <TableRow>
+                                                        <TableCell key="fall">COMP_SCI 111</TableCell>
+                                                        <TableCell key="winter">COMP_SCI 150</TableCell>
+                                                        <TableCell key="spring">COMP_SCI 214</TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall">MATH 220-1</TableCell>
+                                                        <TableCell key="winter">MATH 220-2</TableCell>
+                                                        <TableCell key="spring">MATH 230-1</TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall">SEMINAR/DISTRO</TableCell>
+                                                        <TableCell key="winter">SEMINAR/DISTRO</TableCell>
+                                                        <TableCell key="spring">SEMINAR/DISTRO</TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                    </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </div>
+                                    <div class="mb-10">
+                                        <Table aria-label="Sample CS Classes Schedule">
+                                            <TableHeader>
+                                                <TableColumn key="fall" align="center">Fall</TableColumn>
+                                                <TableColumn key="winter" align="center">Winter</TableColumn>
+                                                <TableColumn key="spring" align="center">Spring</TableColumn>
+                                            </TableHeader>
+                                            <TableBody>
+                                                <TableRow>
+                                                        <TableCell key="fall">COMP_SCI 211</TableCell>
+                                                        <TableCell key="winter">COMP_SCI 213</TableCell>
+                                                        <TableCell key="spring">COMP_SCI 212</TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall">MATH 240</TableCell>
+                                                        <TableCell key="winter"><Tooltip content="Many Weinberg CS students opt to make IEMS 201 (the McCormick version of STAT 210 since it's a bit more manageable."><p>STAT 210/Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                        <TableCell key="fall"><Tooltip content="You can either take a distro or a 300 level CS class here" placement="top"><p>Unrestricted</p></Tooltip></TableCell>
+                                                    </TableRow>
+                                            </TableBody>
+                                        </Table>
+                                    </div>
+                                    <h5 class="text-lg font-bold mb-5">
+                                        The Key Takeaways
+                                    </h5>
+                                    <p class="text-gray-700 dark:text-gray-400 mb-5">
+                                        This recommend study is not exhaustive and won't work for everyone (since everyone's paths are different!). But the key things to take away from this is that:
+                                        <br />
+                                        <br />
+                                        If you want to have a solid foundation for recruitment season, you should aim to take CS 214 <strong>first</strong>. This is because in CS 214, you learn about data structures and algorithms which are the bread and butter of technical interviews. The class will give you the foundation to be able to start to understand LeetCode style questions a bit better and will help you in your technical interviews.
+                                        Likewise, doing CS 211 after 214 is an optimal choice since you'll learn about common languages such as C and C++ as well as the Unix environment and learn more about Object-Oriented Programming. Additionally, both classes are the most popular pre-requisites for many of the 300-level CS classes. So the earlier you can take them, the more options you'll have during your second year of Computer Science. 
+                                        <br />
+                                        <br />
+                                        It's very common to pair CS 214 and CS 211 together. And while it's manageable, keep in mind that a lot of the content between the two classes is very different. So it's important to be able to manage your time well and be able to balance the workload between the two classes. But if you switched to CS late, or you're a second-year, it's very common to take CS 214 and CS 211 together.
+                                        <br />
+                                        <br />
+                                        Now, you may be wondering what's the reasoning behind putting CS 212 so late if you only need 111 to take it. The idea with CS 212 so late in our schedules is because CS 212 is am <strong>extremely</strong> difficult class since it's a discrete maths course. You'll be learning about proofs, induction, and other topics that are very different from the other CS classes since it is very theory focused. 
+                                        CS 212 is by no means impossible to do well in, but you probably want to put it off while you learn some of the other CS topics first because in terms of industry, you'll probably never use the content from CS 212 and <strong>very few</strong> classes have it as a pre-req.
+                                    </p>
                                 </div>
                             </div>
                         </div>
