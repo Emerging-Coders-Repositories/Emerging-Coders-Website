@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react"; 
 import { supabase } from '../../../../src/client'; 
 import { Progress } from "@nextui-org/react";
-
+import 'add-to-calendar-button';
 export default function UpcomingEventsComponent() {
 
     // state to hold all of the upcoming events
@@ -74,6 +74,25 @@ export default function UpcomingEventsComponent() {
 
         return `${monthString} ${dayString}, ${year}`;
     }; 
+
+    const convertTo12HourTime = (time) => {
+        const [hours, minutes] = time.split(':').slice(0, 2);
+
+        // Parse hours and minutes as integers
+        const hoursInt = parseInt(hours, 10);
+        const minutesInt = parseInt(minutes, 10);
+
+        // Determine AM or PM
+        const period = hoursInt >= 12 ? 'PM' : 'AM';
+
+        // Convert hours to 12-hour format
+        const hours12h = hoursInt % 12 || 12; // Handle midnight (0) as 12
+
+        // Create the 12-hour formatted time string
+        const time12h = `${hours12h}:${minutesInt < 10 ? '0' : ''}${minutesInt} ${period}`;
+
+        return time12h;
+    };
 
 
 
@@ -159,13 +178,29 @@ export default function UpcomingEventsComponent() {
                             {formatDate(event?.date) || "No date"}
                         </h6> 
                         <h6 class="mb-2 text-l font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                            {event?.time || "No time"} - {event?.endTime || "No end time"}
+                            {convertTo12HourTime(event?.time) || "No time"} - {convertTo12HourTime(event?.endTime) || "No end time"}
                         </h6> 
                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                             {event?.description || "No description"}
                         </p>  
                         </div>
-                    </div>
+                        <div class="flex justify-center mb-5">
+                        <add-to-calendar-button 
+                            name={`Emerging Coders: ${event.title}`}
+                            description={event.description}
+                            startDate={event.date}
+                            startTime={event.time}
+                            endTime={event.endTime}
+                            timeZone="America/Chicago"
+                            location="World Wide Web"
+                            options="'Apple','Google','Outlook.com'"
+                            hideIconModal
+                            hideBackground
+                            hideCheckmark
+                            size="4"
+                        />
+                        </div>
+                </div>
                 ))
             }
             </div>
