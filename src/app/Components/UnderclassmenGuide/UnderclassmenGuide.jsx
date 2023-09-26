@@ -262,7 +262,7 @@ export default function UnderclassmenGuide() {
                                     <h5 class="text-lg font-bold mb-5">
                                         The Key Takeaways
                                     </h5>
-                                    <p class="text-gray-700 dark:text-gray-400 mb-5">
+                                    <p class="text-gray-700 dark:text-gray-400 mb-10">
                                         This recommend study is not exhaustive and won't work for everyone (since everyone's paths are different!). But the key things to take away from this is that:
                                         <br />
                                         <br />
@@ -278,8 +278,16 @@ export default function UnderclassmenGuide() {
                                     </p>
                                 </div>
                             </div>
+                            <div class="flex justify-center mb-10">
+                            <div class="block max-w-3xl p-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                                <p class="font-normal text-gray-700 dark:text-gray-400">
+                                    That's all we have for this guide, we hope that you found the information on this page useful and that it helps you understand how to navigate the Computer Science major a bit better! 🫶🏽🫶🏽
+                                </p>
+                            </div>
+                        </div>
                         </div>
                     </section>
+                    
                 </div>
             </div>
         </>
