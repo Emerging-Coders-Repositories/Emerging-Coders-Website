@@ -40,7 +40,7 @@ export default function UnderclassmenGuide() {
         {
             key: "5",
             title: "Math Courses",
-            text: "As a component of the CS majors, all Computer Sciences are required to take classes in both math and statistics. The classes and order that you take these classes largely depends on again, how many AP credits you came into Northwestern with. Likewise, between Weinberg and McCormick, some of the classes may be different (Math 230-1 vs. Math 228-1) but the general content is the same. In general, you must take Calc 1, Calc 2, Calc 3, Linear Algebra, and an introductory statistics course. You can take these classes in any order that you want, but it is recommended that you take Calc 1 and Calc 2 first, then Linear Algebra, and then Calc 3. You can take the statistics course whenever you want (since it's a pre-req for only a couple of classes)."
+            text: "As a component of the CS majors, all Computer Science students are required to take classes in both math and statistics. The classes and order that you take these classes largely depends on again, how many AP credits you came into Northwestern with. Likewise, between Weinberg and McCormick, some of the classes may be different (Math 230-1 vs. Math 228-1) but the general content is the same. In general, you must take Calc 1, Calc 2, Calc 3, Linear Algebra, and an introductory statistics course. You can take these classes in any order that you want, but it is recommended that you take Calc 1 and Calc 2 first, then Linear Algebra, and then Calc 3. You can take the statistics course whenever you want (since it's a pre-req for only a couple of classes)."
         },
     ];
 
@@ -273,7 +273,7 @@ export default function UnderclassmenGuide() {
                                         It's very common to pair CS 214 and CS 211 together. And while it's manageable, keep in mind that a lot of the content between the two classes is very different. So it's important to be able to manage your time well and be able to balance the workload between the two classes. But if you switched to CS late, or you're a second-year, it's very common to take CS 214 and CS 211 together.
                                         <br />
                                         <br />
-                                        Now, you may be wondering what's the reasoning behind putting CS 212 so late if you only need 111 to take it. The idea with CS 212 so late in our schedules is because CS 212 is am <strong>extremely</strong> difficult class since it's a discrete maths course. You'll be learning about proofs, induction, and other topics that are very different from the other CS classes since it is very theory focused. 
+                                        Now, you may be wondering what's the reasoning behind putting CS 212 so late if you only need 111 to take it. The idea with CS 212 so late in our schedules is because CS 212 is an <strong>extremely</strong> difficult class since it's a discrete maths course. You'll be learning about proofs, induction, and other topics that are very different from the other CS classes since it is very theory focused. 
                                         CS 212 is by no means impossible to do well in, but you probably want to put it off while you learn some of the other CS topics first because in terms of industry, you'll probably never use the content from CS 212 and <strong>very few</strong> classes have it as a pre-req.
                                     </p>
                                 </div>
