@@ -6,16 +6,20 @@ export default function NavigationBar() {
 
     const [isExpanded, toggleExpansion] = useState(false);
     const [isDropdownVisible, toggleDropdown] = useState(false); 
-
+    const [isResourcesDropdownVisible, toggleResourcesDropdown] = useState(false);
+    const [isOpportunitiesDropdownVisible, toggleOpportunitiesDropdown] = useState(false);
 
     const handleToggle = () => {
-        toggleExpansion(!isExpanded);
+      toggleExpansion(!isExpanded);
     };
-
-    const handleDropdownToggle = () => {
-      toggleDropdown(!isDropdownVisible); // Toggle the dropdown visibility
+  
+    const handleResourcesDropdownToggle = () => {
+      toggleResourcesDropdown(!isResourcesDropdownVisible);
     };
-
+  
+    const handleOpportunitiesDropdownToggle = () => {
+      toggleOpportunitiesDropdown(!isOpportunitiesDropdownVisible);
+    };
     const links = [
         {
             name: "Home",
@@ -54,6 +58,16 @@ export default function NavigationBar() {
         {
             name: "Opportunities",
             url: "/Opportunities", 
+            dropdown: [
+              {
+                name:"SWE Internships",
+                url: "/Opportunities/SWE-Opportunities",
+              },
+              {
+                name: "Underclassmen",
+                url: "/Opportunities/Underclassmen-Opportunities",
+              }
+            ],
         },
         {
           name: "Sponsors", 
@@ -109,18 +123,30 @@ export default function NavigationBar() {
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             {links.map((link, index) => (
               <li key={index}>
-                {link.name === "Resources" ? (
+                {link.name === "Resources"  || link.name === "Opportunities"? (
                   <>
                     <button
-                      id="dropdownNavbarLink"
-                      data-dropdown-toggle="dropdownNavbar"
-                      onClick={handleDropdownToggle}
+                      id={`dropdownNavbarLink${index}`}
+                      data-dropdown-toggle={`dropdownNavbar${index}`}
+                      onClick={() => {
+                        if (link.name === "Resources") {
+                          handleResourcesDropdownToggle();
+                        } else if (link.name === "Opportunities") {
+                          handleOpportunitiesDropdownToggle();
+                        }
+                      }}
                       className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
                       {link.name}
                       <svg
                         className={`w-2.5 h-2.5 ml-2.5 transform transition-transform ${
-                          isDropdownVisible ? "rotate-180" : ""
+                          link.name === "Resources"
+                            ? isResourcesDropdownVisible
+                              ? "rotate-180"
+                              : ""
+                            : isOpportunitiesDropdownVisible
+                            ? "rotate-180"
+                            : ""
                         }`}
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
@@ -137,24 +163,30 @@ export default function NavigationBar() {
                       </svg>
                     </button>
                     <div
-                      id="dropdownNavbar"
+                      id={`dropdownNavbar${index}`}
                       className={`z-10 ${
-                        isDropdownVisible ? "block" : "hidden"
+                        link.name === "Resources"
+                          ? isResourcesDropdownVisible
+                            ? "block"
+                            : "hidden"
+                          : isOpportunitiesDropdownVisible
+                          ? "block"
+                          : "hidden"
                       } absolute my-2 z-100 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700`}
                     >
                       <ul
                         className="py-2 text-sm text-gray-700 dark:text-gray-400"
-                        aria-labelledby="dropdownLargeButton"
+                        aria-labelledby={`dropdownLargeButton${index}`}
                       >
                         {link.dropdown.map((dropdownLink, key) => (
-                          <li key={index}>
-                          <a
-                            href={`/AdditionalResources/${dropdownLink.url}`}
-                            className="block px-4 py-2 text-gray-700"
-                          >
-                            {dropdownLink.name}
-                          </a>
-                        </li>
+                          <li key={key}>
+                            <a
+                              href={dropdownLink.url}
+                              className="block px-4 py-2 text-gray-700"
+                            >
+                              {dropdownLink.name}
+                            </a>
+                          </li>
                         ))}
                       </ul>
                     </div>
