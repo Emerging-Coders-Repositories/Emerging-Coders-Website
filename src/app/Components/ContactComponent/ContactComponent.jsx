@@ -25,7 +25,6 @@ export default function ContactComponent() {
             }
         ).then((response) => {
             setIsFormSubmitting(false);
-            // resetForm();
             setIsFormSubmitted(true);
         })
         .catch ((error) => {

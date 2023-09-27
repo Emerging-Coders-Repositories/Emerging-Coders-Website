@@ -18,7 +18,7 @@ export default function TechnicalInterviewStudying() {
                     Unless you are interviewing for a more specific role such as a mobile app developer or a front-end developer position,  you should be able to have free reign over the coding language that you do your interviews in.
                 </p>
                 <p class="text-gray-700 dark:text-gray-400 mb-5">
-                    Ideally, you should a choose a programming language that you already have some experience with or at least used in one of your classes. This will allow you to focus more in studying the problem solving aspects of the technical interview more than the syntax of the language.
+                    Ideally, you should choose a programming language that you already have some experience with or at least used in one of your classes. This will allow you to focus more in studying the problem solving aspects of the technical interview more than the syntax of the language.
                     However, if you are not familiar with any of the popular programming languages, it is recommended that you choose a language that is easy to learn and has a lot of resources available online such as Python.
                 </p>
                 <p class="text-gray-700 dark:text-gray-400 mb-10">
@@ -31,8 +31,8 @@ export default function TechnicalInterviewStudying() {
                     Practicing and Studying
                 </h4>
                 <p class="text-gray-700 dark:text-gray-400 mb-5">
-                    Nowadays, there are a lot of resources that exists on the internet that can help you prepare for technical interviews. These resources can range from books, to online courses, to practice problems, and more.
-                    Unfortunately, some resources are mostly just trying to make money off of you and don't offer anything useful behind their paywalls. So, we've compiled a list of resources and tools that we've used in our studying and preparing that we felt were the most helpful while accommodating for various learning styles! 
+                    Nowadays, there are a lot of resources that exist on the internet that can help you prepare for technical interviews. These resources can range from books, to online courses, to practice problems, and more.
+                    Unfortunately, some resources are mostly just trying to make money off of you and don't offer anything useful behind their paywalls. So, we've compiled a list of resources and tools that we've used in our studying and preparation that we felt were the most helpful while accommodating various learn styles! 
                 </p>
                 <h5 class="text-xl font-bold mb-5">
                     Books
@@ -67,7 +67,7 @@ export default function TechnicalInterviewStudying() {
                             NeetCode
                         </Link>
                         <p class="text-gray-700 dark:text-gray-400 mb-2 my-3">
-                            NeetCode is very similar to LeetCode in that it provides a large collection of practice problems that are frequently asked in technical interviews. However, NeetCode is unique in that it provides list of curated problems that are organized by topic and difficulty. This makes it easier to find problems that you want to practice. This helps balance off the fact that LeetCode can get overwhelming with the amount of problems that it has whereas NeetCode gives you more structure and insight into what you should be focusing on. 
+                            NeetCode is very similar to LeetCode in that it provides a large collection of practice problems that are frequently asked in technical interviews. However, NeetCode is unique in that it provides a list of curated problems that are organized by topic and difficulty. This makes it easier to find problems that you want to practice. This helps balance off the fact that LeetCode can get overwhelming with the amount of problems that it has whereas NeetCode gives you more structure and insight into what you should be focusing on. 
                         </p>
                     </div>
                     <div class="mb-5">
@@ -86,8 +86,8 @@ export default function TechnicalInterviewStudying() {
                         <p class="text-gray-700 dark:text-gray-400 mb-5">
                             Mock interviews are arguably the best and most efficient way to prepare for technical interviews. Mock interviews are essentially practice interviews that you do with someone else such as a friend, an upperclassmen, or your roommate. 
                             The purpose of mock interviews is to simulate the experience of a real technical interview. This allows you to get a feel for what a real technical interview is like and allows you to practice your problem solving skills in a more realistic environment.
-                            The best thing about doing mock interviews is that you are able to gain insights into your strengths and weaknesses. This allows you to focus on improving your weaknesses and building on your strengths. You can also become comfortable with having to solve technical problems on a time crunch and pressure. 
-                            Overall, it is <strong>strongly</strong> suggested that you do at least a couple of mock interviews while preparing for an interview. When you doing a mock interview, we recommend using this <a href="https://www.algoexpert.io/mock-interviews/feedback?id=fake_feedback_form" class="text-purple-700" target="_blank">scorecard</a> to provide quantitative feedback to the interviewee.
+                            The best thing about doing mock interviews is that you are able to gain insights into your strengths and weaknesses. This allows you to focus on improving your weaknesses and building on your strengths. You can also become comfortable with having to solve technical problems in a time crunch and pressure. 
+                            Overall, it is <strong>strongly</strong> suggested that you do at least a couple of mock interviews while preparing for an interview. When you are doing a mock interview, we recommend using this <a href="https://www.algoexpert.io/mock-interviews/feedback?id=fake_feedback_form" class="text-purple-700" target="_blank">scorecard</a> to provide quantitative feedback to the interviewee.
                         </p>
                         <p class="text-gray-700 dark:text-gray-400 mb-5">
                             If you're unsure what a mock interview should look like, here is a video of a mock interview between software engineers. 

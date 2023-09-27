@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react"; 
 import { supabase } from '../../../../src/client'; 
 import { Progress } from "@nextui-org/react";
+import EventCard from "../EventCard/EventCard";
 import 'add-to-calendar-button';
 export default function UpcomingEventsComponent() {
 
@@ -162,45 +163,16 @@ export default function UpcomingEventsComponent() {
             <div class="grid-cols-1 sm:grid md:grid-cols-3 py-8 lg:py-16 px-4 mx-auto max-w-screen-xl">
                 {
                 events.map((event,   index) => (
-                    <div key={index} class="mx-3 mt-6 flex flex-col self-start rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-                        <img
-                        class="rounded-t-lg"
-                        src={event.imageUrl}
-                        alt="Hollywood Sign on The Hill" />
-                        <div class="p-6">
-                        <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                            {event?.title || "No title"}
-                        </h5>
-                        <h6 class="mb-2 text-l font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                            {event?.location || "No location"}
-                        </h6>
-                        <h6 class="mb-2 text-l font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                            {formatDate(event?.date) || "No date"}
-                        </h6> 
-                        <h6 class="mb-2 text-l font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                            {convertTo12HourTime(event?.time) || "No time"} - {convertTo12HourTime(event?.endTime) || "No end time"}
-                        </h6> 
-                        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            {event?.description || "No description"}
-                        </p>  
-                        </div>
-                        <div class="flex justify-center mb-5">
-                        <add-to-calendar-button 
-                            name={`Emerging Coders: ${event.title}`}
-                            description={event.description}
-                            startDate={event.date}
-                            startTime={event.time}
-                            endTime={event.endTime}
-                            timeZone="America/Chicago"
-                            location="World Wide Web"
-                            options="'Apple','Google','Outlook.com'"
-                            hideIconModal
-                            hideBackground
-                            hideCheckmark
-                            size="4"
-                        />
-                        </div>
-                </div>
+                    <EventCard 
+                        key={index}
+                        imageUrl={event.imageUrl}
+                        title={event.title}
+                        location={event.location}
+                        date={formatDate(event.date)}
+                        description={event.description}
+                        time={convertTo12HourTime(event.time)}
+                        endTime={convertTo12HourTime(event.endTime)}
+                    />
                 ))
             }
             </div>

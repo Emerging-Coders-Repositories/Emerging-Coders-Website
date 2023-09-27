@@ -38,7 +38,7 @@ export default function KeyPoints() {
                                     Technical Development
                             </h5>
                             <p class="text-neutral-500 dark:text-neutral-200">
-                                We strive to provide accessible and inclusive technical development opportunities for all of our members by hosting workshops, speaker events, and other events to help our members learn and grow as developers engineers, designers, product managers, and more. 
+                                We strive to provide accessible and inclusive technical development opportunities for all of our members by hosting workshops, speaker events, and other events to help our members learn and grow as developers, engineers, designers, product managers, and more.
                             </p>
                         </div>
                         

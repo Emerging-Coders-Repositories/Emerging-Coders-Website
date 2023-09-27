@@ -76,7 +76,7 @@ export default function UnderclassmenGuide() {
                                     How to Use This Guide
                                 </h4>
                                 <p class="text-gray-700 dark:text-gray-400 mb-5">
-                                    The purposes of this guide is to provide additional context and guidance when it comes to navigating the Computer Science major at Northwestern. The department already provides lots of resources, guides, and opportunities for students to succeed, but we wanted to provide a more personal and condensed guide that is based on the experiences of our members and alumni.
+                                    The purpose of this guide is to provide additional context and guidance when it comes to navigating the Computer Science major at Northwestern. The department already provides lots of resources, guides, and opportunities for students to succeed, but we wanted to provide a more personal and condensed guide that is based on the experiences of our members and alumni.
                                     This guide by no means is perfect to every situation, interest, or path that you may embark on during your time at Northwestern but, if you someone that is completely new to Computer Science (like many of us were), or you don't have someone to ask questions to, we hope that this guide can help you out with answering some of your questions. Keep in mind also that this guide is mostly geared for those wanting to enter <strong>industry</strong> after graduation. A more detailed version for folks interested in graduate school will be coming soon!
                                     <br />
                                     <br />
@@ -104,7 +104,7 @@ export default function UnderclassmenGuide() {
                                     Should I Pursue a CS major?
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-400 mb-10">
-                                    Before we say anything, ultimately the decision to pursue a Computer Science degree is going to be up to you. Again, a lot of this advice in this guide is subjective and your milage may vary, so take everything with a grain of salt.
+                                    Before we say anything, ultimately the decision to pursue a Computer Science degree is going to be up to you. Again, a lot of this advice in this guide is subjective and your mileage may vary, so take everything with a grain of salt.
                                 </p>
                                 <div class="mb-5">
                                     <h4 class="text-xl font-bold mb-5">
@@ -133,10 +133,10 @@ export default function UnderclassmenGuide() {
                                     </h4>
                                     <p class="text-gray-700 dark:text-gray-400 mb-10">
                                         Pursuing a degree in computer science offers not only promising career prospects but also the chance to make a meaningful impact on the world through innovation and problem-solving. It's a field that rewards curiosity, adaptability, and a passion for learning.
-                                        A Computer Science is very versatile and the skills that you learn in a CS degree can be applied to a wide variety of fields and industries. You don't have to become a software engineer after graduation, you can become a data scientist, a product manager, a UX designer, a technical writer, a technical recruiter, and so much more!
+                                        A Computer Science degree is very versatile and the skills that you learn in a CS degree can be applied to a wide variety of fields and industries. You don't have to become a software engineer after graduation, you can become a data scientist, a product manager, a UX designer, a technical writer, a technical recruiter, and so much more!
                                         <br />
                                         <br />
-                                        Of course, if you choose to work in technology, you'll be joining a fast-growing industry with a lot of opportunities for career growth and advancement. The tech industry is also known for its competitive salaries and benefits, as well as its flexible work arrangements.
+                                        Of course, if you choose to work in technology, you'll be joining a fast-growing industry with a lot of opportunities for career growth and advancement. The tech industry is also known for it's competitive salaries and benefits, as well as its flexible work arrangements.
                                     </p>
                                 </div>
                             </div>
@@ -146,14 +146,14 @@ export default function UnderclassmenGuide() {
                                 </h3>
                                 <p class="text-gray-700 dark:text-gray-400 mb-10">
                                     The Computer Science major at Northwestern is a very diverse and versatile major. Because of the quarter system, its possible to take classes in a variety of different fields and topics in CS from systems/hardware, game development, human-computer interaction, artificial intelligence, and theory.  
-                                    The depending on your planning and how many credits you come into Northwestern with, it's even possible to double major or minor in another field or even graduate with a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/combined-bs-ba-ms-program.html" target="_blank" color="secondary">Masters in Computer Science in 4 years</Link>. 
+                                    Depending on your planning and how many credits you come into Northwestern with, it's even possible to double major or minor in another field or even graduate with a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/combined-bs-ba-ms-program.html" target="_blank" color="secondary">Masters in Computer Science in 4 years</Link>. 
                                 </p>
                                 <div class="mb-5">
                                     <h4 class="text-xl font-bold mb-5">
                                         What are the requirements for the CS major?
                                     </h4>
                                     <p class="text-gray-700 dark:text-gray-400 mb-5">
-                                        The Computer Science already has a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-ba-curriculum" target="_blank" color="secondary">general overview of the curriculum</Link> that you could use to get a better understanding of the requirements for the major. 
+                                        The Computer Science Department already has a <Link showAnchorIcon href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/bachelors/#bs-ba-curriculum" target="_blank" color="secondary">general overview of the curriculum</Link> that you could use to get a better understanding of the requirements for the major. 
                                         <br />
                                         <br />
                                         But, the curriculum can be broken down into the following: 
@@ -172,19 +172,19 @@ export default function UnderclassmenGuide() {
                                         This is a lot of information! And for the most part, a lot of this information you could have just found online through the department website. Let's now break down some of the components of the major and what they mean.
                                     </p>
                                     <h4 class="text-xl font-bold mb-5">
-                                        Should I do the BA or BS in Computer Science?
+                                        Should I do a BA or BS in Computer Science?
                                     </h4>
                                     <p class="text-gray-700 dark:text-gray-400 mb-10">
                                         If you choose to pursue Computer Science in either McCormick or Weinberg, the difference is only in the classes that you need to take outside of Computer Science (your graduation requirements) albeit, some of the specific math classes are different between the two schools. But, in terms of just Computer Science classes, both degrees have the <strong>same</strong> requirements. 
                                         <br />
                                         <br />
-                                        The McCormick version of Computer Science is more geared towards students who want to learn more about "engineering" side of Computer Science. This just means that you'll take more engineering-focused classes such as DTC, and EA. 
+                                        The McCormick version of Computer Science is more geared towards students who want to learn more about the "engineering" side of Computer Science. This just means that you'll take more engineering-focused classes such as DTC, and EA. 
                                         <br />
                                         <br />
-                                        On the contrary, the Weinberg route in CS is good if you want a more holistic education since you'll have more opportunities to take classes outside of CS such as humanities, social sciences, and other STEM classes. It's also worth nothing that a lot of people choose Weinberg CS because it's a lot easier to double-major in CS and another "fun" field such as Creative Writing or Economics. 
+                                        On the contrary, the Weinberg route in CS is good if you want a more holistic education since you'll have more opportunities to take classes outside of CS such as humanities, social sciences, and other STEM classes. It's also worth noting that a lot of people choose Weinberg CS because it's a lot easier to double-major in CS and another "fun" field such as Creative Writing or Economics. 
                                         <br />
                                         <br />
-                                        <strong>It's important to emphasize that between the two schools, there is not difference in terms of job placement. Technology companies do not care if you graduate with a BS or BA in CS, what matters most is if you have the technical skills and background that they are looking for! Not what your degree type is. </strong>
+                                        <strong>It's important to emphasize that between the two schools, there is no difference in terms of job placement. Technology companies do not care if you graduate with a BS or BA in CS, what matters most is if you have the technical skills and background that they are looking for! Not what your degree type is. </strong>
                                     </p>
                                     <h4 class="text-xl font-bold mb-5">
                                         What Order should I Take The Core Classes In? 

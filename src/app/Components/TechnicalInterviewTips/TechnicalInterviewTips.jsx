@@ -27,8 +27,8 @@ export default function TechnicalInterviewTips() {
                 </h5>
                 <p class="text-gray-700 dark:text-gray-400 mb-5">
                 It's important to communicate your thought process and what you are thinking to your interviewer. The emphasis of the technical interview is <strong>not always </strong> going to be on solving the problem. 
-                It's vital that during the interview you are constantly communicating your though process and problem solving over anything else. This is because the interviewer wants to see how you think and how you approach problems.
-                If you are are able to communicate well, <strong>you can actually get better help to solve the problem</strong>.
+                It's vital that during the interview you are constantly communicating your thought process and problem solving over anything else. This is because the interviewer wants to see how you think and how you approach problems.
+                If you are able to communicate well, <strong>you can actually get better help to solve the problem</strong>.
                 </p>
             </div>
             <div class="mb-5">
@@ -46,7 +46,7 @@ export default function TechnicalInterviewTips() {
                 </h5>
                 <p class="text-gray-700 dark:text-gray-400 mb-5">
                 If you don’t know the answer, take a few minutes to think about it. Say that you have not encountered a similar scenario, but you are going to try to work through a process to solve the problem. Think out loud, ask for some direction.
-                <strong> If you're really stuck</strong>, you can as to go through examples of the problem. This will help you understand the problem better and will help you come up with a solution.
+                <strong> If you're really stuck</strong>, you can ask to go through examples of the problem. This will help you understand the problem better and will help you come up with a solution.
                 </p>
             </div>
             <div class="mb-5">
