@@ -43,15 +43,15 @@ export default function NavigationBar() {
         },
         {
           name: "Resources",
-          url: "/AdditionalResources",
+          url: "/Additional-Resources",
           dropdown: [
             {
               name: "Underclassmen",
-              url: "/Underclassmen-Guide",
+              url: "/Additional-Resources/Underclassmen-Guide",
             },
             {
               name: "Technical Interviews",
-              url: "/Technical-Interview",
+              url: "/Additional-Resources/Technical-Interview",
             },
           ],
         },
