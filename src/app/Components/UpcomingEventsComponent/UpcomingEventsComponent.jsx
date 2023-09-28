@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from '../../../../src/client'; 
 import { Progress } from "@nextui-org/react";
 import EventCard from "../EventCard/EventCard";
-import 'add-to-calendar-button';
+// import 'add-to-calendar-button';
 export default function UpcomingEventsComponent() {
 
     // state to hold all of the upcoming events
@@ -168,10 +168,13 @@ export default function UpcomingEventsComponent() {
                         imageUrl={event.imageUrl}
                         title={event.title}
                         location={event.location}
-                        date={formatDate(event.date)}
+                        date={event.date}
                         description={event.description}
-                        time={convertTo12HourTime(event.time)}
-                        endTime={convertTo12HourTime(event.endTime)}
+                        time={event.time}
+                        endTime={event.endTime}
+                        formattedStartTime={convertTo12HourTime(event.time)}
+                        formattedEndTime={convertTo12HourTime(event.endTime)}
+                        formattedDate={formatDate(event.date)}
                     />
                 ))
             }

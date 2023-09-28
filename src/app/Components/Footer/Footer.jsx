@@ -25,7 +25,7 @@ export default function Footer() {
         },
         {
             name: "Resources",
-            url: "/AdditionalResources"
+            url: "/Additional-Resources"
         },
         {
             name: "Opportunities",
