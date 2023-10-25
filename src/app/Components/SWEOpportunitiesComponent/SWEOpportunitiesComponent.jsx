@@ -12,7 +12,9 @@ export default function OpportunitiesComponent() {
     const [isFetching, setIsFetching] = useState(true);
     const [page,setPage] = useState(1);
     const [pages, setPages] = useState(0); 
-    const [tableItems, setTableItems] = useState([]);
+
+    // search = ""
+    //setSearch changes the value of search
     const [search, setSearch] = useState("");
     const rowsPerPage = 20; 
     
@@ -67,10 +69,12 @@ export default function OpportunitiesComponent() {
     };
 
     const handleSearch = (event) => {
+        // changing the value of search
         setSearch(event.target.value);
     };
 
     const filteredJobs = useMemo(() => {
+
         const lowerSearch = search.toLowerCase();
         if (!lowerSearch) {
             return jobsList;

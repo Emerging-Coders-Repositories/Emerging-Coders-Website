@@ -1,9 +1,9 @@
-"use client";
+"use client"; 
 import React from "react"; 
 import {NextUIProvider} from "@nextui-org/react";
-import FAQComponent from "../Components/FAQComponent/FAQComponent";
-import NavigationBar from "../Components/NavigationBar/NavigationBar";
-import Footer from "../Components/Footer/Footer";
+import PastEvents from "@/app/Components/PastEvents/PastEvents";
+import NavigationBar from "@/app/Components/NavigationBar/NavigationBar";
+import Footer from "@/app/Components/Footer/Footer";
 
 export default function Page() {
 
@@ -11,7 +11,7 @@ export default function Page() {
         <>
             <NextUIProvider>
                 <NavigationBar />
-                <FAQComponent />
+                <PastEvents /> 
                 <Footer />
             </NextUIProvider>
         </>
