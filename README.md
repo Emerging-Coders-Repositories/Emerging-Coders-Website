@@ -4,6 +4,8 @@ EmergingCoders is a community and student organization catered for First-Generat
 
 This website was built by [Ethan Pineda](https://www.linkedin.com/in/ethanpineda/), the current Webmaster for Emerging Coders and third year Computer Science student at Northwestern. 
 
+If you would like to contribute to the website, or learn more about how it was built, checkout the documentation [here](https://emerging-coders-website-documentation-fxxzuu0t6-ethanpaneraa.vercel.app/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

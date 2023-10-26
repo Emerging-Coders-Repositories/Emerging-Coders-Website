@@ -293,18 +293,3 @@ export default function UnderclassmenGuide() {
         </>
     );
 };
-
-// Should I pursue a CS major? 
-    // What is CS?
-    // why CS
-    // What you can with a CS major
-// What is the CS major like at Northwestern?
-    // What are the requirements for the CS major?
-    // General Advice for Picking order of intro classes
-    // What do the Breadth courses mean? 
-     // Support, Resources, Opertunities
-// What should I do to prepare for a career in tech? 
-    // What to do during the summers
-    // What to do during the school year
-    // How to get involved in tech
-// Final thoughts
