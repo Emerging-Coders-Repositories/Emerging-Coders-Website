@@ -1,7 +1,7 @@
 "use client"; 
 import React from "react"; 
 import {NextUIProvider} from "@nextui-org/react";
-import PastEvents from "@/app/Components/PastEvents/PastEvents";
+import PastEvents from "@/app/Components/PastEventsPage/PastEventsPage";
 import NavigationBar from "@/app/Components/NavigationBar/NavigationBar";
 import Footer from "@/app/Components/Footer/Footer";
 
