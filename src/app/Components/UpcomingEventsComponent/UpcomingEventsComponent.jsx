@@ -142,7 +142,7 @@ export default function UpcomingEventsComponent() {
     if (events.length === 0 && !isFetching) {
         
         return (
-            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
+            <div class="bg-white dark:bg-gray-900 flex justify-center items-center flex-col gap-4">
                 <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
                     We don't have any upcoming events at the moment. Please check back later!
                 </h2>

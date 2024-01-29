@@ -11,8 +11,8 @@ export default function OpportunitiesComponent() {
     const [fetchingError, setFetchingError] = useState(false);
     const [isFetching, setIsFetching] = useState(true);
     const [page,setPage] = useState(1);
-    const [pages, setPages] = useState(0); 
-
+    const [pages, setPages] = useState(0);
+    
     // search = ""
     //setSearch changes the value of search
     const [search, setSearch] = useState("");

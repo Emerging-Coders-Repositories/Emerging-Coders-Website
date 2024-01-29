@@ -10,7 +10,8 @@ import {
     TableRow, 
     TableCell, 
     Link,
-    Tooltip } from "@nextui-org/react";
+    Tooltip, 
+    Image } from "@nextui-org/react";
 
 export default function UnderclassmenGuide() {
 
@@ -276,6 +277,16 @@ export default function UnderclassmenGuide() {
                                         Now, you may be wondering what's the reasoning behind putting CS 212 so late if you only need 111 to take it. The idea with CS 212 so late in our schedules is because CS 212 is am <strong>extremely</strong> difficult class since it's a discrete maths course. You'll be learning about proofs, induction, and other topics that are very different from the other CS classes since it is very theory focused. 
                                         CS 212 is by no means impossible to do well in, but you probably want to put it off while you learn some of the other CS topics first because in terms of industry, you'll probably never use the content from CS 212 and <strong>very few</strong> classes have it as a pre-req.
                                     </p>
+                                    <h4 class="text-2xl font-bold mb-5">
+                                        Other Resources and Tips
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 mb-10">
+                                        {/* If you're looking for more resources and tips on how to navigate the CS major, here are some resources that you could use */}
+                                        If you're still curious to learn about the CS major at Northwestern and want to learn more about the differences between McCormick and Weinberg, we actually recently did a workshop going over this topic! You can find the link to the Google Drive Presentation by clicking on the image below
+                                    </p>
+                                    <a href="https://docs.google.com/presentation/d/1X89dVRnM5NTl4gra_Lgsv052dUErybPpXXaHIWqFeV8/edit?usp=sharing" target="_blank">
+                                        <Image src="/navigating_cs_at_northwestern.png" />
+                                    </a>
                                 </div>
                             </div>
                             <div class="flex justify-center mb-10">

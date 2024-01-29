@@ -25,7 +25,9 @@ export default function TechnicalsGuide() {
                           <br />
                           <br />
                           Authors: <Link showAnchorIcon href="https://www.linkedin.com/in/ethanpineda/" target="_blank" color="secondary">Ethan Pineda</Link>, <Link showAnchorIcon href="https://www.linkedin.com/in/dopineda/" target="_blank" color="secondary">Danny Pineda</Link>
+                          (not related)
                       </p>
+                      
                   </div>
               </div>
               <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
