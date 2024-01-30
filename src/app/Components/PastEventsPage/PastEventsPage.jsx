@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react"; 
 import { supabase } from "@/client";
 import EventCard from "../EventCard/EventCard";
-import { Progress } from "@nextui-org/react";
+import { Progress, Button, Link } from "@nextui-org/react";
 
 export default function PastEvents() {
 
@@ -117,7 +117,7 @@ export default function PastEvents() {
         return (
             <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
                 <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                    We don't have any upcoming events at the moment. Please check back later!
+                    It seems like there might be an issue with displaying our past events. Please try again later or you can checkout out our <a target="_blank" href="https://www.instagram.com/nu.emergingcoders/">instagram</a> to see a list of our past events!
                 </h2>
             </div>
         )
@@ -154,6 +154,16 @@ export default function PastEvents() {
                     )
                 })
             }
+            <div class="flex justify-center items-center mt-8 mb-10">
+                <Button
+                    href="/Events"
+                    as={Link}
+                    color="secondary"
+                    variant="ghost"
+                >
+                    View Our Upcoming Events
+                </Button>
+            </div>
             </div>
         </div>
     );
