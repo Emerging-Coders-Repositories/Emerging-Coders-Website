@@ -178,7 +178,7 @@ export default function ExecBoard() {
         {
             role: "Junior Exec Board Member", 
             name: "Arturo Fonseca", 
-            process: "He/Him",
+            pronouns: "He/Him",
             major: "Computer Science & Data Science",
             classStanding: "Junior",
             linkedin: "https://www.linkedin.com/in/arturo-f/",
