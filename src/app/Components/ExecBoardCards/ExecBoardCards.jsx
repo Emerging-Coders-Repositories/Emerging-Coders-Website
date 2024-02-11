@@ -15,16 +15,13 @@ export default function ExecBoardCards({
     website,
     isVisible,
 }) {
-
-    console.log(isVisible)
-
+    
     return (
         <div class={`text-center text-gray-500 dark:text-gray-400 transform transition-opacity ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}>
             <div class="text-center text-gray-500 dark:text-gray-400">
-                                <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={img} alt={`Picture of ${name}`} />
-                                {/* <Image class="mx-auto mb-4 w-36 h-36 rounded-full" src={img} /> */}
+                                <img class="mx-auto mb-4 w-36 h-36 rounded-full object-cover" src={img} alt={`Picture of ${name}`} />
                                 <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     <a href={website ? website : linkedin} target="blank">{name}</a>
                                 </h3>
