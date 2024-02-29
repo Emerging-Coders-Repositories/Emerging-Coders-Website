@@ -14,6 +14,7 @@ export default function ExecBoardCards({
     email,
     website,
     isVisible,
+    founder, 
 }) {
     
     return (
@@ -26,6 +27,7 @@ export default function ExecBoardCards({
                                     <a href={website ? website : linkedin} target="blank">{name}</a>
                                 </h3>
                                 <p class="font-bold text-gray-900">{major}</p>
+                                {founder && <p>Founding Exec Member</p>}
                                 <p>{role}</p>
                                 <p>{classStanding}</p>
                                 <p>{pronouns}</p>

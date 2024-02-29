@@ -17,6 +17,7 @@ export default function ExecBoard() {
             img: "/Emran.jpeg",
             email: "emranmajidy2025@u.northwestern.edu",
             website: "", 
+            founder: true,
         }, 
         {
             role: "Vice President",
@@ -28,6 +29,7 @@ export default function ExecBoard() {
             img: "/Amiin.jpeg",
             email: "amiinmuse2025@u.northwestern.edu", 
             website: "", 
+            founder: true,
         },
         {
             role: "Vice President", 
@@ -39,6 +41,7 @@ export default function ExecBoard() {
             img: "/Chisara.jpeg",
             email: "godfreyojiako2025@u.northwestern.edu", 
             website: "", 
+            founder: true,
         },
         {
             role: "Secretary",
@@ -50,6 +53,7 @@ export default function ExecBoard() {
             img: "/Attzy.jpeg",
             email: "attzyrodriguez2025@u.northwestern.edu",
             website: "", 
+            founder: true, 
         },
         {
             role: "Treasurer",
@@ -61,6 +65,7 @@ export default function ExecBoard() {
             img: "/Safiya.jpeg",
             email: "safiyamenk2025@u.northwestern.edu", 
             website: "", 
+            founder: true,
         },
         {
             role: "Social Media Chair",
@@ -72,6 +77,7 @@ export default function ExecBoard() {
             img: "/Audrey.jpeg",
             email: "audreybenitezrojo2025@u.northwestern.edu",
             website: "", 
+            founder: true, 
         },
         {
             role: "Webmaster",
@@ -82,7 +88,8 @@ export default function ExecBoard() {
             linkedin: "https://www.linkedin.com/in/ethanpineda/",
             img: "/Ethan.jpeg",
             email: "ethanpineda2025@u.northwestern.edu",
-            website: "https://ethanpaneraa.github.io/Ethan/"
+            website: "https://ethanpaneraa.github.io/Ethan/", 
+            founder: true, 
         },
         {
             role: "Professional Liaison",
@@ -94,6 +101,7 @@ export default function ExecBoard() {
             img: "/Don.jpeg",
             email: "donellmakuvire2026@u.northwestern.edu", 
             website: "", 
+            founder: true, 
         },
     ];
 
@@ -234,6 +242,7 @@ export default function ExecBoard() {
                                     email={member.email}
                                     website={member.website}
                                     isVisible={visibleMembers[index]}
+                                    founder={member.founder}
                                 />
                             ))}
                         </div>
