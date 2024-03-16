@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect, useMemo } from "react";
 import { Progress, Tab } from "@nextui-org/react";
 import { Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, } from "@nextui-org/react";
+import { Cottage } from "@mui/icons-material";
 
 export default function OpportunitiesComponent() {
 
@@ -21,7 +22,8 @@ export default function OpportunitiesComponent() {
     // Fetch README.md file from SWE Tracker
     const fetchREADME = async () => {
 
-        const readmeURL = process.env.NEXT_PUBLIC_SWE_TRACKER_URL; 
+        // change "next pub.." to new named api
+        const readmeURL = process.env.NEW_NEXT_PUBLIC_SWE_TRACKER_URL; 
 
         try {
             const response = await axios.get(readmeURL);
@@ -33,7 +35,7 @@ export default function OpportunitiesComponent() {
             const content = await readme.content; 
             const decodedContent = atob(content);
             setReadmeData(decodedContent);
-            decodeREADME(decodedContent);
+            decodeREADME(decodedContent); // Fetch error occurs in decodeREADME
         } catch (error) {
             console.log("Error fetching README.md file: ", error);
             setFetchingError(true);
@@ -42,31 +44,61 @@ export default function OpportunitiesComponent() {
 
     // The README is encoded in base64 so this function decodes it and parses it into a list of jobs
     const decodeREADME = async (content) => {
-        // regex to parse the README.md file into a list of jobs
-        const regex = /\| ([^\|]+) \| ([^\|]+) \| \[([^\]]+)\]\(([^)]+)\) \| ([^\|]+) \| ([^\|]+) \|\n/g;
+        // initial regex to parse the README.md file into a list of jobs
+        // const regex = /\| ([^\|]+) \| ([^\|]+) \| \[([^\]]+)\]\(([^)]+)\) \| ([^\|]+) \| ([^\|]+) \|\n/g;
+
+        // regex for company name exists
+        const regex1 = /\| \*\*\[([^\]]+)\]\(([^)]+)\)\*\* \| ([^\|]+) \| ([^\|]+) \| <a href="([^"]+)"><img src="[^"]+" width="[^"]+" alt="[^"]+"><\/a> <a href="([^"]+)"><img src="[^"]+" width="[^"]+" alt="[^"]+"><\/a> \| ([^\|]+) \|\n/g;
+        
+        // regex for '↳': ↳, role, location, applylink, simplifylink, date posted
+        const regex2 = /\| ([^\|]+) \| ([^\|]+) \| ([^\|]+) \| <a href="([^"]+)"><img src="[^"]+" width="[^"]+" alt="[^"]+"><\/a> <a href="([^"]+)"><img src="[^"]+" width="[^"]+" alt="[^"]+"><\/a> \| ([^\|]+) \|\n/g;
+        
         let match;
         const jobList = [];
-        while ((match = regex.exec(content))) {
-            const company = match[1].trim();
-            const investors = match[2].trim();
-            const title = match[3].trim();
-            const link = match[4].trim();
-            const status = match[5].trim();
-            const addedOn = match[6].trim();
-            jobList.push({
-                company,
-                investors,
-                title,
-                link,
-                status,
-                addedOn,
-            });
-            }
+
+        // 
+        while ((match = regex1.exec(content)||(match = regex2.exec(content)))) {
+            if ((match = regex1.exec(content))) {
+                const companyLinkText = match[1].trim();        // Extract company link text
+                const companyLinkUrl = match[2].trim();         // Extract company link URL
+                const role = match[3].trim();                   // Extract role
+                const location = match[4].trim();               // Extract location
+                const applyLink = match[5].trim();              // Extract application link URL
+                const simplifyLink = match[6].trim();           // Extract Simplify link URL
+                const datePosted = match[7].trim();             // Extract date posted
+
+                jobList.push({
+                    company: { text: companyLinkText, url: companyLinkUrl },  // Storing company link text and URL in an object
+                    role,
+                    location,
+                    application: { apply: applyLink, url: simplifyLink }, // Storing application link text and URL in an object
+                    datePosted
+                });
+            } else {
+                match = regex2.exec(content)
+                const companyLinkText = match[1].trim();  // Extract company link text
+                const role = match[2].trim();             // Extract role
+                const location = match[3].trim();         // Extract location
+                const applyLink = match[4].trim();        // Extract application link URL
+                const simplifyLink = match[5].trim();     // Extract simplify link URL
+                const datePosted = match[6].trim();       // Extract date posted
+
+                jobList.push({
+                    company: { text: companyLinkText, url: null},  // Storing company link text and URL in an object
+                    role,
+                    location,
+                    application: { apply: applyLink, simplify: simplifyLink }, // Storing application link text and URL in an object
+                    datePosted
+                });
+            };
+        };
         const jobsListLength = await jobList.length;
         setPages(Math.ceil(jobsListLength / rowsPerPage))
         setJobsList(jobList);
         setIsFetching(false);
     };
+        
+
 
     const handleSearch = (event) => {
         // changing the value of search
@@ -81,8 +113,8 @@ export default function OpportunitiesComponent() {
         }
         return jobsList.filter((job) => {
             return (
-                job.title.toLowerCase().includes(lowerSearch) ||
-                job.company.toLowerCase().includes(lowerSearch)
+                job.role.toLowerCase().includes(lowerSearch) ||
+                job.company.text.toLowerCase().includes(lowerSearch) // may be an issue because company names as arrows won't show up
             );
         });
     }, [jobsList, search]);
@@ -179,17 +211,21 @@ export default function OpportunitiesComponent() {
                     >
                     <TableHeader>
                         <TableColumn key="company" align='center'>COMPANY</TableColumn>
-                        <TableColumn key="title" align='center'>TITLE</TableColumn>
-                        <TableColumn key="link" align='center'>LINK</TableColumn>
-                        <TableColumn key="addedOn" align='center'>ADDED ON</TableColumn>
+                        <TableColumn key="role" align='center'>ROLE</TableColumn>
+                        <TableColumn key="location" align='center'>LOCATION</TableColumn>
+                        <TableColumn key="application" align='center'>APPLICATION</TableColumn>
+                        <TableColumn key="simplify" align='center'>SIMPLIFY</TableColumn>
+                        <TableColumn key="datePosted" align='center'>DATE POSTED</TableColumn>
                     </TableHeader>
                     <TableBody items={jobsList}>
                         {filteredJobs.slice((page - 1) * rowsPerPage, page * rowsPerPage).map((job, index) => (
                             <TableRow key={index}>
-                                <TableCell key="company">{job.company}</TableCell>
-                                <TableCell key="title">{job.title}</TableCell>
-                                <TableCell key="link"><a href={job.link} target="_blank" rel="noopener noreferrer">Apply</a></TableCell>
-                                <TableCell key="addedOn">{job.addedOn}</TableCell>
+                                <TableCell key="company"><a href={job.company.url} target="_blank" rel="noopener noreferrer">{job.company.text}</a></TableCell>
+                                <TableCell key="role">{job.role}</TableCell>
+                                <TableCell key="location">{job.location}</TableCell>
+                                <TableCell key="application"><a href={job.application.apply} target="_blank" rel="noopener noreferrer">{'Apply Here'}</a></TableCell>
+                                <TableCell key="simplify"><a href={job.application.simplify} target="_blank" rel="noopener noreferrer">{'Apply through Simplify'}</a></TableCell>
+                                <TableCell key="datePosted">{job.datePosted}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
