@@ -28,12 +28,14 @@ export default function OpportunitiesComponent() {
             // check to make sure the fetch was successful
             if (response.status !== 200) {
                 setFetchingError(true);
+                console.log("ffffffffff");
             };
             const readme = await response.data; 
             const content = await readme.content; 
             const decodedContent = atob(content);
             setReadmeData(decodedContent);
             decodeREADME(decodedContent);
+            console.log(decodedContent);
         } catch (error) {
             console.log("Error fetching README.md file: ", error);
             setFetchingError(true);
@@ -42,31 +44,54 @@ export default function OpportunitiesComponent() {
 
     // The README is encoded in base64 so this function decodes it and parses it into a list of jobs
     const decodeREADME = async (content) => {
-        // regex to parse the README.md file into a list of jobs
-        const regex = /\| ([^\|]+) \| ([^\|]+) \| \[([^\]]+)\]\(([^)]+)\) \| ([^\|]+) \| ([^\|]+) \|\n/g;
+        
+        const regex = /\| ([^|]+?) \| ([^|]+?) \| ([^|]+?) \| <a href="([^"]+?)">.*?<\/a> \| ([^|]+?) \|/g;
         let match;
         const jobList = [];
-        while ((match = regex.exec(content))) {
-            const company = match[1].trim();
-            const investors = match[2].trim();
-            const title = match[3].trim();
+        let lastLegitCompanyName = "";
+    
+        
+        while ((match = regex.exec(content)) !== null) {
+            let company = match[1].trim();
+        
+        
+            if (company.startsWith("**[")) {
+                
+                company = company.replace(/\*\*\[(.*?)\]\(.*?\)\*\*/, "$1").trim();
+            }
+
+        
+            company = company.replace(/[^a-zA-Z0-9\s]/g, "");
+
+            if (company === "") {
+                company = lastLegitCompanyName;
+            } else {
+                lastLegitCompanyName = company; 
+            }
+
+        
+            
+            const title = match[2].trim().replace(/[^a-zA-Z0-9\s]/g, "");
+            const location = match[3].trim();
             const link = match[4].trim();
-            const status = match[5].trim();
-            const addedOn = match[6].trim();
+            const addedOn = match[5].trim();
+
+    
             jobList.push({
                 company,
-                investors,
                 title,
+                location,
                 link,
-                status,
                 addedOn,
             });
-            }
-        const jobsListLength = await jobList.length;
-        setPages(Math.ceil(jobsListLength / rowsPerPage))
+        }
+    
+        const jobsListLength = jobList.length;
+        setPages(Math.ceil(jobsListLength / rowsPerPage));
         setJobsList(jobList);
         setIsFetching(false);
     };
+    
 
     const handleSearch = (event) => {
         // changing the value of search
@@ -96,7 +121,7 @@ export default function OpportunitiesComponent() {
             <div class="m-0 mx-auto">
                 <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4 max-w-screen-md m-0 mx-auto">
                     <h2 class="mb-4 text-xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                        There was an error fetching summer 2024 internships from our SWE Tracker, please try again later!
+                        There was an error fetching summer 2025 internships from our SWE Tracker, please try again later!
                     </h2>
                 </div>
             </div>
@@ -108,7 +133,7 @@ export default function OpportunitiesComponent() {
             <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
                 <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
                     <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                        Fetching Summer 2024 Internships... this may take a while 
+                        Fetching Summer 2025 Internships... this may take a while 
                     </h2>
                     <Progress
                     size="sm"
@@ -136,9 +161,9 @@ export default function OpportunitiesComponent() {
         <div class="bg-white dark:bg-gray-900 min-h-screen">
             <div class="py-8 px-10 mx-auto max-w-screen-2xl lg:py-16 lg:px-6">
                 <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16 text-center">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Summer 2024 Internships Directory</h2>
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Summer 2025 Internships Directory</h2>
                         <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                            This is an updated repository of summer 2024 internships that we have fetched from various online GitHub repositories.
+                            This is an updated repository of summer 2025 internships that we have fetched from various online GitHub repositories.
                             We are constantly updating this list, so check back often!
                         </p>
                 </div> 
@@ -159,7 +184,7 @@ export default function OpportunitiesComponent() {
                 </div>
                 {jobsList.length > 0 && !isFetching && (
                     <NextTable
-                    aria-label="Summer 2024 Internships Tracker"
+                    aria-label="Summer 2025 Internships Tracker"
                     bottomContent = {
                         <div class="flex w-full justify-center">
                             <Pagination 
