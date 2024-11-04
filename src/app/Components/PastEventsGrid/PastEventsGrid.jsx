@@ -1,25 +1,29 @@
-import React from "react"; 
+import React from "react";
 
-export default function PastEventsGrid({
-}) {
+export default function PastEventsGrid() {
+  const basePath =
+    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
 
-    const images = [
-        "/Apple.JPG", 
-        "/EmergingLeetCoders.JPG", 
-        "/IceCreamSocial.JPG", 
-        "/ProfHeadshot.JPG", 
-        "/ResumeWorkshop.JPG",
-        "/ScavengerHunt.JPG",
-    ];
+  const images = [
+    "/Apple.JPG",
+    "/EmergingLeetCoders.JPG",
+    "/IceCreamSocial.JPG",
+    "/ProfHeadshot.JPG",
+    "/ResumeWorkshop.JPG",
+    "/ScavengerHunt.JPG",
+  ];
 
-    return (
-
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    {images.map((image, index) => (
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {images.map((image, index) => (
         <div key={index}>
-            <img class="h-auto max-w-full rounded-lg" src={image} alt="" />
+          <img
+            className="h-auto max-w-full rounded-lg"
+            src={`${basePath}${image}`}
+            alt=""
+          />
         </div>
-    ))}
-</div>
-    );
-};
+      ))}
+    </div>
+  );
+}

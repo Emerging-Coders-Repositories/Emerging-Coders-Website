@@ -24,11 +24,10 @@ export default function NavigationBar() {
     toggleOpportunitiesDropdown(!isOpportunitiesDropdownVisible);
   };
 
-  // Update links with basePath
   const links = [
     {
       name: "Home",
-      url: `${basePath}/`,
+      url: `${basePath}/Emerging-Coders-Website`,
     },
     {
       name: "Board",
