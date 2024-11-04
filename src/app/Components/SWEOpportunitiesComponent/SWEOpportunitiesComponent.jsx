@@ -28,7 +28,6 @@ export default function OpportunitiesComponent() {
             // check to make sure the fetch was successful
             if (response.status !== 200) {
                 setFetchingError(true);
-                console.log("ffffffffff");
             };
             const readme = await response.data; 
             const content = await readme.content; 
