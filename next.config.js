@@ -1,9 +1,9 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   output: "export",
   images: {
+    unoptimized: true,
     loader: "akamai",
     path: "",
   },
@@ -11,6 +11,7 @@ const nextConfig = {
     process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "",
   assetPrefix:
     process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website/" : "",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
