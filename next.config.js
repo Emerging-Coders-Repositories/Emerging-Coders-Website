@@ -6,9 +6,6 @@ const nextConfig = {
   },
   basePath:
     process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "",
-  assetPrefix:
-    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "",
-  trailingSlash: true,
 };
 
 module.exports = nextConfig;
