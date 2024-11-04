@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v3
 
@@ -21,16 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Setup Tailwind CSS
-        run: npx tailwindcss init -p
-
       - name: Build
-        run: |
-          npm run build
-          touch out/.nojekyll
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
           branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
