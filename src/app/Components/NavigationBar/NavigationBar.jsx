@@ -9,6 +9,9 @@ export default function NavigationBar() {
   const [isOpportunitiesDropdownVisible, toggleOpportunitiesDropdown] =
     useState(false);
 
+  const basePath =
+    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
+
   const handleToggle = () => {
     toggleExpansion(!isExpanded);
   };
@@ -20,57 +23,58 @@ export default function NavigationBar() {
   const handleOpportunitiesDropdownToggle = () => {
     toggleOpportunitiesDropdown(!isOpportunitiesDropdownVisible);
   };
+
+  // Update links with basePath
   const links = [
     {
       name: "Home",
-      url: "/",
+      url: `${basePath}/`,
     },
     {
       name: "Board",
-      url: "/ExecutiveBoard",
+      url: `${basePath}/ExecutiveBoard`,
     },
     {
       name: "Contact Us",
-      url: "/Contact",
+      url: `${basePath}/Contact`,
     },
     {
       name: "FAQ",
-      url: "/FAQ",
+      url: `${basePath}/FAQ`,
     },
     {
       name: "Resources",
-      url: "/Additional-Resources",
+      url: `${basePath}/Additional-Resources`,
       dropdown: [
         {
           name: "Underclassmen",
-          url: "/Additional-Resources/Underclassmen-Guide",
+          url: `${basePath}/Additional-Resources/Underclassmen-Guide`,
         },
         {
           name: "Technical Interviews",
-          url: "/Additional-Resources/Technical-Interview",
+          url: `${basePath}/Additional-Resources/Technical-Interview`,
         },
       ],
     },
     {
       name: "Opportunities",
-      url: "/Opportunities",
+      url: `${basePath}/Opportunities`,
       dropdown: [
         {
           name: "SWE Internships",
-          url: "/Opportunities/SWE-Opportunities",
+          url: `${basePath}/Opportunities/SWE-Opportunities`,
         },
         {
           name: "Underclassmen",
-          url: "/Opportunities/Underclassmen-Opportunities",
+          url: `${basePath}/Opportunities/Underclassmen-Opportunities`,
         },
       ],
     },
     {
       name: "Sponsors",
-      url: "/Sponsors",
+      url: `${basePath}/Sponsors`,
     },
   ];
-
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
