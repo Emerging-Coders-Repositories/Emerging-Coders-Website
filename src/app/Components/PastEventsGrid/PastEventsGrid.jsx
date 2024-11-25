@@ -5,12 +5,12 @@ export default function PastEventsGrid() {
     process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
 
   const images = [
-    "/Apple.JPG",
-    "/EmergingLeetCoders.JPG",
-    "/IceCreamSocial.JPG",
-    "/ProfHeadshot.JPG",
-    "/ResumeWorkshop.JPG",
-    "/ScavengerHunt.JPG",
+    "/events/Emerged_coders_fall_2024.jpg",
+    "/events/Google_technical_prep.jpg",
+    "/events/ice_cream_social.jpg",
+    "/events/internship_panel_2024.jpg",
+    "/events/Leetcode_chill_fall_2024.jpg",
+    "/events/Underclassmen_guide.jpg",
   ];
 
   return (
