@@ -2,38 +2,37 @@ import React from "react";
 
 export default function Footer() {
 
+    const basePath =
+    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
+
     const links = [
         {
             name: "Home",
-            url: "/",
-        },
-        {
-            name: "Upcoming Events",
-            url: "/Events",
-        },
-        {
-            name: "Board", 
-            url: "/ExecutiveBoard",
-        },
-        {
-            name: "Contact Us", 
-            url: "/Contact",
-        },
-        {
+            url: `${basePath}/`,
+          },
+          {
+            name: "Board",
+            url: `${basePath}/ExecutiveBoard`,
+          },
+          {
+            name: "Contact Us",
+            url: `${basePath}/Contact`,
+          },
+          {
             name: "FAQ",
-            url: "/FAQ", 
-        },
+            url: `${basePath}/FAQ`,
+          },
         {
             name: "Resources",
-            url: "/Additional-Resources"
+            url: `${basePath}/Additional-Resources`,
         },
         {
             name: "Opportunities",
-            url: "/Opportunities", 
+            url: `${basePath}/Opportunities`,
         },
         {
             name: "Sponsors",
-            url: "/Sponsors",
+            url: `${basePath}/Sponsors`,
         },
     ]
 
