@@ -10,7 +10,7 @@ export default function FeaturedImage() {
         <div>
           <img
             className="h-auto max-w-full rounded-lg"
-            src={`${basePath}/Photo3.png`}
+            src={`${basePath}/community_pictures/photo1.jpg`}
             alt=""
           />
         </div>
@@ -18,35 +18,35 @@ export default function FeaturedImage() {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/Photo8.png`}
+              src={`${basePath}/community_pictures/photo8.jpg`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/Photo5.png`}
+              src={`${basePath}/community_pictures/photo7.jpg`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/Photo1.png`}
+              src={`${basePath}/community_pictures/photo9.jpg`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/Photo4.png`}
+              src={`${basePath}/community_pictures/photo5.jpg`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/Photo6.png`}
+              src={`${basePath}/community_pictures/photo11.jpg`}
               alt=""
             />
           </div>
