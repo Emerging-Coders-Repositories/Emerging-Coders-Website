@@ -8,7 +8,7 @@ export default function PastEventsGrid() {
     "/events/Emerged_coders_fall_2024.jpg",
     "/events/Google_technical_prep.jpg",
     "/events/ice_cream_social.jpg",
-    "/events/internship_panel_2024.jpg",
+    "/events/Internship_panel_2024.jpg",
     "/events/Leetcode_chill_fall_2024.jpg",
     "/events/Underclassmen_guide.jpg",
   ];
