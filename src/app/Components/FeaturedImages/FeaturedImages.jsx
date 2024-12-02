@@ -18,28 +18,28 @@ export default function FeaturedImage() {
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/community_pictures/photo8.jpg`}
+              src={`${basePath}/photo3.png`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/community_pictures/photo7.jpg`}
+              src={`${basePath}/community_pictures/photo7.JPG`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/community_pictures/photo9.jpg`}
+              src={`${basePath}/community_pictures/photo9.JPG`}
               alt=""
             />
           </div>
           <div>
             <img
               className="h-auto max-w-full rounded-lg"
-              src={`${basePath}/community_pictures/photo5.jpg`}
+              src={`${basePath}/community_pictures/photo5.JPG`}
               alt=""
             />
           </div>

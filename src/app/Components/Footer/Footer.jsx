@@ -24,11 +24,11 @@ export default function Footer() {
           },
         {
             name: "Resources",
-            url: `${basePath}/Additional-Resources`,
+            url: `${basePath}/Additional-Resources/Technical-Interview`,
         },
         {
             name: "Opportunities",
-            url: `${basePath}/Opportunities`,
+            url: `${basePath}/Opportunities/SWE_Opportunities`,
         },
         {
             name: "Sponsors",
