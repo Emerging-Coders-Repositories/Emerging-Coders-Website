@@ -28,7 +28,7 @@ export default function Footer() {
         },
         {
             name: "Opportunities",
-            url: `${basePath}/Opportunities/SWE_Opportunities`,
+            url: `${basePath}/Opportunities/SWE-Opportunities`,
         },
         {
             name: "Sponsors",
