@@ -8,7 +8,7 @@ export default function FeaturedImage() {
   const images = [
     `${basePath}/community_pictures/photo1.jpg`,
     `${basePath}/community_pictures/photo5.JPG`,
-    `${basePath}/photo3.png`,
+    `${basePath}/Photo3.png`,
     `${basePath}/community_pictures/photo7.JPG`,
     `${basePath}/community_pictures/photo9.JPG`,
   ];
