@@ -1,186 +1,228 @@
-import React from "react"; 
-import axios from "axios"; 
-import { useState, useEffect, useMemo } from "react"; 
-import { Progress, 
-        Table, 
-        TableHeader, 
-        TableColumn, 
-        TableBody, 
-        TableRow, 
-        TableCell, 
-        Pagination 
-} from "@nextui-org/react"
+import React from "react";
+import { Link } from "@nextui-org/react";
 
-export default function UnderclassmenOpportunitiesTable() {
+export default function UnderclassmenOpportunities() {
+  return (
+    <section className="mb-8 mt-10">
+      <div className="max-w-3xl mx-auto text-left">
+        <h3 className="text-3xl font-bold mb-5">
+          Underclassmen Opportunities Guide
+        </h3>
 
-    const [readmeData, setReadmeData] = useState("");
-    const [jobsList, setJobsList] = useState([]);
-    const [fetchingError, setFetchingError] = useState(false);
-    const [isFetching, setIsFetching] = useState(true);
-    const [page,setPage] = useState(1);
-    const [pages, setPages] = useState(0);
-    const [search, setSearch] = useState("");
-    const rowsPerPage = 10;
-
-    const fetchUnderclassmenREADME = async () => {
-
-        const underclassmenReadmeURL = process.env.NEXT_PUBLIC_UNDERCLASSMEN_OPPORTUNITIES_URL;
-
-        try {
-            const response = await axios.get(underclassmenReadmeURL);
-
-            if (response.status !== 200) {
-                setFetchingError(true);
-                setIsFetching(false);
-            };
-            const readme = await response.data; 
-            const content = await readme.content;   
-            const decodedContent = atob(content);
-            // console.log("decodedContent: ", decodedContent);
-            setReadmeData(decodedContent);
-            decodeREADME(decodedContent);
-            setIsFetching(false);
-        } catch (error) {
-            console.log("Error fetching README.md file: ", error);
-            setFetchingError(true);
-            setIsFetching(false);
-        };
-    };  
-
-    const decodeREADME = (content) => {
-        // Initialize variables to store extracted data
-        const extractedData = [];
-        // Find the start and end markers for the "Internships" section
-        const startIndex = content.indexOf("## Internships");
-        let endIndex = content.indexOf("##", startIndex + 1);
-        if (endIndex === -1) {
-            endIndex = content.length;
-        }
-        // Extract the content of the "Internships" section
-        const internshipsSection = content.substring(startIndex, endIndex);
-        // Split the section into lines
-        const lines = internshipsSection.split('\n');
-        // Regular expression to match a line with program information
-        const programRegex = /\[([^\]]+)\]\(([^)]+)\) +\| *([^|]+) *\| *([^|]+) *\| *([^|\n]+)/;
-        lines.forEach((line) => {
-            const match = line.match(programRegex);
-            if (match) {
-                const name = match[1].trim();
-                const link = match[2].trim();
-                const status = match[3].trim();
-                const year = match[4].trim();
-                extractedData.push({
-                    name,
-                    link,
-                    status,
-                    year,
-                });
-            }
-        });
-        setJobsList(extractedData);
-    };
-
-    const isInternshipsOpen = (internshipStatus) => {
-        if (internshipStatus.includes("Open")) {
-            return true;
-        } else {
-            return false;
-        }
-    };
-
-    useEffect(() => {
-        fetchUnderclassmenREADME();
-    }, []); 
-
-    if (fetchingError) {
-        return (
-            <div class="m-0 mx-auto">
-                <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4 max-w-screen-md m-0 mx-auto">
-                    <h2 class="mb-4 text-xl tracking-light font-bold text-center text-gray-400 dark:text-white">
-                        There was an error fetching summer 2024 internships for underclassmen! Please try again later!
-                    </h2>
-                </div>
-            </div>
-        );
-    };
-
-    if (isFetching) {
-        return (
-        <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
-            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
-                <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                    Fetching Summer 2024 Underclassmen Internships... this may take a while 
-                </h2>
-                <Progress
-                size="sm"
-                isIndeterminate
-                aria-label="Loading..."
-                className="max-w-md"
+        <div className="flex justify-center my-8">
+          <div className="block max-w-3xl p-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              ✋ Hey! This guide is primarily designed for current first-years and second years! Much of
+              the information shared in this guide is based on anecdotal experiences
+              from members and alumni of our community, which we’ve found to be
+              effective for most folks within our network.
+              <br />
+              <br />
+              If you have suggestions, comments, or ideas for improvements, please feel
+              free to make a PR on the{" "}
+              <Link
+                showAnchorIcon
+                href="https://github.com/Emerging-Coders-Repositories/Emerging-Coders-Website"
+                target="_blank"
                 color="secondary"
-                />
-            </div>
-        </div>  
-        );
-    };
-    
-    if (jobsList.length === 0 && !isFetching) {
-        return (
-            <div class="bg-white dark:bg-gray-900 min-h-screen flex justify-center items-center flex-col gap-4">
-                <h2 class="mb-4 text-2xl tracking-tight font-bold text-center text-gray-900 dark:text-white">
-                    We couldn't find any summer 2024 Underclassmen internships, sorry about that! Please check back later!
-                </h2>
-            </div>
-        )    
-    };
-
-    return (
-        <div class="bg-white dark:bg-gray-900 min-h-screen">
-            <div class="py-8 px-10 mx-auto max-w-screen-2xl lg:py-16 lg:px-6">
-                <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16 text-center">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                        Underclassmen 2024 Internships
-                    </h2>
-                    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                        This is an automatically generated list of internships for underclassmen for summer 2024. Most of these internships are Software Engineering focused, but some programs have aspects of Product Management, Data Science, and other roles.
-                    </p>
-                </div>
-                <div class="py-5">
-                {/* This would be the search bar */}
-                </div>
-                <div>
-                    {jobsList.length > 0 && !isFetching && (
-                        <Table
-                            aria-label="Underclassmen Internships Table"
-                            isStriped
-                        >
-                            <TableHeader>
-                                <TableColumn key="name">Name</TableColumn>
-                                <TableColumn key="status">Status</TableColumn>
-                                <TableColumn key="year">Year</TableColumn>
-                                <TableColumn key="link">Link</TableColumn>
-                            </TableHeader>
-                            <TableBody>
-                                {jobsList.map((job, index) => (
-                                    <TableRow key={index}>
-                                        <TableCell key="name">
-                                            {job.name}
-                                        </TableCell>
-                                        <TableCell key="Year">
-                                            {job.year}
-                                        </TableCell>
-                                        <TableCell key="status">
-                                            {isInternshipsOpen(job.status) ? ("✅ Open") : ("❌ Closed/Not Open Yet")}
-                                        </TableCell>
-                                        <TableCell key="link">
-                                            <a href={job.link} target="_blank">Link</a>
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    )}
-            </div>
-            </div>
+              >
+                Emerging Coders Website Repo
+              </Link>
+              .
+            </p>
+          </div>
         </div>
-    );
-};
+
+        <p className="text-gray-700 dark:text-gray-400 mb-10">
+          In a saturated computer science market, getting started early in your
+          career can give you a significant advantage, setting you up for
+          valuable experiences and opening doors to more opportunities in the
+          future. At Northwestern, underclassmen have access to a variety of
+          resources and programs to build skills, connect with peers and
+          professionals, and explore their interests in the tech industry.
+        </p>
+
+        <h4 className="text-2xl font-bold text-gray-900 mb-5">
+          Campus-Based Opportunities
+        </h4>
+        <ul className="list-disc pl-6 mb-10">
+          <li className="mb-3">
+            <strong>Northwestern IEEE: </strong>
+            IEEE NU supports aspiring engineers with workshops, hackathons, and
+            hands-on projects, fostering technical growth, teamwork, and
+            innovation. It emphasizes collaboration, real-world applications,
+            and making a positive impact through engineering.
+          </li>
+          <li className="mb-3">
+            <strong>Peer Mentorship Programs:</strong> These programs connect you with
+            mentors in fields related to your interests, enabling you to seek
+            guidance, receive constructive feedback, and navigate both academic
+            and professional challenges effectively.
+          </li>
+          <li className="mb-3">
+            <strong>Research Opportunities:</strong> Northwestern’s Office of
+            Undergraduate Research provides endless opportunities for students
+            to participate in faculty-led projects or design their own research
+            initiatives, offering a robust foundation for future academic or
+            professional pursuits.
+          </li>
+        </ul>
+
+        <h4 className="text-2xl font-bold text-gray-900 mb-5">
+          Conference Opportunities
+        </h4>
+        <p className="text-gray-700 dark:text-gray-400 mb-5">
+          Conferences help with networking with professionals, recruiters, and
+          provide access to several internship opportunities. Notable
+          conferences include:
+        </p>
+        <ul className="list-disc pl-6 mb-10">
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://tapiaconference.cmd-it.org/" color="secondary" target="_blank" size="lg">
+              Tapia Conference:
+            </Link>{" "}
+            Focused on supporting marginalized groups in technology.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://ghc.anitab.org/" color="secondary" target="_blank" size="lg">
+              Grace Hopper Celebration:
+            </Link>{" "}
+            Dedicated to uplifting women in technology.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://convention.nsbe.org/" color="secondary" target="_blank" size="lg">
+              NSBE/SHPE National Convention:
+            </Link>{" "}
+            Tailored for Hispanic, Latine, and Black engineering students.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://afrotechconference.com/" color="secondary" target="_blank" size="lg">
+              AfroTech:
+            </Link>{" "}
+            Emphasizes diversity and representation in the tech industry.
+          </li>
+        </ul>
+
+        <h4 className="text-2xl font-bold text-gray-900 mb-5">
+          Internship and Training Programs
+        </h4>
+        <ul className="list-disc pl-6 mb-10">
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://buildyourfuture.withgoogle.com/programs/step" color="secondary" target="_blank" size="lg">
+              Google STEP:
+            </Link>{" "}
+            Opens in August. Real-world projects and mentorship for first- and
+            second-year undergraduates.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://www.metacareers.com/careerprograms/pathways/metauniversity" color="secondary" target="_blank" size="lg">
+              Meta University:
+            </Link>{" "}
+            Opens in September. Focus on hands-on experience in software
+            engineering and mentorship.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://info.codepath.org/futureforce-tech-launchpad" color="secondary" target="_blank" size="lg">
+              Salesforce Futureforce Tech Launchpad:
+            </Link>{" "}
+            Opens in August. Focuses on full-stack development and career
+            preparation.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://www.codepath.org/courses/tech-interview-prep" color="secondary" target="_blank" size="lg">
+              CodePath:
+            </Link>{" "}
+            Rolling admissions. Free courses in industry needs like mobile
+            development and interview prep.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://mlt.org/career-prep/" color="secondary" target="_blank" size="lg">
+              Management Leadership of Tomorrow (MLT):
+            </Link>{" "}
+            Opens in July. Personalized coaching, leadership training, and
+            networking.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://careers.microsoft.com/v2/global/en/exploremicrosoft" color="secondary" target="_blank" size="lg">
+              Microsoft Explore Program:
+            </Link>{" "}
+            Opens in September. A 12-week program focusing on engineering
+            fundamentals and team projects.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://www.amazon.jobs/en/jobs/2808739/software-development-engineer-internship-2025-us" color="secondary" target="_blank" size="lg">
+              Amazon Propel:
+            </Link>{" "}
+            Opens in August. A mentorship-driven program exploring careers at
+            Amazon.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://www.uber.com/us/en/careers/uberstar/" color="secondary" target="_blank" size="lg">
+              Uber Star Program:
+            </Link>{" "}
+            Opens in September. A 12-week summer internship providing
+            engineering experience.
+          </li>
+          <li className="mb-3">
+            <Link showAnchorIcon href="https://blog.duolingo.com/duolingo-thrive-intern-program/" color="secondary" target="_blank" size="lg">
+              Duolingo Thrive:
+            </Link>{" "}
+            Opens in September. Focused on software engineering experience and
+            mentorship.
+          </li>
+        </ul>
+
+        <h4 className="text-2xl font-bold text-gray-900 mb-5">Getting Started</h4>
+        <p className="text-gray-700 dark:text-gray-400 mb-5">
+          Guides or steps to obtain the internships and training programs above
+          begin with building a strong foundation in programming and technical
+          skills. Here’s a step-by-step approach:
+        </p>
+        <ul className="list-disc pl-6 mb-10">
+          <li className="mb-5">
+            <strong>Learn Programming to a Comfortable Level:</strong> 
+            Begin by mastering at least one programming language commonly used in
+            technical interviews, such as Python, C++, or Java. At Northwestern,
+            this can be achieved by taking courses like CS 150, CS 211, and CS 111.
+            While self-studying is an option, these structured courses provide a
+            comprehensive and guided approach. Focus on writing clean, efficient
+            code and understanding foundational programming concepts thoroughly.
+          </li>
+          <li className="mb-5">
+            <strong>Master Foundational Data Structures and Algorithms:</strong> 
+            A solid grasp of data structures and algorithms is critical for
+            technical interviews. As an underclassman, focus on the following
+            foundational topics to gain a significant edge:
+            <ul className="list-disc pl-6">
+              <li className="mb-2">Big-O Analysis</li>
+              <li className="mb-2">Lists</li>
+              <li className="mb-2">Stacks and Queues</li>
+              <li className="mb-2">Trees and Graphs</li>
+              <li className="mb-2">Sets and Hashes/Maps</li>
+              <li>Strings</li>
+            </ul>
+            Courses like CS 214 are especially helpful for mastering these areas.
+          </li>
+          <li className="mb-5">
+            <strong>Practice Problem-Solving Skills:</strong> 
+            Understanding concepts is one thing; applying them to solve problems
+            effectively is another. Use platforms like LeetCode, HackerRank, or
+            CodeSignal to practice problem-solving. Start with easy problems, then
+            gradually tackle medium and hard problems to build confidence. 
+            Additionally, familiarize yourself with common interview question types
+            and practice articulating your solutions through mock interviews.
+            Learning to communicate your thought process is as important as
+            solving the problem.
+          </li>
+          <li>
+            <strong>Leverage Resources for Interview Preparation:</strong> 
+            Take advantage of Northwestern’s career services, Emerging Coders
+            workshops, and mentorship programs to prepare for interviews. Attend
+            events offering mock interviews or technical prep sessions to build
+            confidence and improve your skills.
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+}
