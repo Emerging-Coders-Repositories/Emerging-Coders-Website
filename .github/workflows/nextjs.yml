@@ -56,17 +56,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build and Export with Next.js
-        env:
-          CUSTOM_DOMAIN: "true" 
         run: ${{ steps.detect-package-manager.outputs.runner }} next build && ${{ steps.detect-package-manager.outputs.runner }} next export
-
-  
 
       - name: Add .nojekyll File
         run: echo > ./out/.nojekyll
 
       - name: Add CNAME File (Optional, for Custom Domains)
-        run: echo "emergingcoders.org" > ./out/CNAME
+        run: echo "your-custom-domain.com" > ./out/CNAME
 
       - name: List Export Directory
         run: ls -R ./out
