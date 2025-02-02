@@ -1,28 +1,38 @@
-import React from "react"; 
-import { useState, useEffect } from "react"; 
+import React, { useState, useEffect } from "react";
 
+export default function FadeInAnimation({ delay, children }) {
+  const [isShown, setIsShown] = useState(false);
+  const domRef = React.useRef();
 
-export default function FadeInAnimation({delay, children}) {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsShown(true);
+        }
+      });
+    });
 
-    const [isShown, setIsShown] = useState(false);
-    const domRef = React.useRef();
+    const currentElement = domRef.current;
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setIsShown(true);
-                    }
-            });
-        });
-        observer.observe(domRef.current);
-        return () => observer.unobserve(domRef.current);
-    }, []);
+    if (currentElement) {
+      observer.observe(currentElement);
+    }
 
-    return (
-        <div className={`pop-in-section ${isShown ? "is-show" : ""}`} style={{transitionDelay: `${delay}`}} ref={domRef}>
-            {children}
-        </div>
-    )
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, []);
 
+  return (
+    <div
+      className={`pop-in-section ${isShown ? "is-show" : ""}`}
+      style={{ transitionDelay: `${delay}` }}
+      ref={domRef}
+    >
+      {children}
+    </div>
+  );
 }
