@@ -1,16 +1,13 @@
 // "use client"
 import React from "react";
 import { useState } from "react";
-
+import Link from "next/link";
+import Image from "next/image";
 export default function NavigationBar() {
   const [isExpanded, toggleExpansion] = useState(false);
-  const [isDropdownVisible, toggleDropdown] = useState(false);
   const [isResourcesDropdownVisible, toggleResourcesDropdown] = useState(false);
   const [isOpportunitiesDropdownVisible, toggleOpportunitiesDropdown] =
     useState(false);
-
-  const basePath =
-    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
 
   const handleToggle = () => {
     toggleExpansion(!isExpanded);
@@ -27,61 +24,63 @@ export default function NavigationBar() {
   const links = [
     {
       name: "Home",
-      url: `${basePath}/`,
+      url: `/`,
     },
     {
       name: "Board",
-      url: `${basePath}/ExecutiveBoard`,
+      url: `/ExecutiveBoard`,
     },
     {
       name: "Contact Us",
-      url: `${basePath}/Contact`,
+      url: `/Contact`,
     },
     {
       name: "FAQ",
-      url: `${basePath}/FAQ`,
+      url: `/FAQ`,
     },
     {
       name: "Resources",
-      url: `${basePath}/Additional-Resources`,
+      url: `/Additional-Resources`,
       dropdown: [
         {
           name: "Underclassmen",
-          url: `${basePath}/Additional-Resources/Underclassmen-Guide`,
+          url: `/Additional-Resources/Underclassmen-Guide`,
         },
         {
           name: "Technical Interviews",
-          url: `${basePath}/Additional-Resources/Technical-Interview`,
+          url: `/Additional-Resources/Technical-Interview`,
         },
       ],
     },
     {
       name: "Opportunities",
-      url: `${basePath}/Opportunities`,
+      url: `/Opportunities`,
       dropdown: [
         {
           name: "SWE Internships",
-          url: `${basePath}/Opportunities/SWE-Opportunities`,
+          url: `/Opportunities/SWE-Opportunities`,
         },
         {
           name: "Underclassmen",
-          url: `${basePath}/Opportunities/Underclassmen-Opportunities`,
+          url: `/Opportunities/Underclassmen-Opportunities`,
         },
       ],
     },
     {
       name: "Sponsors",
-      url: `${basePath}/Sponsors`,
+      url: `/Sponsors`,
     },
   ];
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href= {`${basePath}/`} className="flex items-center">
-          <img
+        <a href={`/`} className="flex items-center">
+          <Image
             src="https://se-images.campuslabs.com/clink/images/7fa49590-7782-41cb-942b-c4602cdf50c4e027cf3b-b17e-4e7c-82c9-4012c2c07b3c.png?preset=med-sq"
-            className="h-8 mr-3"
             alt="Emerging Coders Logo"
+            width={50}
+            height={50}
+            className="mr-2 mt-2"
           />
           <div>
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -191,12 +190,12 @@ export default function NavigationBar() {
                     </div>
                   </>
                 ) : (
-                  <a
+                  <Link
                     href={link.url}
                     className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 )}
               </li>
             ))}

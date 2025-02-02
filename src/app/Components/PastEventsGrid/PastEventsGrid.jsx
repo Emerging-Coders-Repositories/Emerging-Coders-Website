@@ -1,9 +1,7 @@
 import React from "react";
+import Image from "next/image";
 
 export default function PastEventsGrid() {
-  const basePath =
-    process.env.NODE_ENV === "production" ? "/Emerging-Coders-Website" : "";
-
   const images = [
     "/events/Emerged_coders_fall_2024.jpg",
     "/events/Google_technical_prep.jpg",
@@ -17,10 +15,12 @@ export default function PastEventsGrid() {
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {images.map((image, index) => (
         <div key={index}>
-          <img
+          <Image
             className="h-auto max-w-full rounded-lg"
-            src={`${basePath}${image}`}
-            alt=""
+            src={`${image}`}
+            alt={`${image} event image`}
+            width={500}
+            height={500}
           />
         </div>
       ))}
