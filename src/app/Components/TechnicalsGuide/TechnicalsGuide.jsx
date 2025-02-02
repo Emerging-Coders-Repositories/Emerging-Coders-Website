@@ -5,6 +5,7 @@ import TechnicalInterviewsTypes from "../TechnicalInterviewsTypes/TechnicalInter
 import TechnicalInterviewStudying from "../TechnicalInterviewStudying/TechnicalInterviewStudying";
 import TechnicalInterviewTips from "../TechnicalInterviewTips/TechnicalInterviewTips";
 
+
 export default function TechnicalsGuide() {
   return (
     <>
@@ -35,7 +36,7 @@ export default function TechnicalsGuide() {
                 EmergingCoders Website Repo
               </Link>
               <br />
-              <br />µ Authors:{" "}
+              <br />Authors:{" "}
               <Link
                 showAnchorIcon
                 href="https://www.linkedin.com/in/ethanpineda/"
@@ -53,7 +54,7 @@ export default function TechnicalsGuide() {
               >
                 Danny Pineda
               </Link>
-              (not related)
+              
             </p>
           </div>
         </div>
