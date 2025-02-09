@@ -4,6 +4,7 @@ import React from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import Footer from "../Footer/Footer";
 import LandingPage from "../LandingPage/LandingPage";
+import ExecApplicationBanner from "../ExecApplicationBanner/ExecApplicationBanner"
 import { NextUIProvider } from "@nextui-org/react";
 export default function MainComp() {
 
@@ -11,6 +12,7 @@ export default function MainComp() {
         <div>
             <NextUIProvider>
                 <NavigationBar />
+                <ExecApplicationBanner />
                 <LandingPage />
                 <Footer />
             </NextUIProvider>
