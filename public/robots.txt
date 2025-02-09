@@ -1,0 +1,8 @@
+# robots.txt for emergingcoders.org
+
+# Allow all web crawlers full access
+User-agent: *
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://emergingcoders.org/sitemap.xml
