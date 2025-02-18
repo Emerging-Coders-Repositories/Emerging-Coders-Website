@@ -24,7 +24,7 @@ export default function ExecApplicationBanner() {
               2025-2026 Executive Board application
             </a>{" "}
             is now open. The deadline to submit applications is{" "}
-            <strong>Monday, February 17th, 11:59 PM</strong>.
+            <strong>Thursday, February 20th, 11:59 PM</strong>.
           </p>
         </div>
       </div>
