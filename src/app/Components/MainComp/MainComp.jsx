@@ -12,7 +12,6 @@ export default function MainComp() {
         <div>
             <NextUIProvider>
                 <NavigationBar />
-                <ExecApplicationBanner />
                 <LandingPage />
                 <Footer />
             </NextUIProvider>
