@@ -10,7 +10,7 @@ export default function LandingPageCoverText() {
                 <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl">Emerging Coders</h1>
                 <p class="mt-2 text-lg md:text-xl lg:text-2xl">Northwestern University's Community of First-Generation and Low-Income Technologist</p>
                 <div class="flex flex-row justify-center mt-6 space-x-4 gap-2">
-                    <Button color="secondary"  onPress={() => window.open("https://groupme.com/join_group/89417887/c1x6DI3U", "_blank")}>
+                    <Button color="secondary"  onPress={() => window.open("https://linktr.ee/nu.emergingcoders", "_blank")}>
                         Join
                     </Button>
                     <Button color="secondary">
