@@ -24,12 +24,12 @@ export default function CodeEditorChatSection() {
           </div>
           <div className="flex justify-start">
             <div className="bg-zinc-800 rounded-lg rounded-tl-none p-2 text-xs text-white/90 max-w-[85%]">
-              We generally have weekly events during the week on Thursdays from
-              5:30-6:30 PM. You can checkout our instagram or subscribe to our
-              ListServ to stay up to do date with our events week over week. At
-              all of our events, you can expect to meet other FGLI students,
-              learn about tech, and get involved in our community. And enjoy a
-              free meal on us!
+              Emerging Coders generally have weekly events during the week on
+              Thursdays from 5:30-6:30 PM. You can checkout our instagram or
+              subscribe to our ListServ to stay up to do date with our events
+              week over week. At all of our events, you can expect to meet other
+              FGLI students, learn about tech, and get involved in our
+              community. And enjoy a free meal on us!
             </div>
           </div>
         </div>
