@@ -15,10 +15,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-indigo-900 hover:bg-white/90 rounded-md text-lg px-8 py-6">
-                Join Our Community
-              </Button>
-              <Button className="-white/20 text-white bg-white/10 hover:bg-white/20 rounded-md text-lg px-8 py-6 border">
-                Learn More
+                Join Emerging Coders
               </Button>
             </div>
           </div>

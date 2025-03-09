@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@config '../../tailwind.config.cjs';
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -122,5 +122,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: black;
   }
 }
