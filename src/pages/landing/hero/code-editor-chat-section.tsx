@@ -2,7 +2,7 @@ export default function CodeEditorChatSection() {
   return (
     <div className="col-span-3 bg-zinc-950 border-l border-white/10 flex flex-col">
       <div className="p-4 border-b border-white/10">
-        <div className="text-white font-medium mb-4">EMCOgpt</div>
+        <div className="text-white font-medium mb-4">EMCO AI</div>
         <div className="flex flex-col space-y-6">
           <div className="flex justify-end">
             <div className="bg-purple-600 rounded-lg rounded-tr-none p-2 text-xs text-white max-w-[85%]">
