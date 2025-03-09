@@ -1,3 +1,5 @@
+"use client";
+
 interface TestimonialCardProps {
   img: string;
   name: string;
@@ -18,13 +20,19 @@ export default function TestimonialCard({
           {body}
         </p>
         <div className="flex items-center gap-3 mt-auto">
-          <img
-            className="rounded-full"
-            width="48"
-            height="48"
-            alt={`${name}'s avatar`}
-            src={img}
-          />
+          <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+            <img
+              src={img}
+              alt={`${name}'s avatar`}
+              sizes="48px"
+              style={{ objectFit: "cover" }}
+              onError={(e) => {
+                const imgElement = e.target as HTMLImageElement;
+                imgElement.src = "https://via.placeholder.com/48";
+                imgElement.srcset = "";
+              }}
+            />
+          </div>
           <div>
             <p className="text-base font-mono font-medium text-white">{name}</p>
             <p className="text-sm font-mono text-gray-500">{company}</p>
