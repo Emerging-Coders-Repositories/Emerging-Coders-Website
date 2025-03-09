@@ -46,8 +46,8 @@ export default function ExecBoard() {
   // Function to set the year
   const handleYearChange = (year) => {
     setCurrentYear(year);
-    setVisibleExecMembers([]); // Reset animation
-    setVisibleJuniorMembers([]); // Reset animation
+    setVisibleExecMembers([]);
+    setVisibleJuniorMembers([]); 
   };
 
   return (

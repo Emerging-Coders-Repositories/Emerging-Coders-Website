@@ -17,7 +17,7 @@ export default function PastEventsComponent() {
                                 </h2>
                                 <p class="my-8 text-gray-600 dark:gray-300">
                                     We've hosted a variety of event types ranging from social events to professional development events. Our events are open to all Northwestern students and we encourage you to attend our events to learn more about Emerging Coders and the FGLI community at Northwestern.
-                                    To learn what we have upcoming next, check out our <a href="/UpcomingEvents" class="text-purple-700">events page</a>.
+                                    To learn what we have upcoming next, check out our <a href="./Events" class="text-purple-700">events page</a>.
                                 </p>
                             </div>
                         </div>
