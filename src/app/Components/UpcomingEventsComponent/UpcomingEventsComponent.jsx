@@ -114,7 +114,7 @@ import { Table as NextTable, TableHeader, TableColumn, TableBody, TableRow, Tabl
 
 const GOOGLE_CALENDAR_ID = "nuemergingcoders@gmail.com";
 const API_KEY = process.env.GOOGLE_CALENDAR_API; 
-// const API_KEY = "AIzaSyB1qSMHewrQa4qyILiF0xZi5r3GRmH2WCQ";
+
 
 export default function UpcomingEventsComponent() {
     const [events, setEvents] = useState([]);
