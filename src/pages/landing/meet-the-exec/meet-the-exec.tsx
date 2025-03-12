@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ExecutiveBoardCards from "./exec-board-cards";
+import ExecutiveBoardCards from "./exec-board-group";
 
 export default function MeetTheExec() {
   return (

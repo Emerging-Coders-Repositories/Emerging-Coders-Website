@@ -9,10 +9,10 @@ const EmergingCodersTestimonials: React.FC = () => {
     <div className="w-full h-screen bg-black text-white overflow-hidden">
       <div className="h-full flex flex-col w-full 3xl:mx-auto">
         <div className="text-center py-6">
-          <h2 className="text-5xl font-bold mb-1">Loved by NU students</h2>
-          <p className="text-xl text-gray-400">
-            Building community for First-Generation and Low-Income students in
-            tech
+          <h2 className="text-5xl font-bold mb-4">What Our Members Say</h2>
+          <p className="text-xl text-gray-400 pb-12">
+            We're building the largest community for first-generation and
+            low-income students in technology at Northwestern University.
           </p>
         </div>
 

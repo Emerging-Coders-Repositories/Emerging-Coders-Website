@@ -7,8 +7,8 @@ export default function Page() {
     <div className="bg-black min-h-screen flex flex-col">
       <Hero />
       <AboutUsCards />
-      <EmergingCodersTestimonials />
       <MeetTheExec />
+      <EmergingCodersTestimonials />
     </div>
   );
 }
