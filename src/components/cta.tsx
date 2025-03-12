@@ -12,8 +12,8 @@ export default function CTA() {
             </h1>
             <div className="mt-10">
               <button className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center">
-                {/* <span className="mr-3 w-6 h-6 bg-gray-800 inline-block"></span> */}
-                JOIN GROUPME
+                <span className="mr-3 w-6 h-6 bg-gray-800 inline-block"></span>
+                JOIN NOW
               </button>
             </div>
           </div>

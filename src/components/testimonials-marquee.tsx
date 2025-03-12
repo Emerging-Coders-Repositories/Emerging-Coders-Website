@@ -7,7 +7,7 @@ const EmergingCodersTestimonials: React.FC = () => {
 
   return (
     <div className="w-full h-screen bg-black text-white overflow-hidden">
-      <div className="h-full flex flex-col w-full 3xl:max-w-8/12 3xl:mx-auto">
+      <div className="h-full flex flex-col w-full 3xl:mx-auto">
         <div className="text-center py-6">
           <h2 className="text-5xl font-bold mb-1">Loved by NU students</h2>
           <p className="text-xl text-gray-400">
