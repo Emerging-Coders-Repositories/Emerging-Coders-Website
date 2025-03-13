@@ -1,8 +1,8 @@
 "use client";
-
 import React from "react";
 import ExecutiveBoardCards from "./exec-board-group";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function MeetTheExec() {
   return (
@@ -29,13 +29,13 @@ export default function MeetTheExec() {
           </h3>
           <ExecutiveBoardCards boardType="junior" />
         </div>
-        write a button that says "view past execs"
         <div className="mt-10 text-center">
           <Link
             href="/executive-boards"
-            className="text-white font-bold text-lg font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center"
+            className="inline-flex items-center text-xs text-white/70 font-bold py-2 px-4 rounded-md hover:bg-neutral-800 transition-colors gap-1"
           >
             View Past Executives Boards
+            <ChevronRight size={14} />
           </Link>
         </div>
       </div>
