@@ -169,7 +169,7 @@ export default function Header() {
             </div>
             <div className="md:hidden flex-none">{/* <MobileMenu /> */}</div>
             <div className="hidden md:block flex-none">
-              <Button className="bg-white hover:bg-white/90 text-black font-semibold transition-colors text-base font-mono py-6">
+              <Button className="bg-white hover:bg-white/90 text-black font-semibold transition-colors text-base font-mono py-5">
                 <a href="https://discord.gg/mqRQ7s9CyS">Join EMCO</a>
               </Button>
             </div>

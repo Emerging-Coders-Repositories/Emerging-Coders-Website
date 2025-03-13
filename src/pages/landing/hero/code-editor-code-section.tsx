@@ -1,7 +1,7 @@
 export default function CodeEditorCodeSection() {
   return (
     <div className="col-span-7 bg-zinc-900 overflow-hidden">
-      <div className="h-full p-4 text-white text-sm font-mono flex flex-col">
+      <div className="h-full p-6 text-white text-sm font-mono flex flex-col">
         <div className="flex mb-1">
           <span className="text-zinc-600 mr-4 select-none">1</span>
           <span className="text-purple-400">import</span>

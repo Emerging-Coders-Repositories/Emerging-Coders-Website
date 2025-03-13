@@ -4,7 +4,7 @@ import CodeEditorFileSection from "@/pages/landing/hero/code-editor-file-section
 export default function HeroCodeEditor() {
   return (
     <div className="w-full px-4 md:px-8 lg:px-12">
-      <div className="relative w-full max-w-7xl min-h-[585px]  mx-auto rounded-t-xl overflow-hidden shadow-2xl border-t border-l border-r border-white/10">
+      <div className="relative w-full max-w-7xl min-h-[40rem] px-2 mx-auto rounded-t-xl overflow-hidden shadow-2xl border-t border-l border-r border-white/10">
         <div className="absolute top-0 left-0 right-0 bg-zinc-900 h-8 flex items-center px-4 gap-2 z-10">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
