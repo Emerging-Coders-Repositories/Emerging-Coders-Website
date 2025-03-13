@@ -8,5 +8,24 @@ export interface ExecMember {
   image: string;
   linkedin?: string;
   email?: string;
-  isisFound?: boolean;
+  isFounder?: boolean;
+}
+
+export interface ExecTeam {
+  name: string;
+  executive: ExecMember[];
+  general: ExecMember[];
+}
+
+export interface RosterYear {
+  year: string;
+  chairs?: ExecMember[];
+  teams?: ExecTeam[];
+  error?: string;
+}
+
+export interface YearlyBoard {
+  year: string;
+  executiveBoard: ExecMember[];
+  juniorExecutiveBoard: ExecMember[];
 }
