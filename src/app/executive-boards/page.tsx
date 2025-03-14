@@ -9,8 +9,8 @@ export default function Page() {
       <div className="flex items-center gap-2">
         <Link href="/" className="flex">
           <svg
-            width="64"
-            height="64"
+            width="84"
+            height="84"
             viewBox="0 0 90 86"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
