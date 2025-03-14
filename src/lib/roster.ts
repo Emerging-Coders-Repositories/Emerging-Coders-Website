@@ -6,12 +6,13 @@ import type {
 } from "@/types/exec-board-type";
 import {
   foundingExecutiveMembers,
-  executiveMembers,
+  executiveMembers2526,
+  executiveMembers2425,
   ExecutiveBoard20232024,
 } from "@/constants/executive-boards-list";
 import {
   foundingJuniorExecutiveMembers,
-  juniorExecutiveMembers,
+  juniorExecutiveMembers2425,
 } from "@/constants/junior-executive-boards-list";
 
 function getLastName(member: ExecMember) {
@@ -70,10 +71,16 @@ function convertExecBoardToRoster(
   };
 }
 
-const currentExecRoster = convertExecBoardToRoster(
+const ExecRoster202520256 = convertExecBoardToRoster(
+  "2025-2026",
+  executiveMembers2526,
+  []
+);
+
+const ExecRoster20242025 = convertExecBoardToRoster(
   "2024-2025",
-  executiveMembers,
-  juniorExecutiveMembers
+  executiveMembers2425,
+  juniorExecutiveMembers2425
 );
 
 const ExecutiveBoard2023to2024 = convertExecBoardToRoster(
@@ -89,16 +96,22 @@ const foundingExecRoster = convertExecBoardToRoster(
 );
 
 export const historicalRoster: RosterYear[] = sorted([
-  currentExecRoster,
+  ExecRoster202520256,
+  ExecRoster20242025,
   ExecutiveBoard2023to2024,
   foundingExecRoster,
 ]);
 
 export const execBoards: Record<string, YearlyBoard> = {
+  "2025-2026": {
+    year: "2025-2026",
+    executiveBoard: executiveMembers2526,
+    juniorExecutiveBoard: [],
+  },
   "2024-2025": {
     year: "2024-2025",
-    executiveBoard: executiveMembers,
-    juniorExecutiveBoard: juniorExecutiveMembers,
+    executiveBoard: executiveMembers2425,
+    juniorExecutiveBoard: juniorExecutiveMembers2425,
   },
   "2023-2024": {
     year: "2023-2024",

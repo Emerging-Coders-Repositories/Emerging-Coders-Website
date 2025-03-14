@@ -1,6 +1,102 @@
 import type { ExecMember } from "@/types/exec-board-type";
 
-export const executiveMembers: ExecMember[] = [
+export const executiveMembers2526: ExecMember[] = [
+  {
+    role: "President",
+    name: "Sydney Hoppenworth",
+    pronouns: "She/They",
+    major: "Computer Science",
+    year: "Junior",
+    linkedin: "https://www.linkedin.com/in/sydney-hoppenworth",
+    image: "/exec-pictures/sydney.jpeg",
+    email: "SydneyHoppenworth2026@u.northwestern.edu",
+  },
+  {
+    role: "External Coordinator",
+    name: "Joanna Echeverri Porras",
+    pronouns: "She/Her",
+    major: "Computer Science",
+    year: "Sophomore",
+    linkedin:
+      "https://www.linkedin.com/in/joanna-ep?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADuwj-wBV6vE5evg2lfQdfvHXy2WPyP0jMM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BjUOheGLeT%2F%2B0K4QbZyteVw%3D%3D",
+    image: "/exec-pictures/joanna.jpg",
+    email: "JoannaEcheverriPorras2027@u.northwestern.edu",
+  },
+  {
+    role: "Internal Coordinator",
+    name: "Areg Aslanyan",
+    pronouns: "He/Him",
+    major: "Computer Science, Minor in Psychology",
+    year: "Sophomore",
+    linkedin:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.linkedin.com/in/areg-aslanyan&ved=2ahUKEwiA5rv5k4qMAxVJF1kFHReAMcAQFnoECCUQAQ&usg=AOvVaw0GT477FJbABMalZ4kesjOx",
+    image: "/exec-pictures/areg.jpg",
+    email: "AregAslanyan2027@u.northwestern.edu",
+  },
+  {
+    role: "Internal Coordinator",
+    name: "Melanie Cuenca",
+    pronouns: "She/Her",
+    major: "Computer Science, minor in German",
+    year: "Sophomore",
+    linkedin: "https://www.linkedin.com/in/melanie-cuenca-9272112b6/",
+    image: "/exec-pictures/melanie.jpeg",
+    email: "MelanieCuenca2027@u.northwestern.edu",
+  },
+  {
+    role: "Treasurer",
+    name: "Faris Eltayib",
+    pronouns: "He/Him",
+    major: "Computer Engineering",
+    year: "Sophomore",
+    linkedin: "https://www.linkedin.com/in/faris-eltayib-a89709297/",
+    image: "/exec-pictures/faris.jpg",
+    email: "FarisEltayib2027@u.northwestern.edu",
+  },
+  {
+    role: "Marketing Chair",
+    name: "Marissa Rocha Rangel",
+    major: "Computer Science",
+    year: "First-Year",
+    pronouns: "She/Her",
+    linkedin: "https://www.linkedin.com/in/marissa-rocha-764a19281/",
+    image: "/exec-pictures/marissa.jpeg",
+    email: "MarissaRochaRangel2028@u.northwestern.edu",
+  },
+  {
+    role: "Secretary",
+    name: "Michelle Ordonez Campos",
+    major: "Computer Science",
+    year: "Sophomore",
+    pronouns: "She/Her",
+    linkedin: "https://www.linkedin.com/in/mordonez719/",
+    image: "/exec-pictures/michelle.jpeg",
+    email: "MichelleOrdonezCampos2027@u.northwestern.edu",
+  },
+  {
+    role: "Professional Liaison",
+    name: "Lana Alnajm",
+    major: "Data Science & Social Policy",
+    year: "First-Year",
+    pronouns: "She/Her",
+    linkedin:
+      "https://www.linkedin.com/in/lana-alnajm-451b532a6/?trk=organization_guest_main-feed-card-text",
+    image: "/exec-pictures/lana.jpeg",
+    email: "LanaAlnajm2028@u.northwestern.edu",
+  },
+  {
+    role: "Technical Development Chair",
+    name: "Acton Healy",
+    major: "Computer Science",
+    year: "First-Year",
+    pronouns: "He/Him",
+    linkedin: "https://www.linkedin.com/in/acton-healy-6a7b3a1b6/",
+    image: "/exec-pictures/acton.jpg",
+    email: "ActonHealy2028@u.northwestern.edu",
+  },
+];
+
+export const executiveMembers2425: ExecMember[] = [
   {
     role: "President",
     name: "Safiya Menk",
@@ -34,7 +130,7 @@ export const executiveMembers: ExecMember[] = [
     email: "sydneyhoppenworth2026@u.northwestern.edu",
   },
   {
-    role: "Social Media Chair",
+    role: "Marketing Chair",
     name: "Eden Kim",
     pronouns: "She/Her",
     major: "Computer Science",
@@ -132,7 +228,7 @@ export const foundingExecutiveMembers: ExecMember[] = [
     isFounder: true,
   },
   {
-    role: "Social Media Chair",
+    role: "Marketing Chair",
     name: "Audrey Benitez-Rojo",
     pronouns: "She/Her",
     major: "Computer Science",
@@ -223,7 +319,7 @@ export const ExecutiveBoard20232024: ExecMember[] = [
     isFounder: true,
   },
   {
-    role: "Social Media Chair",
+    role: "Marketing Chair",
     name: "Audrey Benitez-Rojo",
     pronouns: "She/Her",
     major: "Computer Science",

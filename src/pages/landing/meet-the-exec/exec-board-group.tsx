@@ -1,6 +1,6 @@
 import ExecutiveBoardMemberCard from "@/pages/landing/meet-the-exec/exec-member-card";
-import { executiveMembers } from "@/constants/executive-boards-list";
-import { juniorExecutiveMembers } from "@/constants/junior-executive-boards-list";
+import { executiveMembers2526 } from "@/constants/executive-boards-list";
+import { juniorExecutiveMembers2526 } from "@/constants/junior-executive-boards-list";
 
 export default function ExecutiveBoardCards({
   boardType,
@@ -8,7 +8,9 @@ export default function ExecutiveBoardCards({
   boardType: "executive" | "junior";
 }) {
   const members =
-    boardType === "executive" ? executiveMembers : juniorExecutiveMembers;
+    boardType === "executive"
+      ? executiveMembers2526
+      : juniorExecutiveMembers2526;
 
   return (
     <div className="flex flex-wrap justify-center gap-12">

@@ -1,6 +1,8 @@
 import type { ExecMember } from "@/types/exec-board-type";
 
-export const juniorExecutiveMembers: ExecMember[] = [
+export const juniorExecutiveMembers2526: ExecMember[] = [];
+
+export const juniorExecutiveMembers2425: ExecMember[] = [
   {
     role: "Junior Exec Board Member",
     name: "Acton Healy",

@@ -3,6 +3,8 @@ import React from "react";
 import ExecutiveBoardCards from "./exec-board-group";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { executiveMembers2526 } from "@/constants/executive-boards-list";
+import { juniorExecutiveMembers2526 } from "@/constants/junior-executive-boards-list";
 
 export default function MeetTheExec() {
   return (
@@ -17,18 +19,22 @@ export default function MeetTheExec() {
             students in tech
           </p>
         </div>
-        <div className="mb-14">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Executive Board
-          </h3>
-          <ExecutiveBoardCards boardType="executive" />
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Junior Executive Board
-          </h3>
-          <ExecutiveBoardCards boardType="junior" />
-        </div>
+        {executiveMembers2526.length > 0 && (
+          <div className="mb-14">
+            <h3 className="text-2xl font-bold text-center mb-8">
+              Executive Board
+            </h3>
+            <ExecutiveBoardCards boardType="executive" />
+          </div>
+        )}
+        {juniorExecutiveMembers2526.length > 0 && (
+          <div className="mb-14">
+            <h3 className="text-2xl font-bold text-center mb-8">
+              Junior Executive Board
+            </h3>
+            <ExecutiveBoardCards boardType="junior" />
+          </div>
+        )}
         <div className="mt-10 text-center">
           <Link
             href="/executive-boards"
