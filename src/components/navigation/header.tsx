@@ -152,12 +152,7 @@ export default function Header() {
                   >
                     TEAM
                   </NavItem>
-                  <NavItem
-                    href="/#faq"
-                    onClick={(e) => handleNavigation(e, "faq")}
-                  >
-                    BLOG
-                  </NavItem>
+                  <NavItem href="/blog">BLOG</NavItem>
                   <NavItem
                     href="/#faq"
                     onClick={(e) => handleNavigation(e, "faq")}

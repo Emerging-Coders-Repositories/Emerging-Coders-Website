@@ -1,249 +1,151 @@
 "use client";
 
 import React from "react";
-import { StaticBorder } from "@/components/ui/static-shine-border";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 export default function FeatureCards() {
   const features = [
     {
       title: "Mentorship",
       description:
-        "We aim to provide mentorship and support opportunities for underrepresented groups within the Northwestern Computer Science community and beyond. We are welcoming of all majors and backgrounds, and we hope to provide a safe space for students to learn and grow together.",
-      image: (
-        <div className="w-48 h-48 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="30" cy="30" r="20" fill="#6366F1" />
-                <circle cx="70" cy="30" r="20" fill="#8B5CF6" />
-                <path d="M50 60 L30 85 L70 85 Z" fill="#EC4899" />
-                <path
-                  d="M20 50 C20 70, 80 70, 80 50"
-                  stroke="#6366F1"
-                  strokeWidth="4"
-                  fill="none"
-                />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute top-0 left-0 w-10 h-10 bg-gray-800 rounded-md transform rotate-0 translate-x-4 translate-y-10"></div>
-          <div className="absolute bottom-0 right-0 w-10 h-10 bg-gray-800 rounded-md transform rotate-0 translate-x-4 translate-y-0"></div>
-        </div>
+        "We provide mentorship and support for underrepresented groups within Northwestern's Computer Science community. Our inclusive space welcomes students of all majors and backgrounds to learn and grow together.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="w-6 h-6"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
       ),
-      borderColors: ["#6366F1", "#8B5CF6", "#EC4899"],
-      gradientAngle: 45,
+      gradient: "from-violet-500/20 to-fuchsia-500/20",
+      iconClass: "text-violet-500",
     },
     {
       title: "Technical Development",
       description:
-        "We strive to provide accessible and inclusive technical development opportunities for all of our members by hosting workshops, speaker events, and other events to help our members learn and grow as developers, engineers, designers, product managers, and more.",
-      image: (
-        <div className="w-48 h-48 relative flex items-center justify-center">
-          <div className="grid grid-cols-3 gap-2">
-            <div className="w-12 h-12 bg-gradient-to-tr from-blue-500 to-indigo-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 18h.01"></path>
-                <path d="M8 21h8"></path>
-                <path d="M12 15v3"></path>
-                <path d="M17 3a2 2 0 0 1 2 2v1.55A6 6 0 0 1 22 12v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a6 6 0 0 1 3-5.45V5a2 2 0 0 1 2-2h10Z"></path>
-              </svg>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                <line x1="3" x2="21" y1="9" y2="9"></line>
-                <line x1="3" x2="21" y1="15" y2="15"></line>
-                <line x1="9" x2="9" y1="9" y2="21"></line>
-                <line x1="15" x2="15" y1="9" y2="21"></line>
-              </svg>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-tr from-orange-500 to-red-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 15V9h3v6H4z"></path>
-                <path d="M10 4v16h3V4h-3z"></path>
-                <path d="M17 10v10h3V10h-3z"></path>
-              </svg>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-tr from-green-500 to-teal-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                <path d="m3 9 18-6"></path>
-                <path d="m3 21 18-6"></path>
-              </svg>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-tr from-yellow-500 to-amber-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                <path d="M2 12h20"></path>
-              </svg>
-            </div>
-            <div className="w-12 h-12 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-md flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <path d="M15 3h6v6"></path>
-                <path d="m10 14 11-11"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
+        "We deliver accessible and inclusive technical opportunities through workshops, speaker events, and collaborative projects that help our members grow as developers, engineers, designers, and product managers.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="w-6 h-6"
+        >
+          <path d="M8 9h8"></path>
+          <path d="M8 13h6"></path>
+          <path d="M18 2a3 3 0 0 1 2.995 2.824L21 5v14a3 3 0 0 1-2.824 2.995L18 22H6a3 3 0 0 1-2.995-2.824L3 19V5a3 3 0 0 1 2.824-2.995L6 2h12z"></path>
+        </svg>
       ),
-      borderColors: ["#3B82F6", "#10B981", "#F59E0B"],
-      gradientAngle: 135,
+      gradient: "from-blue-500/20 to-sky-500/20",
+      iconClass: "text-blue-500",
     },
     {
       title: "Establish Community",
       description:
-        "We want to provide a safe, welcoming, and inclusive community for all of our members. We hope that we can all lean on one another for support and guidance.",
-      image: (
-        <div className="w-48 h-48 relative flex items-center justify-center">
-          <div className="relative">
-            <div className="w-32 h-32 bg-gray-800 rounded-xl flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="url(#community-gradient)"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                <defs>
-                  <linearGradient
-                    id="community-gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="#6366F1" />
-                    <stop offset="50%" stopColor="#8B5CF6" />
-                    <stop offset="100%" stopColor="#EC4899" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <div className="absolute inset-0 border-2 border-purple-500 opacity-30 rounded-full w-36 h-36 m-auto animate-pulse"></div>
-            <div
-              className="absolute inset-0 border border-pink-500 opacity-20 rounded-full w-44 h-44 m-auto animate-pulse"
-              style={{ animationDelay: "0.5s" }}
-            ></div>
-          </div>
-        </div>
+        "We foster a safe, welcoming, and inclusive community where members can lean on one another for support and guidance through their academic and professional journeys.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="w-6 h-6"
+        >
+          <path d="M18 8a6 6 0 0 0-6-6 6 6 0 0 0-6 6c0 4.97 6 12 6 12s6-7.03 6-12Z"></path>
+          <path d="M13 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+        </svg>
       ),
-      borderColors: ["#8B5CF6", "#EC4899", "#F43F5E"],
-      gradientAngle: 225,
+      gradient: "from-emerald-500/20 to-teal-500/20",
+      iconClass: "text-emerald-500",
     },
   ];
 
   return (
-    <div className="w-full bg-black text-white py-16 px-4">
+    <div className="w-full bg-black text-white py-28 px-4" id="features">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <h1 className="text-5xl font-bold mb-4">
+        <div className="mb-20 max-w-3xl">
+          <h2 className="text-5xl font-bold mb-6 leading-tight">
             What We Do At Emerging Coders
-          </h1>
-          <p className="text-xl font-mono">
+          </h2>
+          <p className="text-xl text-white/70 font-mono">
             Creating a community of diverse technologists through mentorship,
             education, and support.
           </p>
           <div className="mt-8">
-            <button className="bg-white text-black font-medium py-2 px-4 rounded-md hover:bg-gray-200 transition-colors">
+            <button className="bg-white text-black font-medium py-3 px-6 rounded-md hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
               JOIN OUR COMMUNITY
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-1"
+              >
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-2xl border border-gray-800 p-6"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.01] backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]"
             >
-              <StaticBorder
-                borderWidth={2}
-                borderColor={feature.borderColors}
-                gradientAngle={feature.gradientAngle}
+              <div
+                className={`absolute inset-0 opacity-20 bg-gradient-to-br ${feature.gradient}`}
               />
+              <BorderBeam className="opacity-40" />
 
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-6 font-mono text-center">
+              <div className="relative h-full p-8 flex flex-col">
+                <div
+                  className={`w-12 h-12 mb-6 rounded-lg bg-white/10 flex items-center justify-center ${feature.iconClass}`}
+                >
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 font-mono">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 text-base leading-relaxed">
+                <p className="text-white/70 leading-relaxed text-base mb-6 flex-grow">
                   {feature.description}
                 </p>
-              </div>
-
-              {/* Image moved to the bottom */}
-              <div className="h-56 flex items-center justify-center">
-                {feature.image}
+                {/* add these later, for now, we don't need them */}
+                {/* <div className="mt-auto">
+                  <button className="text-white/60 hover:text-white font-medium text-sm flex items-center gap-1 transition-colors group-hover:text-white/90">
+                    Learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="ml-1 transition-transform group-hover:translate-x-1"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </div> */}
               </div>
             </div>
           ))}
