@@ -1,4 +1,4 @@
-import InternshipsComponent from "@/pages/opportunities/swe-internships/swe-internships-oppurtunities";
+import InternshipsComponent from "@/components/opportunities/swe-internships/swe-internships-oppurtunities";
 
 export const metadata = {
   title: "Software Engineering Internships",

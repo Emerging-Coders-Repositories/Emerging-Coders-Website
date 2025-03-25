@@ -3,10 +3,10 @@
 import React, { useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { SearchInput } from "@/pages/opportunities/swe-internships/search-input";
-import { JobTable } from "@/pages/opportunities/swe-internships/jobs-table";
-import { PaginationControls } from "@/pages/opportunities/swe-internships/pagination-controls";
-import { ErrorState } from "@/pages/opportunities/swe-internships/error-state";
+import { SearchInput } from "@/components/opportunities/swe-internships/search-input";
+import { JobTable } from "@/components/opportunities/swe-internships/jobs-table";
+import { PaginationControls } from "@/components/opportunities/swe-internships/pagination-controls";
+import { ErrorState } from "@/components/opportunities/swe-internships/error-state";
 
 import { useFetchGithub } from "@/hooks/use-fetch-github";
 import { useSearch } from "@/hooks/use-search";

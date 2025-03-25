@@ -1,6 +1,6 @@
 "use client";
 import { historicalRoster } from "@/lib/roster";
-import RosterSection from "@/pages/past-executive-boards/roster-section";
+import RosterSection from "@/components/past-executive-boards/roster-section";
 import Link from "next/link";
 
 export default function Page() {

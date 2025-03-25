@@ -1,4 +1,4 @@
-import ExecutiveBoardMemberCard from "@/pages/landing/meet-the-exec/exec-member-card";
+import ExecutiveBoardMemberCard from "@/components/landing/meet-the-exec/exec-member-card";
 import { executiveMembers2526 } from "@/constants/executive-boards-list";
 import { juniorExecutiveMembers2526 } from "@/constants/junior-executive-boards-list";
 

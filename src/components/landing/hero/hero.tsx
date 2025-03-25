@@ -146,7 +146,7 @@
 // }
 
 import { Button } from "@/components/ui/button";
-import HeroCodeEditor from "@/pages/landing/hero/hero-code-editor";
+import HeroCodeEditor from "@/components/landing/hero/hero-code-editor";
 export default function Hero() {
   return (
     <main className="flex-1 flex flex-col items-center px-4 relative ">

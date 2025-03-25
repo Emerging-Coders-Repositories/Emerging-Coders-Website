@@ -1,6 +1,6 @@
-import CodeEditorCodeSection from "@/pages/landing/hero/code-editor-code-section";
-import CodeEditorChatSection from "@/pages/landing/hero/code-editor-chat-section";
-import CodeEditorFileSection from "@/pages/landing/hero/code-editor-file-section";
+import CodeEditorChatSection from "@/components/landing/hero/code-editor-chat-section";
+import CodeEditorCodeSection from "@/components/landing/hero/code-editor-code-section";
+import CodeEditorFileSection from "@/components/landing/hero/code-editor-file-section";
 export default function HeroCodeEditor() {
   return (
     <div className="w-full px-4 md:px-8 lg:px-12">
