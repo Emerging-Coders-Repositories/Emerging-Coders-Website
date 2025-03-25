@@ -109,7 +109,7 @@ export default function TechnicalsGuide() {
             {interviewTypes.map((type) => (
               <div
                 key={type.id}
-                className="border border-zinc-800 rounded-lg p-5 bg-black/40 shadow-sm"
+                className="border border-zinc-900 rounded-lg p-5 bg-black/40 shadow-sm"
               >
                 <h4 className="text-xl font-bold text-white mb-3">
                   {type.title}
