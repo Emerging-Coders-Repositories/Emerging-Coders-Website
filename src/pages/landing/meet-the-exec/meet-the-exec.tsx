@@ -8,7 +8,7 @@ import { juniorExecutiveMembers2526 } from "@/constants/junior-executive-boards-
 
 export default function MeetTheExec() {
   return (
-    <div className="w-full bg-black text-white py-80 px-4" id="team">
+    <div className="w-full text-white py-80 px-4" id="team">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold mb-4">

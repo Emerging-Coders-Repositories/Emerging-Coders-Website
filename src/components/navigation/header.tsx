@@ -102,7 +102,7 @@ export default function Header() {
     <header className="fixed top-4 z-50 w-full lg:top-2 md:mt-4">
       <div className="mx-auto !max-w-[1550px] !px-6 md:!px-9]">
         <nav
-          className="rounded-2xl bg-black px-2 transition-all duration-300 ease-in-out"
+          className="rounded-2xl px-2 transition-all duration-300 ease-in-out"
           aria-label="Main navigation"
         >
           <div className="flex py-0 md:py-2 items-center">

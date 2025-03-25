@@ -71,7 +71,7 @@ export default function FeatureCards() {
   ];
 
   return (
-    <div className="w-full bg-black text-white py-28 px-4" id="features">
+    <div className="w-full text-white py-28 px-4" id="features">
       <div className="max-w-6xl mx-auto">
         <div className="mb-20 max-w-3xl">
           <h2 className="text-5xl font-bold mb-6 leading-tight">

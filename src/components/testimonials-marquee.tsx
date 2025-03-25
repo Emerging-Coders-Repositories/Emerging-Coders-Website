@@ -5,7 +5,7 @@ import TestimonialCard from "@/components/testimonial-card";
 export default function EmergingCodersTestimonials(): React.ReactElement {
   const columns = createColumns();
   return (
-    <div className="w-full 4xl:max-w-8/12 mx-auto h-screen bg-black text-white overflow-hidden mb-72">
+    <div className="w-full 4xl:max-w-8/12 mx-auto h-screen text-white overflow-hidden mb-72">
       <div className="h-full flex flex-col w-full 3xl:mx-auto">
         <div className="text-center py-6">
           <h2 className="text-5xl font-bold mb-4">What Our Members Say</h2>

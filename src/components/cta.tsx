@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CTA() {
   return (
-    <div className="w-full bg-black text-white py-24 px-4">
+    <div className="w-full text-white py-24 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 md:max-w-3xl">

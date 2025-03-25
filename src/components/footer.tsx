@@ -16,7 +16,7 @@ const typedSocialMediaLinks = socialMediaLinks as SocialMediaLink[];
 export default function Footer() {
   return (
     <footer
-      className="w-full bg-black text-white py-16 border-t border-white/10"
+      className="w-full  text-white py-16 border-t border-white/10"
       id="footer"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
