@@ -29,6 +29,17 @@ export default function UnderclassmenInternshipPrograms() {
         </h2>
         <ul className="list-disc pl-6 mb-10 text-zinc-400 space-y-4">
           <li>
+            <span className="font-semi-bold text-zinc-300">
+              Develop and Innovate for Social Change (DISC):{" "}
+            </span>
+            DISC is a student organization that focuses on using technology for
+            social good. DISC hosts workshops during the fall to help teach you
+            full-stack development using the latest and modern web technologies.
+            During the winter, you can apply for the Discover program, where you
+            will have the chance to work on technical projects for non-profits
+            in the Evanston and Chicago land areas.
+          </li>
+          <li>
             <span className="font-semibold text-zinc-300">
               Northwestern IEEE:{" "}
             </span>
@@ -57,6 +68,19 @@ export default function UnderclassmenInternshipPrograms() {
           </li>
         </ul>
 
+        <p className="text-zinc-400 mb-6">
+          If you want a full list of clubs and organizations on campus at
+          Northwestern to explore, you can vist the supported student groups and
+          clubs from the Northwestern Computer Science department{" "}
+          <Link
+            href="https://www.mccormick.northwestern.edu/electrical-computer/students/groups-organizations.html"
+            target="_blank"
+            className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
+          >
+            here
+          </Link>
+        </p>
+
         <h2 className="text-2xl font-bold text-white mb-5">
           Conference Opportunities
         </h2>
@@ -70,7 +94,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://tapiaconference.cmd-it.org/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Tapia Conference
             </Link>
@@ -82,7 +106,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://ghc.anitab.org/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Grace Hopper Celebration
             </Link>
@@ -94,7 +118,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://convention.nsbe.org/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               NSBE/SHPE National Convention
             </Link>
@@ -106,7 +130,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://afrotechconference.com/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               AfroTech
             </Link>
@@ -124,7 +148,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://buildyourfuture.withgoogle.com/programs/step"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Google STEP
             </Link>
@@ -137,7 +161,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://www.metacareers.com/careerprograms/pathways/metauniversity"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Meta University
             </Link>
@@ -150,20 +174,33 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://info.codepath.org/futureforce-tech-launchpad"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Salesforce Futureforce Tech Launchpad
             </Link>
             <span className="ml-2">
-              — Opens in August. Focuses on full-stack development and career
-              preparation.
+              — Opens in latest fall. Focuses on full-stack development and
+              career preparation.
+            </span>
+          </li>
+          <li>
+            <Link
+              href="https://www.wayup.com/i-Financial-Services-j-Technology-Internship-Program-Summer-2024-Capital-One-466174007828339/"
+              target="_blank"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
+            >
+              Capital One Technology Internship Program
+            </Link>
+            <span className="ml-2">
+              — Opens in September. A 10-week program focusing on software
+              engineering and professional development.
             </span>
           </li>
           <li>
             <Link
               href="https://www.codepath.org/courses/tech-interview-prep"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               CodePath
             </Link>
@@ -176,7 +213,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://mlt.org/career-prep/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Management Leadership of Tomorrow (MLT)
             </Link>
@@ -187,9 +224,22 @@ export default function UnderclassmenInternshipPrograms() {
           </li>
           <li>
             <Link
+              href="https://www.colorstack.org/"
+              target="_blank"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
+            >
+              ColorStack
+            </Link>
+            <span className="ml-2">
+              — Rolling admissions. A community for Black/Latine students in
+              technology.
+            </span>
+          </li>
+          <li>
+            <Link
               href="https://careers.microsoft.com/v2/global/en/exploremicrosoft"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Microsoft Explore Program
             </Link>
@@ -200,22 +250,9 @@ export default function UnderclassmenInternshipPrograms() {
           </li>
           <li>
             <Link
-              href="https://www.amazon.jobs/en/jobs/2808739/software-development-engineer-internship-2025-us"
-              target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
-            >
-              Amazon Propel
-            </Link>
-            <span className="ml-2">
-              — Opens in August. A mentorship-driven program exploring careers
-              at Amazon.
-            </span>
-          </li>
-          <li>
-            <Link
               href="https://www.uber.com/us/en/careers/uberstar/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Uber Star Program
             </Link>
@@ -228,7 +265,7 @@ export default function UnderclassmenInternshipPrograms() {
             <Link
               href="https://blog.duolingo.com/duolingo-thrive-intern-program/"
               target="_blank"
-              className="text-purple-400 hover:text-purple-300 hover:underline font-medium"
+              className="text-purple-300 hover:text-purple-300 hover:underline font-medium"
             >
               Duolingo Thrive
             </Link>
