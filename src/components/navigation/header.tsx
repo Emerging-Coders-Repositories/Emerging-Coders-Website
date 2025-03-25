@@ -6,11 +6,14 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import {
   NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/navigation/navigation-menu";
 import { Button } from "@/components/ui/button";
-// import MobileMenu from "@/_components/ui/mobile-menu";
+import { cn } from "@/lib/utils";
 
 const NavItem = ({
   href,
@@ -30,9 +33,38 @@ const NavItem = ({
   </NavigationMenuLink>
 );
 
-// const getImagePath = (src: string) => {
-//   return process.env.NODE_ENV === "production" ? `/disc-website${src}` : src;
-// };
+const ListItem = ({
+  className,
+  title,
+  children,
+  href,
+}: {
+  className?: string;
+  title: string;
+  children: React.ReactNode;
+  href: string;
+}) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors bg-black hover:bg-zinc-800 hover:text-white focus:bg-zinc-800 focus:text-white border border-zinc-800/40",
+            className
+          )}
+        >
+          <div className="text-sm font-medium leading-none text-white/90">
+            {title}
+          </div>
+          <p className="line-clamp-2 text-sm leading-snug text-white/70">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+};
 
 export default function Header() {
   const pathname = usePathname();
@@ -126,7 +158,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="hidden md:flex flex-1 justify-center">
-              <NavigationMenu>
+              <NavigationMenu className="[&_[data-slot=navigation-menu-viewport]]:bg-black [&_[data-slot=navigation-menu-viewport]]:border-zinc-900 [&_[data-slot=navigation-menu-viewport]]:shadow-none">
                 <NavigationMenuList className="text-white/90 text-lg flex justify-center space-x-4">
                   <NavItem
                     href="/#about"
@@ -153,12 +185,50 @@ export default function Header() {
                     TEAM
                   </NavItem>
                   <NavItem href="/blog">BLOG</NavItem>
-                  <NavItem
-                    href="/opportunities"
-                    onClick={(e) => handleNavigation(e, "opportunities")}
-                  >
-                    OPPORTUNITIES
-                  </NavItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono bg-transparent hover:bg-transparent">
+                      OPPORTUNITIES
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="bg-black">
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-black border border-black rounded-lg">
+                        <li className="row-span-3 col-span-2 md:col-span-1">
+                          <NavigationMenuLink asChild>
+                            <Link
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-purple-600 via-purple-500/50 to-fuchsia-500/40 p-6 no-underline outline-none focus:shadow-md border border-zinc-800 hover:from-purple-500 hover:via-purple-400/50 hover:to-fuchsia-400/40 transition-all duration-300"
+                              href="/opportunities"
+                            >
+                              <div className="mb-2 mt-4 text-lg font-medium text-white">
+                                Career Opportunities
+                              </div>
+                              <p className="text-sm leading-tight text-white/70">
+                                Explore tech opportunities for students at all
+                                levels.
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                        <ListItem
+                          href="/opportunities/internships"
+                          title="Internships"
+                        >
+                          Tech internship opportunities for college students.
+                        </ListItem>
+                        <ListItem
+                          href="/opportunities/new-grad"
+                          title="New Grad"
+                        >
+                          Entry-level positions for recent and upcoming
+                          graduates.
+                        </ListItem>
+                        <ListItem
+                          href="/opportunities/underclassmen"
+                          title="Underclassmen"
+                        >
+                          Early career development programs and opportunities.
+                        </ListItem>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
