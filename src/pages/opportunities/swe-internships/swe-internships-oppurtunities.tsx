@@ -39,21 +39,24 @@ export default function InternshipsComponent() {
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6">
-      <Card className="bg-background border-border shadow-sm">
+      <Card className="bg-black border-zinc-900 shadow-md">
         <CardHeader className="pb-2">
-          <CardTitle className="text-3xl font-bold">
+          <CardTitle className="text-3xl font-bold text-white">
             Software Engineering Internships
           </CardTitle>
-          <p className="text-muted-foreground mt-2">
-            Browse available software engineering internships for Summer 2024
+          <p className="text-zinc-400 mt-2 max-w-2xl">
+            This is an updated repository of summer 2025 internships that we
+            have fetched from various online GitHub repositories. The data is
+            always fresh with the latest updates and changes made to the
+            Simplify Jobs repository. So be sure to check back often!
           </p>
         </CardHeader>
 
         <CardContent>
           <SearchInput value={searchInput} onChange={setSearchInput} />
-          <div className="text-sm text-muted-foreground mb-4">
+          <div className="text-sm text-zinc-600 mb-4">
             {isLoading ? (
-              <Skeleton className="h-4 w-40" />
+              <Skeleton className="h-4 w-40 bg-zinc-900/70" />
             ) : (
               `Showing ${
                 filteredJobs.length === 0 ? 0 : (currentPage - 1) * 15 + 1
@@ -72,14 +75,15 @@ export default function InternshipsComponent() {
               />
             </div>
           )}
-          <div className="mt-6 text-center text-xs text-muted-foreground">
+
+          <div className="mt-6 text-center text-xs text-zinc-600">
             <p>
               Data sourced from{" "}
               <a
                 href="https://github.com/SimplifyJobs/Summer2024-Internships"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline"
+                className="text-purple-500 hover:text-purple-400 hover:underline"
               >
                 SimplifyJobs/Summer2024-Internships
               </a>

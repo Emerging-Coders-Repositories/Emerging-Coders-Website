@@ -31,7 +31,6 @@ export function PaginationControls({
     e.preventDefault();
     onPageChange(page);
   };
-
   let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
@@ -41,8 +40,7 @@ export function PaginationControls({
 
   return (
     <Pagination>
-      <PaginationContent>
-        {/* Previous button */}
+      <PaginationContent className="text-zinc-400">
         <PaginationItem>
           <PaginationPrevious
             href="#"
@@ -50,9 +48,9 @@ export function PaginationControls({
               e.preventDefault();
               if (currentPage > 1) onPageChange(currentPage - 1);
             }}
-            className={
+            className={`bg-black border-zinc-800 hover:bg-zinc-900 hover:text-white ${
               currentPage === 1 ? "pointer-events-none opacity-50" : ""
-            }
+            }`}
           />
         </PaginationItem>
         {startPage > 1 && (
@@ -62,13 +60,18 @@ export function PaginationControls({
                 href="#"
                 onClick={(e) => handleClick(e, 1)}
                 isActive={currentPage === 1}
+                className={`bg-black border-zinc-800 hover:bg-zinc-900 hover:text-white ${
+                  currentPage === 1
+                    ? "bg-purple-900 text-white border-purple-800"
+                    : ""
+                }`}
               >
                 1
               </PaginationLink>
             </PaginationItem>
             {startPage > 2 && (
               <PaginationItem>
-                <PaginationEllipsis />
+                <PaginationEllipsis className="text-zinc-600" />
               </PaginationItem>
             )}
           </>
@@ -82,6 +85,11 @@ export function PaginationControls({
               href="#"
               onClick={(e) => handleClick(e, page)}
               isActive={currentPage === page}
+              className={`bg-black border-zinc-800 hover:bg-zinc-900 hover:text-white ${
+                currentPage === page
+                  ? "bg-purple-600 text-white border-purple-800"
+                  : ""
+              }`}
             >
               {page}
             </PaginationLink>
@@ -99,6 +107,11 @@ export function PaginationControls({
                 href="#"
                 onClick={(e) => handleClick(e, totalPages)}
                 isActive={currentPage === totalPages}
+                className={`bg-black border-zinc-800 hover:bg-zinc-900 hover:text-white ${
+                  currentPage === totalPages
+                    ? "bg-purple-900 text-white border-purple-800"
+                    : ""
+                }`}
               >
                 {totalPages}
               </PaginationLink>
@@ -112,9 +125,9 @@ export function PaginationControls({
               e.preventDefault();
               if (currentPage < totalPages) onPageChange(currentPage + 1);
             }}
-            className={
+            className={`bg-black border-zinc-800 hover:bg-zinc-900 hover:text-white ${
               currentPage === totalPages ? "pointer-events-none opacity-50" : ""
-            }
+            }`}
           />
         </PaginationItem>
       </PaginationContent>

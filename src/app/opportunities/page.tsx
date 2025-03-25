@@ -3,12 +3,12 @@ import InternshipsComponent from "@/pages/opportunities/swe-internships/swe-inte
 export const metadata = {
   title: "Software Engineering Internships",
   description:
-    "Browse the latest software engineering internships for Summer 2024.",
+    "Browse the latest software engineering internships for Summer 2025.",
 };
 
 export default function InternshipsPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen max-w-9/12 mx-auto mt-24">
       <InternshipsComponent />
     </div>
   );
