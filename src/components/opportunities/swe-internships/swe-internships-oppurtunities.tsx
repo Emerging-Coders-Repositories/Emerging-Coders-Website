@@ -4,7 +4,7 @@ import React, { useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SearchInput } from "@/components/opportunities/swe-internships/search-input";
-import { JobTable } from "@/components/opportunities/swe-internships/jobs-table";
+import { JobTable } from "@/components/opportunities/swe-internships/internship-jobs-table";
 import { PaginationControls } from "@/components/opportunities/swe-internships/pagination-controls";
 import { ErrorState } from "@/components/opportunities/swe-internships/error-state";
 
@@ -12,7 +12,7 @@ import { useFetchGithub } from "@/hooks/use-fetch-github";
 import { useSearch } from "@/hooks/use-search";
 import { usePagination } from "@/hooks/use-pagination";
 
-export default function InternshipsComponent() {
+export default function SoftwareEngineeringInternships() {
   const {
     data: jobsList,
     isLoading,
@@ -38,7 +38,7 @@ export default function InternshipsComponent() {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4 md:px-6">
+    <div className="container mx-auto py-12 px-4 md:px-6 mt-24 max-w-9/12 mb-24">
       <Card className="bg-black border-zinc-900 shadow-md">
         <CardHeader className="pb-2">
           <CardTitle className="text-3xl font-bold text-white">
