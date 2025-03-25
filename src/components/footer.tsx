@@ -68,6 +68,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Emerging Coders - Northwestern
             University
           </span>
+          <span className="text-sm text-gray-500 font-mono">
+            built and designed by ethan pineda
+          </span>
 
           <div className="flex items-center gap-4">
             {typedSocialMediaLinks.map(({ icon: Icon, link, label }) => (

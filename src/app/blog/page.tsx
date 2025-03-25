@@ -25,7 +25,6 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen  text-white">
-      {/* Main content container with proper spacing */}
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-16">
         {/* Blog Header */}
         <header className="mb-16">
