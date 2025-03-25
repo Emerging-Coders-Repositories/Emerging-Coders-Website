@@ -40,9 +40,9 @@ export default function NewGraduatePositions() {
 
   return (
     <div className="container mx-auto py-12 px-4 md:px-6 max-w-9/12 mb-24 mt-24">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4 text-white">
-          New Grad Positions 2025
+      <div>
+        <h1 className="text-3xl font-bold mb-4 text-white">
+          College New Graduate Positions
         </h1>
         <p className="text-zinc-400 mb-10 max-w-2xl">
           Browse available new graduate software engineering positions for 2025.

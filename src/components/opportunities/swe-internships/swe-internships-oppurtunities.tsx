@@ -41,7 +41,7 @@ export default function SoftwareEngineeringInternships() {
     <div className="container mx-auto py-12 px-4 md:px-6 mt-24 max-w-9/12 mb-24">
       <Card className="bg-black border-zinc-900 shadow-md">
         <CardHeader className="pb-2">
-          <CardTitle className="text-3xl font-bold text-white">
+          <CardTitle className="text-3xl font-bold text-white mb-4">
             Software Engineering Internships
           </CardTitle>
           <p className="text-zinc-400 mt-2 max-w-2xl">
