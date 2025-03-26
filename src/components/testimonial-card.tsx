@@ -17,7 +17,7 @@ export default function TestimonialCard({
   return (
     <div className="relative my-1 p-8 rounded-xl border border-zinc-800 bg-neutral-950 hover:bg-gradient-to-br hover:from-purple-900/40 hover:via-purple-600/30 hover:to-fuchsia-500/40 transition-colors duration-300 w-full">
       <div className="flex flex-col h-full justify-between min-h-[200px]">
-        <p className="text-lg text-white/80 leading-relaxed font-mono mb-6">
+        <p className="text-base text-white leading-relaxed font-mono mb-6">
           {body}
         </p>
 
