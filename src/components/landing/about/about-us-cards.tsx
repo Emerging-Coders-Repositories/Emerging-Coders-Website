@@ -82,7 +82,7 @@ export default function AboutusCards() {
             education, and support.
           </p>
           <div className="mt-8">
-            <button className="bg-white text-black font-medium py-3 px-6 rounded-md hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
+            <button className="font-mono bg-white text-black font-medium py-3 px-6 rounded-md hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
               JOIN OUR COMMUNITY
               <svg
                 xmlns="http://www.w3.org/2000/svg"

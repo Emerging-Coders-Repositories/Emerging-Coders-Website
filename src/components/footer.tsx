@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { footerSections, socialMediaLinks } from "@/constants/footer-links";
-import type {
-  FooterLink,
-  FooterSection,
-  SocialMediaLink,
-} from "@/types/footer";
+import type { FooterSection, SocialMediaLink } from "@/types/footer";
 import ListservSignup from "@/components/list-serv-signup-form";
 
 const typedFooterSections = footerSections as FooterSection[];
@@ -69,7 +65,15 @@ export default function Footer() {
             University
           </span>
           <span className="text-sm text-gray-500 font-mono">
-            built and designed by ethan pineda
+            built and designed by{" "}
+            <Link
+              href="https://ethanpinedaa.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              ethan pineda
+            </Link>
           </span>
 
           <div className="flex items-center gap-4">
