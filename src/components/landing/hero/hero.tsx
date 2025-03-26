@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <main className="flex-1 flex flex-col items-center px-4 relative ">
       <div className="w-full max-w-[113rem] h-auto mx-auto py-18 mt-8 pb-8">
-        <div className="bg-gradient-to-br from-indigo-900 via-purple-600 via-30% via-fuchsia-500 via-60% via-violet-600 via-70% to-sky-400 rounded-xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-indigo-900 via-fuchsia-500  via-70% to-sky-400 rounded-xl relative overflow-hidden">
           <div className="text-center px-6 mb-10">
             <h1 className="py-30 text-[clamp(4.125rem,1.6250rem+_8.3333vw,_9.625rem)] font-semibold -tracking-4 text-balance !leading-[0.85] md:!leading-[clamp(4.563rem,3.0289rem+_5.1136vw,_7.938rem)] text-white">
               Emerging Coders

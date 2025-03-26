@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Pagination,
   PaginationContent,
@@ -21,8 +20,11 @@ export function PaginationControls({
   onPageChange,
 }: PaginationControlsProps) {
   if (totalPages <= 1) return null;
+  const getMaxVisiblePages = () => {
+    return window.innerWidth < 640 ? 3 : 5;
+  };
 
-  const maxVisiblePages = 5;
+  const maxVisiblePages = getMaxVisiblePages();
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -31,6 +33,7 @@ export function PaginationControls({
     e.preventDefault();
     onPageChange(page);
   };
+
   let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
@@ -39,8 +42,8 @@ export function PaginationControls({
   }
 
   return (
-    <Pagination>
-      <PaginationContent className="text-zinc-400">
+    <Pagination className="overflow-x-auto py-2">
+      <PaginationContent className="text-zinc-400 flex-wrap justify-center">
         <PaginationItem>
           <PaginationPrevious
             href="#"
@@ -55,7 +58,7 @@ export function PaginationControls({
         </PaginationItem>
         {startPage > 1 && (
           <>
-            <PaginationItem>
+            <PaginationItem className="hidden sm:inline-flex">
               <PaginationLink
                 href="#"
                 onClick={(e) => handleClick(e, 1)}
@@ -70,12 +73,13 @@ export function PaginationControls({
               </PaginationLink>
             </PaginationItem>
             {startPage > 2 && (
-              <PaginationItem>
+              <PaginationItem className="hidden sm:inline-flex">
                 <PaginationEllipsis className="text-zinc-600" />
               </PaginationItem>
             )}
           </>
         )}
+
         {Array.from(
           { length: endPage - startPage + 1 },
           (_, i) => startPage + i
@@ -98,11 +102,11 @@ export function PaginationControls({
         {endPage < totalPages && (
           <>
             {endPage < totalPages - 1 && (
-              <PaginationItem>
+              <PaginationItem className="hidden sm:inline-flex">
                 <PaginationEllipsis />
               </PaginationItem>
             )}
-            <PaginationItem>
+            <PaginationItem className="hidden sm:inline-flex">
               <PaginationLink
                 href="#"
                 onClick={(e) => handleClick(e, totalPages)}
@@ -118,6 +122,7 @@ export function PaginationControls({
             </PaginationItem>
           </>
         )}
+
         <PaginationItem>
           <PaginationNext
             href="#"

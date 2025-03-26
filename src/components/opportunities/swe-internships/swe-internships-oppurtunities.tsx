@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { SearchInput } from "@/components/opportunities/swe-internships/search-input";
-import { JobTable } from "@/components/opportunities/swe-internships/internship-jobs-table";
-import { PaginationControls } from "@/components/opportunities/swe-internships/pagination-controls";
-import { ErrorState } from "@/components/opportunities/swe-internships/error-state";
+import { SearchInput } from "@/components/opportunities/components/search-input";
+import { JobTable } from "@/components/opportunities/components/jobs-table";
+import { PaginationControls } from "@/components/opportunities/components/pagination-controls";
+import { ErrorState } from "@/components/opportunities/components/error-state";
 
 import { useFetchGithub } from "@/hooks/use-fetch-github";
 import { useSearch } from "@/hooks/use-search";
@@ -28,7 +28,6 @@ export default function SoftwareEngineeringInternships() {
   const currentPageData = useCallback(() => {
     return paginateItems(filteredJobs);
   }, [paginateItems, filteredJobs]);
-
   const handleRetry = useCallback(() => {
     refetch();
   }, [refetch]);
@@ -38,23 +37,22 @@ export default function SoftwareEngineeringInternships() {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4 md:px-6 mt-24 max-w-9/12 mb-24">
+    <div className="container mx-auto py-8 sm:py-12 px-2 sm:px-4 md:px-6 mt-16 sm:mt-24 max-w-full sm:max-w-9/12 mb-16 sm:mb-24">
       <Card className="bg-black border-zinc-900 shadow-md">
         <CardHeader className="pb-2">
-          <CardTitle className="text-3xl font-bold text-white mb-4">
+          <CardTitle className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-4">
             Software Engineering Internships
           </CardTitle>
-          <p className="text-zinc-400 mt-2 max-w-2xl">
+          <p className="text-zinc-400 mt-2 max-w-2xl text-sm sm:text-base">
             This is an updated repository of summer 2025 internships that we
             have fetched from various online GitHub repositories. The data is
             always fresh with the latest updates and changes made to the
             Simplify Jobs repository. So be sure to check back often!
           </p>
         </CardHeader>
-
-        <CardContent>
+        <CardContent className="px-2 sm:px-6">
           <SearchInput value={searchInput} onChange={setSearchInput} />
-          <div className="text-sm text-zinc-600 mb-4">
+          <div className="text-xs sm:text-sm text-zinc-600 mb-4">
             {isLoading ? (
               <Skeleton className="h-4 w-40 bg-zinc-900/70" />
             ) : (
@@ -67,7 +65,7 @@ export default function SoftwareEngineeringInternships() {
           </div>
           <JobTable jobs={currentPageData()} isLoading={isLoading} />
           {!isLoading && filteredJobs.length > 0 && (
-            <div className="mt-6">
+            <div className="mt-6 w-full overflow-x-auto">
               <PaginationControls
                 currentPage={currentPage}
                 totalPages={totalPages}
@@ -75,7 +73,6 @@ export default function SoftwareEngineeringInternships() {
               />
             </div>
           )}
-
           <div className="mt-6 text-center text-xs text-zinc-600">
             <p>
               Data sourced from{" "}

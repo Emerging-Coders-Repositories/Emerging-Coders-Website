@@ -1,13 +1,10 @@
 "use client";
-
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-
-import { SearchInput } from "@/components/opportunities/swe-internships/search-input";
-import { JobTable } from "@/components/opportunities/swe-internships/internship-jobs-table";
-import { PaginationControls } from "@/components/opportunities/swe-internships/pagination-controls";
-import { ErrorState } from "@/components/opportunities/swe-internships/error-state";
-
+import { SearchInput } from "@/components/opportunities/components/search-input";
+import { JobTable } from "@/components/opportunities/components/jobs-table";
+import { PaginationControls } from "@/components/opportunities/components/pagination-controls";
+import { ErrorState } from "@/components/opportunities/components/error-state";
 import { useFetchGithub } from "@/hooks/use-fetch-github";
 import { useSearch } from "@/hooks/use-search";
 import { usePagination } from "@/hooks/use-pagination";
@@ -21,11 +18,13 @@ export default function NewGraduatePositions() {
   } = useFetchGithub("SimplifyJobs/New-Grad-Positions");
 
   const { searchInput, setSearchInput, filteredJobs } = useSearch(jobsList);
+
   const { currentPage, setCurrentPage, totalPages, paginateItems } =
     usePagination<(typeof filteredJobs)[0]>({
       totalItems: filteredJobs.length,
       itemsPerPage: 15,
     });
+
   const currentPageData = useCallback(() => {
     return paginateItems(filteredJobs);
   }, [paginateItems, filteredJobs]);
@@ -39,17 +38,17 @@ export default function NewGraduatePositions() {
   }
 
   return (
-    <div className="container mx-auto py-12 px-4 md:px-6 max-w-9/12 mb-24 mt-24">
+    <div className="container mx-auto py-8 sm:py-12 px-2 sm:px-4 md:px-6 max-w-full sm:max-w-9/12 mb-16 sm:mb-24 mt-16 sm:mt-24">
       <div>
-        <h1 className="text-3xl font-bold mb-4 text-white">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 text-white">
           College New Graduate Positions
         </h1>
-        <p className="text-zinc-400 mb-10 max-w-2xl">
+        <p className="text-zinc-400 mb-6 sm:mb-10 max-w-2xl text-sm sm:text-base">
           Browse available new graduate software engineering positions for 2025.
           This page is updated regularly with the latest opportunities.
         </p>
         <SearchInput value={searchInput} onChange={setSearchInput} />
-        <div className="text-sm text-zinc-600 mb-4">
+        <div className="text-xs sm:text-sm text-zinc-600 mb-4">
           {isLoading ? (
             <Skeleton className="h-4 w-40 bg-zinc-900/70" />
           ) : (
@@ -60,9 +59,12 @@ export default function NewGraduatePositions() {
             } positions`
           )}
         </div>
-        <JobTable jobs={currentPageData()} isLoading={isLoading} />
+        <div className="sm:mx-0 ">
+          <JobTable jobs={currentPageData()} isLoading={isLoading} />
+        </div>
+
         {!isLoading && filteredJobs.length > 0 && (
-          <div className="mt-6">
+          <div className="mt-6 w-full">
             <PaginationControls
               currentPage={currentPage}
               totalPages={totalPages}
@@ -70,6 +72,7 @@ export default function NewGraduatePositions() {
             />
           </div>
         )}
+
         <div className="mt-6 text-center text-xs text-zinc-600">
           <p>
             Data sourced from{" "}
