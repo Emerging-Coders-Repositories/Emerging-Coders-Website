@@ -13,7 +13,7 @@ export default function EmergingCodersTestimonials(): React.ReactElement {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const checkScreenWidth = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
     checkScreenWidth();
     window.addEventListener("resize", checkScreenWidth);
@@ -44,8 +44,6 @@ export default function EmergingCodersTestimonials(): React.ReactElement {
               img={allTestimonials[currentIndex].img}
             />
           </div>
-
-          {/* Navigation buttons */}
           <button
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-black/80 focus:outline-none z-20"
             onClick={goToPrevious}
@@ -62,8 +60,6 @@ export default function EmergingCodersTestimonials(): React.ReactElement {
             <ChevronRight size={24} />
           </button>
         </div>
-
-        {/* Pagination indicators */}
         <div className="flex justify-center mt-4 space-x-2">
           {allTestimonials.map((_, index) => (
             <button
