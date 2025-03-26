@@ -5,6 +5,7 @@ import PastEventsSection from "@/components/landing/about/past-events";
 import MeetTheExec from "@/components/landing/meet-the-exec/meet-the-exec";
 import EmergingCodersTestimonials from "@/components/testimonials-marquee";
 import LandingPageFAQ from "@/components/landing/faq/landing-page-faq";
+
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col">
