@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="p-8 max-w-7xl mx-auto mt-36">
+    <main className="p-8 max-w-7xl mx-auto mt-24">
       <div className="flex items-center gap-2">
         <Link href="/" className="flex">
           <svg

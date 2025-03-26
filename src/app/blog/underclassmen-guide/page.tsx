@@ -14,7 +14,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Image from "next/image";
 import {
   firstYearSchedule,
   secondYearSchedule,
@@ -29,28 +28,11 @@ export const metadata = {
 };
 export default function NorthwesternComputerScienceUnderlcassmenGuide() {
   return (
-    <div className="container mx-auto py-12 px-4 md:px-6 mt-24">
+    <div className="container mx-auto py-12 px-4 md:px-6 mt-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-white">
           Northwestern University CS Underclassmen Guide
         </h1>
-        <a
-          href="https://docs.google.com/presentation/d/1X89dVRnM5NTl4gra_Lgsv052dUErybPpXXaHIWqFeV8/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block mb-10"
-        >
-          <div className="relative w-full h-96">
-            <Image
-              src="/blog/navigating-cs/navigating-cs-hero-image.png"
-              alt="CS Major Workshop"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-        </a>
-
         <p className="text-zinc-400 mb-10">
           Author:{" "}
           <Link

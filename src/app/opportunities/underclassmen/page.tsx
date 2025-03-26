@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function UnderclassmenInternshipPrograms() {
   return (
-    <div className="container mx-auto py-12 px-4 md:px-6 mt-24">
+    <div className="container mx-auto py-12 px-4 md:px-6 mt-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-white">
           Underclassmen Opportunities Guide
