@@ -44,24 +44,14 @@ export default function EmergingCodersTestimonials(): React.ReactElement {
               </Marquee>
             </div>
           ))}
-
           {/* Left gradient */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-80 bg-gradient-to-r from-black via-black to-transparent z-10"></div>
-
           {/* Right gradient */}
           <div className="pointer-events-none absolute inset-y-0 right-0 w-80 bg-gradient-to-l from-black via-black to-transparent z-10"></div>
-
           {/* Top gradient */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black z-10"></div>
-
-          {/* DEBUGGING OVERLAY - EXTREMELY VISIBLE */}
-          <div
-            className="absolute left-0 right-0 bottom-0 h-72 z-[999]"
-            style={{
-              background: "linear-gradient(to top, red, transparent)",
-              pointerEvents: "none",
-            }}
-          ></div>
+          {/* Bottom gradient */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-black z-10"></div>
         </div>
       </div>
     </div>

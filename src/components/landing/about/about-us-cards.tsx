@@ -3,7 +3,7 @@
 import React from "react";
 import { BorderBeam } from "@/components/ui/border-beam";
 
-export default function FeatureCards() {
+export default function AboutusCards() {
   const features = [
     {
       title: "Mentorship",
