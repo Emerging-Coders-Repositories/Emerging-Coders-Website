@@ -22,7 +22,7 @@ export default function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`}>
-                <div className="h-full relative rounded-xl border border-zinc-800 bg-neutral-950 hover:bg-gradient-to-br hover:from-purple-900/40 hover:via-purple-600/30 hover:to-fuchsia-500/40 transition-colors duration-300 cursor-pointer">
+                <div className="h-full relative rounded-xl border border-zinc-800 bg-neutral-950 hover:bg-gradient-to-br hover:from-purple-600 hover:via-purple-500/50 hover:to-fuchsia-500/40 transition-colors duration-300 cursor-pointer">
                   <div className="p-6 flex flex-col h-full">
                     <div className="mb-6">
                       <div className="flex flex-wrap gap-2 mb-4">
