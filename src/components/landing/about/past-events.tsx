@@ -22,7 +22,7 @@ export default function EventsSection() {
   const mobileImages = eventImages.slice(0, 2);
 
   return (
-    <div className="bg-black py-5 sm:py-32 min-h-screen max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="bg-black py-12 sm:py-12 max-w-6xl mx-auto px-4 sm:px-6">
       <div className="max-w-md mx-auto lg:max-w-none">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-5/12 mb-10 lg:mb-0">

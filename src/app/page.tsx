@@ -13,7 +13,7 @@ export default function Page() {
       <AboutusCards />
       <PastEventsSection />
       <MeetTheExec />
-      <EmergingCodersTestimonials />
+      {/* <EmergingCodersTestimonials /> */}
       <LandingPageFAQ />
     </div>
   );
