@@ -5,70 +5,28 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import Image from "next/image";
+import {
+  firstYearSchedule,
+  secondYearSchedule,
+  underclassmenGuideAccordionItems as accordionItems,
+} from "@/constants/underclassmen-guide";
+import type { ClassSchedule } from "@/types/schedule";
 
 export const metadata = {
   title: "Northwestern Computer Science Underclassmen Guide | Emerging Coders",
   description:
     "A comprehensive guide for Northwestern University computer science underclassmen to navigate the computer science major, course selection, and career development",
 };
-
-const accordionItems = [
-  {
-    id: "1",
-    title: "Core Classes",
-    content:
-      "There are 6 total core classes for the CS major. You can think of these are being the foundational classes for the major. If you come into Northwestern CS with AP CS credit, then you can skip one of the core classes, COMP_SCI 150. But the rest of the core classes are required for the major. The core classes are as follows: COMP_SCI 111, COMP_SCI 150, COMP_SCI 211, COMP_SCI 212 COMP_SCI 213, COMP_SCI 214. NOTE: COMP_SCI 110, does not count for either the CS major or minor! It is a class that is meant to be an introduction to programming for non-CS majors. Though, you could still take the class if you're unsure about Computer Science",
-  },
-  {
-    id: "2",
-    title: "Breadth Courses",
-    content:
-      "The Breadth Courses you can think of as being extensions of the core classes but with more flexibility in terms of the options that you have. There are 5 breadth areas: Theory, Systems, Artificial Intelligence, Interfaces, and Software Development and Programming Languages. You only have to take one class from each breadth area. (More on this later)",
-  },
-  {
-    id: "3",
-    title: "Technical Electives",
-    content:
-      "Tech electives are classes you take that are at the 300 level or above. You have to take a total of 6 technical electives in total. So in short, once you finish your breadth or project classes, the additional classes that you take will count as electives. Keep in mind that it may be wise to save some tech electives slots open on your schedule since classes like COMP_SCI 396's (special topics in Computer Science) and COMP_SCI 399 (independent research) don't fullfil any of the breadth requirements and can only satisfy technical electives.",
-  },
-  {
-    id: "4",
-    title: "Project Courses",
-    content:
-      "Project courses are essentially classes that focus on a specific topic or project. These classes are meant to be more hands-on and project-based. You have to take 2 project courses in total. The project courses that are offered vary from year to year, but some examples of project courses are: COMP_SCI 330 (Human-Computer Interaction) and COMP_SCI 329 (HCI Studio).",
-  },
-  {
-    id: "5",
-    title: "Math Courses",
-    content:
-      "As a component of the CS majors, all Computer Sciences are required to take classes in both math and statistics. The classes and order that you take these classes largely depends on again, how many AP credits you came into Northwestern with. Likewise, between Weinberg and McCormick, some of the classes may be different (Math 230-1 vs. Math 228-1) but the general content is the same. In general, you must take Calc 1, Calc 2, Calc 3, Linear Algebra, and an introductory statistics course. You can take these classes in any order that you want, but it is recommended that you take Calc 1 and Calc 2 first, then Linear Algebra, and then Calc 3. You can take the statistics course whenever you want (since it's a pre-req for only a couple of classes).",
-  },
-];
-
-const firstYearSchedule = [
-  {
-    fall: "COMP_SCI 111",
-    winter: "COMP_SCI 150",
-    spring: "COMP_SCI 214",
-  },
-  {
-    fall: "MATH 220-1",
-    winter: "MATH 220-2",
-    spring: "MATH 230-1",
-  },
-  {
-    fall: "SEMINAR/DISTRO",
-    winter: "SEMINAR/DISTRO",
-    spring: "SEMINAR/DISTRO",
-  },
-  {
-    fall: "Unrestricted",
-    winter: "Unrestricted",
-    spring: "Unrestricted",
-  },
-];
-
 export default function NorthwesternComputerScienceUnderlcassmenGuide() {
   return (
     <div className="container mx-auto py-12 px-4 md:px-6 mt-24">
@@ -287,18 +245,29 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               <br />
               But, the curriculum can be broken down into the following:
             </p>
-            <Accordion type="single" collapsible className="mb-10">
-              {accordionItems.map((item) => (
-                <AccordionItem key={item.id} value={item.id}>
-                  <AccordionTrigger className="text-white font-bold">
-                    {item.title}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-zinc-400">
-                    {item.content}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+
+            <div className="max-w-4xl mx-auto">
+              <Accordion
+                type="single"
+                collapsible
+                className="mb-10 w-11/12 mx-auto"
+              >
+                {accordionItems.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    value={item.id}
+                    className="border-zinc-900 border-b last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-white/90 font-bold">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-zinc-400">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
 
             <h3 className="text-xl font-bold text-white my-10 mb-5">
               Okay, but what does this all mean?
@@ -378,153 +347,92 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             <h4 className="text-lg font-bold text-white mb-5">
               Weinberg Students
             </h4>
-            <div className="mb-10 overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+            <div className="mb-8 rounded-lg overflow-hidden border border-zinc-800 bg-black/40">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-black/60 hover:bg-black/60">
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Fall
-                    </th>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+                    </TableHead>
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Winter
-                    </th>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+                    </TableHead>
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Spring
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {firstYearSchedule.map((row, index) => (
-                    <tr key={index}>
-                      <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                        {row.fall}
-                      </td>
-                      <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                        {row.winter}
-                      </td>
-                      <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                        {row.spring}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {firstYearSchedule.map(
+                    (row: ClassSchedule, index: number) => (
+                      <TableRow
+                        key={index}
+                        className={
+                          index % 2 === 0
+                            ? "bg-black/30 hover:bg-black/30"
+                            : "bg-black/40 hover:bg-black/40"
+                        }
+                      >
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.fall}
+                        </TableCell>
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.winter}
+                        </TableCell>
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.spring}
+                        </TableCell>
+                      </TableRow>
+                    )
+                  )}
+                </TableBody>
+              </Table>
             </div>
-            <div className="mb-10 overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+            <div className="mb-8 rounded-lg overflow-hidden border border-zinc-800 bg-black/40">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-black/60 hover:bg-black/60">
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Fall
-                    </th>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+                    </TableHead>
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Winter
-                    </th>
-                    <th className="p-3 text-center text-white border border-zinc-800 bg-black/40">
+                    </TableHead>
+                    <TableHead className="text-zinc-300 font-medium py-3 px-4 w-1/3">
                       Spring
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      COMP_SCI 211
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      COMP_SCI 213
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      COMP_SCI 212
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      MATH 240
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        STAT 210/Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-20 left-1/2 transform -translate-x-1/2">
-                          Many Weinberg CS students opt to take IEMS 201 (the
-                          McCormick version of STAT 210) since it's a bit more
-                          manageable.
-                        </span>
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                    <td className="p-3 text-center text-zinc-400 border border-zinc-800">
-                      <span className="group relative inline-block">
-                        Unrestricted
-                        <span className="invisible group-hover:visible absolute z-10 p-2 bg-zinc-800 text-zinc-300 text-xs rounded w-64 -top-16 left-1/2 transform -translate-x-1/2">
-                          You can either take a distro or a 300 level CS class
-                          here
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {secondYearSchedule.map(
+                    (row: ClassSchedule, index: number) => (
+                      <TableRow
+                        key={index}
+                        className={
+                          index % 2 === 0
+                            ? "bg-black/30 hover:bg-black/30"
+                            : "bg-black/40 hover:bg-black/40"
+                        }
+                      >
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.fall}
+                        </TableCell>
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.winter}
+                        </TableCell>
+                        <TableCell className="text-zinc-400 py-3 px-4 border-t border-zinc-800">
+                          {row.spring}
+                        </TableCell>
+                      </TableRow>
+                    )
+                  )}
+                </TableBody>
+              </Table>
             </div>
             <div className="mb-6 text-sm text-zinc-500 italic">
-              Note: Hover over each "Unrestricted" or special course for
-              additional information.
+              Note: Unrestricted classes are open slots for you to take any
+              class. This can be a CS breadth, and elective, or something else
+              outside of CS.
             </div>
             <h4 className="text-lg font-bold text-white mb-5">
               The Key Takeaways
