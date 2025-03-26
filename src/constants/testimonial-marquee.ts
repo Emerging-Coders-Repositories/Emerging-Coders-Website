@@ -113,6 +113,6 @@ export const testimonials: Testimonial[] = [
     name: "Donell Makuvire",
     company: "B.S. Computer Science 26'",
     body: "Being the first professional liaison for Emerging Coders was a great experience. I learned a lot about networking and building relationships with industry professionals.",
-    img: "/testimonials/don.jpg",
+    img: "/testimonials/don.jpeg",
   },
 ];

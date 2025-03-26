@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 
 interface TestimonialCardProps {
@@ -16,13 +15,14 @@ export default function TestimonialCard({
   body,
 }: TestimonialCardProps) {
   return (
-    <div className="relative my-1 p-6 rounded-xl border border-zinc-800 bg-neutral-950 hover:bg-gradient-to-br hover:from-purple-900/40 hover:via-purple-600/30 hover:to-fuchsia-500/40 transition-colors duration-300 w-full">
-      <div className="flex flex-col h-full justify-between">
-        <p className="text-md text-white/80 leading-relaxed font-mono mb-6">
+    <div className="relative my-1 p-8 rounded-xl border border-zinc-800 bg-neutral-950 hover:bg-gradient-to-br hover:from-purple-900/40 hover:via-purple-600/30 hover:to-fuchsia-500/40 transition-colors duration-300 w-full">
+      <div className="flex flex-col h-full justify-between min-h-[200px]">
+        <p className="text-lg text-white/80 leading-relaxed font-mono mb-6">
           {body}
         </p>
-        <div className="flex items-center gap-3 mt-auto">
-          <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+
+        <div className="flex items-center gap-2 mt-auto">
+          <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
             <Image
               src={img}
               alt={`${name}'s avatar`}
@@ -31,8 +31,8 @@ export default function TestimonialCard({
             />
           </div>
           <div>
-            <p className="text-lg font-mono font-medium text-white">{name}</p>
-            <p className="text-sm font-mono text-gray-500">{company}</p>
+            <p className="text-xl font-mono font-medium text-white">{name}</p>
+            <p className="text-base font-mono text-gray-500">{company}</p>
           </div>
         </div>
       </div>
