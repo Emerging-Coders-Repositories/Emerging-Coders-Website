@@ -13,7 +13,7 @@ export default function OpportunitiesPage() {
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-16">
         <header className="mb-16">
           <h1 className="text-7xl font-bold mb-6">Opportunities</h1>
-          <p className="text-lg text-zinc-500 max-w-2xl">
+          <p className="text-lg text-zinc-500 max-w-2xl font-mono">
             Curated list of internships, new graduate positions, and career
             development programs for FGLI students in technology.
           </p>
@@ -59,12 +59,12 @@ export default function OpportunitiesPage() {
               <h3 className="text-xl font-bold mb-4">
                 Technical Interview Prep
               </h3>
-              <p className="text-white/80 mb-4">
+              <p className="text-white/80 mb-4 font-mono">
                 Get access to our technical interview preparation resources,
                 practice problems, and mock interview opportunities.
               </p>
               <Link
-                href="/blog"
+                href="/blog/technical-interviews"
                 className="text-purple-400 hover:text-purple-300 font-mono text-sm"
               >
                 View Resources →
@@ -72,7 +72,7 @@ export default function OpportunitiesPage() {
             </div>
             <div className="rounded-xl border border-zinc-800 bg-neutral-950 p-6">
               <h3 className="text-xl font-bold mb-4">Mentorship Program</h3>
-              <p className="text-white/80 mb-4">
+              <p className="text-white/80 mb-4 font-mono">
                 Connect with experienced mentors who can guide you through your
                 internship search and career development.
               </p>

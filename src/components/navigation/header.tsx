@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useCallback, useEffect } from "react";
+import { ReactNode, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -12,6 +12,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/navigation/navigation-menu";
+import {
+  mainNavItems,
+  blogPosts,
+  opportunityItems,
+} from "@/constants/header-links";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,12 +41,12 @@ const NavItem = ({
 const ListItem = ({
   className,
   title,
-  children,
+  description,
   href,
 }: {
   className?: string;
   title: string;
-  children: React.ReactNode;
+  description: string;
   href: string;
 }) => {
   return (
@@ -50,7 +55,7 @@ const ListItem = ({
         <Link
           href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors bg-black hover:bg-zinc-800 hover:text-white focus:bg-zinc-800 focus:text-white border border-zinc-800/40",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/10 focus:bg-white/10 border border-transparent hover:border-zinc-700 duration-300",
             className
           )}
         >
@@ -58,7 +63,7 @@ const ListItem = ({
             {title}
           </div>
           <p className="line-clamp-2 text-sm leading-snug text-white/70">
-            {children}
+            {description}
           </p>
         </Link>
       </NavigationMenuLink>
@@ -109,27 +114,6 @@ export default function Header() {
     [pathname, router]
   );
 
-  useEffect(() => {
-    if (pathname === "/" && window.location.hash) {
-      const sectionId = window.location.hash.slice(1);
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const navHeight = 60;
-          const buffer = 264;
-          const elementPosition = section.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - navHeight - buffer;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
-    }
-  }, [pathname]);
-
   return (
     <header className="fixed top-4 z-50 w-full lg:top-2 md:mt-4">
       <div className="mx-auto !max-w-[1550px] !px-6 md:!px-9]">
@@ -160,31 +144,34 @@ export default function Header() {
             <div className="hidden md:flex flex-1 justify-center">
               <NavigationMenu className="[&_[data-slot=navigation-menu-viewport]]:bg-black [&_[data-slot=navigation-menu-viewport]]:border-zinc-900 [&_[data-slot=navigation-menu-viewport]]:shadow-none">
                 <NavigationMenuList className="text-white/90 text-lg flex justify-center space-x-4">
-                  <NavItem
-                    href="/#about"
-                    onClick={(e) => handleNavigation(e, "intro")}
-                  >
-                    ABOUT
-                  </NavItem>
-                  <NavItem
-                    href="/#features"
-                    onClick={(e) => handleNavigation(e, "features")}
-                  >
-                    MISSION
-                  </NavItem>
-                  <NavItem
-                    href="/#projects"
-                    onClick={(e) => handleNavigation(e, "projects")}
-                  >
-                    CONTACT
-                  </NavItem>
-                  <NavItem
-                    href="/#team"
-                    onClick={(e) => handleNavigation(e, "team")}
-                  >
-                    TEAM
-                  </NavItem>
-                  <NavItem href="/blog">BLOG</NavItem>
+                  {mainNavItems.map((item) => (
+                    <NavItem
+                      key={item.id}
+                      href={item.href}
+                      onClick={(e) => handleNavigation(e, item.section)}
+                    >
+                      {item.label}
+                    </NavItem>
+                  ))}
+
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono bg-transparent hover:bg-transparent">
+                      BLOG
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="bg-black">
+                      <ul className="grid w-[400px] gap-3 p-4 bg-black border border-black rounded-lg">
+                        {blogPosts.map((post) => (
+                          <ListItem
+                            key={post.href}
+                            href={post.href}
+                            title={post.title}
+                            description={post.description}
+                          />
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
                   <NavigationMenuItem>
                     <NavigationMenuTrigger className="text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono bg-transparent hover:bg-transparent">
                       OPPORTUNITIES
@@ -207,25 +194,14 @@ export default function Header() {
                             </Link>
                           </NavigationMenuLink>
                         </li>
-                        <ListItem
-                          href="/opportunities/internships"
-                          title="Internships"
-                        >
-                          Tech internship opportunities for college students.
-                        </ListItem>
-                        <ListItem
-                          href="/opportunities/new-grad"
-                          title="New Grad"
-                        >
-                          Entry-level positions for recent and upcoming
-                          graduates.
-                        </ListItem>
-                        <ListItem
-                          href="/opportunities/underclassmen"
-                          title="Underclassmen"
-                        >
-                          Early career development programs and opportunities.
-                        </ListItem>
+                        {opportunityItems.map((item) => (
+                          <ListItem
+                            key={item.href}
+                            href={item.href}
+                            title={item.title}
+                            description={item.description}
+                          />
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
