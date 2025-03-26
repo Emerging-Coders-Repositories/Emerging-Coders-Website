@@ -6,7 +6,7 @@ const column3Items = faqItems.filter((item) => [3, 6, 9].includes(item.order));
 
 export default function LandingPageFAQ() {
   return (
-    <div className="bg-black py-24 sm:py-32 max-w-8/12 mx-auto">
+    <div className="bg-black py-24 sm:py-32 max-w-[90rem] mx-auto">
       <div className="container flex flex-col gap-6 md:gap-14 mx-auto px-6">
         <h2 className="text-5xl font-semibold -tracking-4 mb-8 text-center text-white">
           Have Questions? We Have Answers.

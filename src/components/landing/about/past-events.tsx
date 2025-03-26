@@ -19,16 +19,18 @@ export default function EventsSection() {
     }
   };
 
+  const mobileImages = eventImages.slice(0, 2);
+
   return (
-    <div className="bg-black py-12 sm:py-32 min-h-11/12 max-w-7xl mx-auto">
-      <div className="container mx-auto px-6">
+    <div className="bg-black py-12 sm:py-32 min-h-screen max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-md mx-auto lg:max-w-none">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-5/12 mb-10 lg:mb-0">
-            <div className="lg:top-8 flex justify-center flex-col">
-              <h2 className="text-5xl font-semibold -tracking-4 mb-6 text-white">
+            <div className="lg:top-8">
+              <h2 className="text-5xl font-semibold -tracking-4 mb-6 text-white lg:text-left">
                 What We've Done
               </h2>
-              <p className="font-mono text-sm leading-relaxed text-zinc-400 mb-4">
+              <p className="font-mono text-xl md:text-base leading-relaxed text-zinc-400 mb-8 lg:text-left">
                 We've hosted a variety of event types ranging from social events
                 to professional development events. Our events are open to all
                 Northwestern students and we encourage you to attend our events
@@ -38,11 +40,15 @@ export default function EventsSection() {
             </div>
           </div>
           <div className="lg:w-7/12">
-            <div className="flex flex-col gap-4 lg:hidden">
-              {eventImages.map((image) => (
+            <div className="flex flex-col gap-6 lg:hidden">
+              {mobileImages.map((image, index) => (
                 <div
                   key={`mobile-${image.id}`}
-                  className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 group aspect-square"
+                  className="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 group aspect-square mx-auto w-full max-w-xs"
+                  style={{
+                    transform:
+                      index === 1 ? "translateY(20px)" : "translateY(0px)", // Stagger second image
+                  }}
                 >
                   <Image
                     src={image.src || "/placeholder.svg"}
@@ -73,8 +79,8 @@ export default function EventsSection() {
                       image.size
                     )} ${isLarge ? "" : "aspect-square"}`}
                     style={{
-                      transform: `translateY(${Math.random() * 20 - 10}px)`, // Random slight offset for visual interest
-                      ...(isLarge && { aspectRatio: "1/1" }), // Ensure large images maintain square aspect ratio
+                      transform: `translateY(${Math.random() * 20 - 10}px)`,
+                      ...(isLarge && { aspectRatio: "1/1" }),
                     }}
                   >
                     <Image

@@ -9,11 +9,11 @@ export default function Page() {
   return (
     <div className="min-h-screen flex flex-col">
       <Hero />
-      <AboutusPhotoGrid />
+      {/* <AboutusPhotoGrid /> */}
       <AboutusCards />
       <PastEventsSection />
       <MeetTheExec />
-      <EmergingCodersTestimonials />
+      {/* <EmergingCodersTestimonials /> */}
       <LandingPageFAQ />
     </div>
   );

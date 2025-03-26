@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 
 export default function CTA() {
   return (
@@ -7,12 +6,11 @@ export default function CTA() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 md:max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
+            <h1 className="text-center md:text-left text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
               Join Emerging Coders Today
             </h1>
             <div className="mt-10">
-              <button className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center">
-                {/* <span className="mr-3 w-6 h-6 bg-gray-800 inline-block"></span> */}
+              <button className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center mx-auto md:mx-0">
                 JOIN NOW
               </button>
             </div>
