@@ -81,3 +81,28 @@ export const images: ImageProps[] = [
     description: "Spring Quarter 2024",
   },
 ];
+
+export const eventImages = [
+  {
+    id: 1,
+    src: "/event-photos/event-1.jpg",
+    alt: "Emerged Coders: Andy Moran",
+    description:
+      "Emerging Coders alumni Andy Moran, now at Google, giving advice to students",
+    size: "medium-left",
+  },
+  {
+    id: 2,
+    src: "/event-photos/event-2.jpg",
+    alt: "Emerging Coders x Google",
+    description: "Emerging Coders x Google technical prep workshop",
+    size: "large-right",
+  },
+  {
+    id: 3,
+    src: "/event-photos/event-3.jpg",
+    alt: "Emerging Coders x WiC Ice Cream Social",
+    description: "End of year ice cream social with WiC",
+    size: "small-right",
+  },
+];

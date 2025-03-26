@@ -1,8 +1,5 @@
 "use client";
 
-import React from "react";
-import { BorderBeam } from "@/components/ui/border-beam";
-
 export default function AboutusCards() {
   const features = [
     {
@@ -81,25 +78,6 @@ export default function AboutusCards() {
             Creating a community of diverse technologists through mentorship,
             education, and support.
           </p>
-          <div className="mt-8">
-            <button className="font-mono bg-white text-black font-medium py-3 px-6 rounded-md hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
-              JOIN OUR COMMUNITY
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="ml-1"
-              >
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </button>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -111,7 +89,6 @@ export default function AboutusCards() {
               <div
                 className={`absolute inset-0 opacity-20 bg-gradient-to-br ${feature.gradient}`}
               />
-              <BorderBeam className="opacity-40" />
 
               <div className="relative h-full p-8 flex flex-col">
                 <div
@@ -125,27 +102,6 @@ export default function AboutusCards() {
                 <p className="text-white/70 leading-relaxed text-base mb-6 flex-grow">
                   {feature.description}
                 </p>
-                {/* add these later, for now, we don't need them */}
-                {/* <div className="mt-auto">
-                  <button className="text-white/60 hover:text-white font-medium text-sm flex items-center gap-1 transition-colors group-hover:text-white/90">
-                    Learn more
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="ml-1 transition-transform group-hover:translate-x-1"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </button>
-                </div> */}
               </div>
             </div>
           ))}
