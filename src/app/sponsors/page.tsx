@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Sponsors | Emerging Coders",
+  description:
+    "Partner with Northwestern University's community of First-Generation and Low-Income technologists.",
+};
+
 export default function SponsorsPage() {
   return (
     <main className="min-h-screen bg-black text-white relative overflow-hidden mb-36">
