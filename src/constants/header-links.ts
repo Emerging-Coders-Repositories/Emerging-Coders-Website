@@ -19,8 +19,6 @@ interface OpportunityNavigationItem {
 
 export const mainNavItems: NavItem[] = [
   { id: "about", label: "ABOUT", href: "/#about", section: "intro" },
-  { id: "mission", label: "MISSION", href: "/#features", section: "features" },
-  { id: "contact", label: "CONTACT", href: "/#projects", section: "projects" },
   { id: "team", label: "TEAM", href: "/#team", section: "team" },
 ];
 

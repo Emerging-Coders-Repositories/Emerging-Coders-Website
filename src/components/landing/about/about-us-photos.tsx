@@ -15,7 +15,7 @@ export default function AboutusPhotoGrid() {
   };
 
   return (
-    <div className="bg-black py-24 sm:py-32 min-h-screen">
+    <div className="bg-black py-24 sm:py-32 min-h-screen" id="about">
       <div className="max-w-[110rem] mx-auto px-8">
         <div className="flex flex-col items-center justify-center lg:flex-row lg:gap-32">
           <div className="lg:w-6/12 mb-10 lg:mb-0">

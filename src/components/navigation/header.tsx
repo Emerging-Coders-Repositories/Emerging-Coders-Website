@@ -2,7 +2,6 @@
 
 import { ReactNode, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import {
   NavigationMenu,
@@ -115,7 +114,7 @@ export default function Header() {
   );
 
   return (
-    <header className="fixed top-4 z-50 w-full lg:top-2 md:mt-4">
+    <header className="fixed top-4 z-50 w-full lg:top-2 md:mt-4 h-20">
       <div className="mx-auto !max-w-[1550px] !px-6 md:!px-9]">
         <nav
           className="rounded-2xl px-2 transition-all duration-300 ease-in-out bg-black"
@@ -182,7 +181,7 @@ export default function Header() {
                     <NavItem
                       key={item.id}
                       href={item.href}
-                      onClick={(e) => handleNavigation(e, item.section)}
+                      onClick={(e) => handleNavigation(e, item.id)}
                     >
                       {item.label}
                     </NavItem>
@@ -241,6 +240,18 @@ export default function Header() {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+              <Link
+                href="/contact"
+                className="text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono"
+              >
+                CONTACT
+              </Link>
+              <Link
+                href="/sponsors"
+                className="text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono"
+              >
+                SPONSORS
+              </Link>
             </div>
             <div className="md:hidden flex-none">{/* <MobileMenu /> */}</div>
             <div className="hidden md:block flex-none">
