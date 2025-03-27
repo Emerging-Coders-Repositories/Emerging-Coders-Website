@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import HeroCodeEditor from "@/components/landing/hero/hero-code-editor";
 
 export default function Hero() {
@@ -15,9 +15,13 @@ export default function Hero() {
               Low-Income Technologists
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-indigo-900 hover:bg-white/90 rounded-md text-lg px-4 py-2">
+              <Link
+                href="https://groupme.com/join_group/89417887/c1x6DI3U"
+                target="_blank"
+                className="bg-white text-indigo-900 hover:bg-white/90 rounded-md text-lg px-4 py-2"
+              >
                 Join Today
-              </Button>
+              </Link>
             </div>
           </div>
           <HeroCodeEditor />

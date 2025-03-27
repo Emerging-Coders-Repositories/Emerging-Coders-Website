@@ -50,7 +50,7 @@ export const images: ImageProps[] = [
   },
   {
     id: 7,
-    src: "/about-us-photos/photo-8.jpeg",
+    src: "/about-us-photos/photo-8.JPEG",
     alt: "Emerging Coders x Duoling",
     order: 7,
     aspectRatio: "portrait",
