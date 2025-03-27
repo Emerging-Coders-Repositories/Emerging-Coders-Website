@@ -11,7 +11,7 @@ export default function Hero() {
               Emerging Coders
             </h1>
             <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-2xl mx-auto font-mono -mt-6 sm:-mt-20">
-              Northwestern University's Community of First-Generation and
+              Northwestern University&apos;s Community of First-Generation and
               Low-Income Technologists
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

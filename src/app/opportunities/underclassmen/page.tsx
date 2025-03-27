@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata = {
   title: "Underclassmen Opportunities Guide | Emerging Coders",
@@ -61,10 +60,10 @@ export default function UnderclassmenInternshipPrograms() {
             <span className="font-semibold text-zinc-300">
               Research Opportunities:{" "}
             </span>
-            Northwestern's Office of Undergraduate Research provides endless
-            opportunities for students to participate in faculty-led projects or
-            design their own research initiatives, offering a robust foundation
-            for future academic or professional pursuits.
+            Northwestern&apos;s Office of Undergraduate Research provides
+            endless opportunities for students to participate in faculty-led
+            projects or design their own research initiatives, offering a robust
+            foundation for future academic or professional pursuits.
           </li>
         </ul>
 
@@ -280,7 +279,7 @@ export default function UnderclassmenInternshipPrograms() {
         <p className="text-zinc-400 mb-5">
           Guides or steps to obtain the internships and training programs above
           begin with building a strong foundation in programming and technical
-          skills. Here's a step-by-step approach:
+          skills. Here&apos;s a step-by-step approach:
         </p>
         <ul className="list-disc pl-6 mb-10 text-zinc-400 space-y-6">
           <li>
@@ -332,10 +331,10 @@ export default function UnderclassmenInternshipPrograms() {
             <span className="font-semibold text-zinc-300">
               Leverage Resources for Interview Preparation:{" "}
             </span>
-            Take advantage of Northwestern's career services, Emerging Coders
-            workshops, and mentorship programs to prepare for interviews. Attend
-            events offering mock interviews or technical prep sessions to build
-            confidence and improve your skills.
+            Take advantage of Northwestern&apos;s career services, Emerging
+            Coders workshops, and mentorship programs to prepare for interviews.
+            Attend events offering mock interviews or technical prep sessions to
+            build confidence and improve your skills.
           </li>
         </ul>
 

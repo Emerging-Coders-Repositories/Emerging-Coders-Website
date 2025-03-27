@@ -28,14 +28,14 @@ export default function EventsSection() {
           <div className="lg:w-5/12 mb-10 lg:mb-0">
             <div className="lg:top-8">
               <h2 className="text-5xl font-semibold -tracking-4 mb-6 text-white lg:text-left">
-                What We've Done
+                What We&apos;ve Done
               </h2>
               <p className="font-mono text-xl md:text-base leading-relaxed text-zinc-400 mb-8 lg:text-left">
-                We've hosted a variety of event types ranging from social events
-                to professional development events. Our events are open to all
-                Northwestern students and we encourage you to attend our events
-                to learn more about Emerging Coders and the FGLI community at
-                Northwestern.
+                We&apos;ve hosted a variety of event types ranging from social
+                events to professional development events. Our events are open
+                to all Northwestern students and we encourage you to attend our
+                events to learn more about Emerging Coders and the FGLI
+                community at Northwestern.
               </p>
             </div>
           </div>

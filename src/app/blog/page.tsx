@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <div className="min-h-screen text-white mt-24">
+    <div className="min-h-screen text-white mt-12">
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-16">
         <header className="mb-16">
           <h1 className="text-7xl font-bold mb-6">Emerging Coders Blog</h1>

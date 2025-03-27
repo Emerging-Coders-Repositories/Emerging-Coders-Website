@@ -28,7 +28,7 @@ export default function ContactPage() {
           <h1 className="text-7xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-zinc-500 font-mono max-w-2xl mx-auto">
             Have questions about Emerging Coders? Want to get involved or
-            collaborate? We'd love to hear from you.
+            collaborate? We&apos;d love to hear from you.
           </p>
         </div>
 

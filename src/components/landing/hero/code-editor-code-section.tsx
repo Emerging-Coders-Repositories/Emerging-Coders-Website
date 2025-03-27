@@ -6,7 +6,7 @@ export default function CodeEditorCodeSection() {
         <span className="text-purple-400">import</span>
         <span className="text-white ml-2">React</span>
         <span className="text-purple-400 ml-2">from</span>
-        <span className="text-green-400 ml-2">'react'</span>
+        <span className="text-green-400 ml-2">&apos;react&apos;</span>
         <span className="text-white">;</span>
       </div>
       <div className="flex mb-1">
@@ -40,23 +40,25 @@ export default function CodeEditorCodeSection() {
       <div className="flex mb-1">
         <span className="text-zinc-600 mr-2 sm:mr-4 select-none">7</span>
         <span className="ml-6 sm:ml-12 text-white">community: </span>
-        <span className="text-green-400">'FGLI Students at Northwestern'</span>
+        <span className="text-green-400">
+          &apos;FGLI Students at Northwestern&apos;
+        </span>
         <span className="text-white">,</span>
       </div>
       <div className="flex mb-1">
         <span className="text-zinc-600 mr-2 sm:mr-4 select-none">8</span>
         <span className="ml-6 sm:ml-12 text-white">mission: </span>
         <span className="text-green-400">
-          'Empower and develop technical skills'
+          &apos;Empower and develop technical skills&apos;
         </span>
         <span className="text-white">,</span>
       </div>
       <div className="flex mb-1">
         <span className="text-zinc-600 mr-2 sm:mr-4 select-none">9</span>
         <span className="ml-6 sm:ml-12 text-white">activities: [</span>
-        <span className="text-green-400">'coding'</span>
+        <span className="text-green-400">&apos;coding&apos;</span>
         <span className="text-white">, </span>
-        <span className="text-green-400">'mentorship'</span>
+        <span className="text-green-400">&apos;mentorship&apos;</span>
         <span className="text-white">],</span>
       </div>
       <div className="flex mb-1">

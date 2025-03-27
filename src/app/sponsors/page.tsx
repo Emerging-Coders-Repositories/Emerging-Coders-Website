@@ -22,8 +22,8 @@ export default function SponsorsPage() {
             Technology
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mb-10 -mt-6 sm:-mt-20 font-mono">
-            Partner with Northwestern University's community of First-Generation
-            and Low-Income technologists.
+            Partner with Northwestern University&apos;s community of
+            First-Generation and Low-Income technologists.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link
@@ -36,7 +36,7 @@ export default function SponsorsPage() {
           </div>
           <div className="w-full relative z-10 mt-16">
             <p className="text-center text-gray-400 text-sm uppercase tracking-wider mb-8">
-              COMPANIES WE'VE WORKED WITH
+              COMPANIES WE&apos;VE WORKED WITH
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 mb-12">
               <div className="h-12 w-48 flex items-center justify-center">

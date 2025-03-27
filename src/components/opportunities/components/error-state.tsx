@@ -13,8 +13,8 @@ export function ErrorState({ onRetry }: ErrorStateProps) {
           Oops! Something went wrong
         </h2>
         <p className="text-zinc-400 mb-6">
-          We couldn't fetch the internship listings. Please try again later or
-          check the repository directly.
+          We couldn&apos;t fetch the internship listings. Please try again later
+          or check the repository directly.
         </p>
         <Button
           onClick={onRetry}

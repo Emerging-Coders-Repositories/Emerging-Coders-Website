@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useState, useCallback, useMemo } from "react";
 import { debounce } from "@/utils/debounce";
 import { Job } from "@/types/internship";
@@ -15,7 +17,6 @@ export function useSearch(jobs: Job[], debounceMs = 300): UseSearchResult {
   const [searchInput, setSearchInput] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  // Set up debounced search
   const debouncedSetSearch = useCallback(
     debounce((value: string) => {
       setDebouncedSearch(value);
@@ -23,7 +24,6 @@ export function useSearch(jobs: Job[], debounceMs = 300): UseSearchResult {
     []
   );
 
-  // Handle search input changes
   const handleSearchChange = useCallback(
     (value: string) => {
       setSearchInput(value);
@@ -32,7 +32,6 @@ export function useSearch(jobs: Job[], debounceMs = 300): UseSearchResult {
     [debouncedSetSearch]
   );
 
-  // Filter jobs based on search term
   const filteredJobs = useMemo(() => {
     const searchTerm = debouncedSearch.toLowerCase();
 

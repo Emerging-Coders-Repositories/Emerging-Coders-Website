@@ -126,7 +126,7 @@ export default function EmergingCodersTestimonials(): React.ReactElement {
             What Our Members Say
           </h2>
           <p className="text-lg md:text-xl text-gray-400 pb-6 md:pb-12 px-4">
-            We're building the largest community for first-generation and
+            We&apos;re building the largest community for first-generation and
             low-income students in technology at Northwestern University.
           </p>
         </div>

@@ -64,4 +64,3 @@ export const faqItems: FAQItem[] = [
     order: 9,
   },
 ];
-``;

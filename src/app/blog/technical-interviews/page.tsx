@@ -66,11 +66,11 @@ export default function TechnicalsGuide() {
           </h2>
           <p className="text-zinc-400 mb-6">
             In the fast-paced world of software engineering, technical
-            interviews play a crucial role in assessing a candidate's skills and
-            suitability for a role. These interviews are designed to evaluate
-            not just your coding abilities but also your problem-solving skills,
-            algorithmic thinking, and, in some cases, your ability to design
-            scalable systems.
+            interviews play a crucial role in assessing a candidate&apos;s
+            skills and suitability for a role. These interviews are designed to
+            evaluate not just your coding abilities but also your
+            problem-solving skills, algorithmic thinking, and, in some cases,
+            your ability to design scalable systems.
           </p>
           <h3 className="text-xl font-bold text-white mb-5">
             Why are technical interviews important?
@@ -86,7 +86,7 @@ export default function TechnicalsGuide() {
             </li>
             <li>
               Interviews often include behavioral questions to determine if
-              you'll be a good fit for the company culture.
+              you&apos;ll be a good fit for the company culture.
             </li>
             <li>
               Preparing for technical interviews can be a valuable learning
@@ -101,7 +101,7 @@ export default function TechnicalsGuide() {
           </h2>
           <p className="text-zinc-400 mb-6">
             Technical interviews come in various forms, each serving a specific
-            purpose in evaluating a candidate's capabilities. Here are some
+            purpose in evaluating a candidate&apos;s capabilities. Here are some
             common types:
           </p>
 
@@ -121,9 +121,9 @@ export default function TechnicalsGuide() {
 
           <p className="text-zinc-400 mt-6">
             These are just a few examples of the most common types of technical
-            interviews that you may encounter throughout your career. It's
+            interviews that you may encounter throughout your career. It&apos;s
             essential to understand the specific requirements of the job that
-            you're applying for to be able to prepare effectively.
+            you&apos;re applying for to be able to prepare effectively.
           </p>
         </section>
 
@@ -160,15 +160,15 @@ export default function TechnicalsGuide() {
               available online such as Python.
             </p>
             <p className="text-zinc-400 mb-4">
-              Our recommendation based on what we've seen and used ourselves, is
-              to use a language such as Python or JavaScript. This is due to the
-              fact that these languages are easy to learn and have a lot of
-              resources available online. Additionally, they already have a lot
-              of built-in functions, data structures, and libraries that you can
-              use to solve problems. This makes your job during the interview a
-              lot easier as you don't have to worry about implementing these
-              things yourself. Thus, giving you more time to focus on the
-              problem-solving aspect of the interview.
+              Our recommendation based on what we&apos;ve seen and used
+              ourselves, is to use a language such as Python or JavaScript. This
+              is due to the fact that these languages are easy to learn and have
+              a lot of resources available online. Additionally, they already
+              have a lot of built-in functions, data structures, and libraries
+              that you can use to solve problems. This makes your job during the
+              interview a lot easier as you don&apos;t have to worry about
+              implementing these things yourself. Thus, giving you more time to
+              focus on the problem-solving aspect of the interview.
             </p>
           </div>
 
@@ -181,10 +181,11 @@ export default function TechnicalsGuide() {
               that can help you prepare for technical interviews. These
               resources can range from books, to online courses, to practice
               problems, and more. Unfortunately, some resources are mostly just
-              trying to make money off of you and don't offer anything useful
-              behind their paywalls. So, we've compiled a list of resources and
-              tools that we've used in our studying and preparation that we felt
-              were the most helpful while accommodating various learning styles!
+              trying to make money off of you and don&apos;t offer anything
+              useful behind their paywalls. So, we&apos;ve compiled a list of
+              resources and tools that we&apos;ve used in our studying and
+              preparation that we felt were the most helpful while accommodating
+              various learning styles!
             </p>
 
             <h4 className="text-lg font-bold text-white mb-3">Books</h4>
@@ -197,9 +198,9 @@ export default function TechnicalsGuide() {
                 Cracking the Coding Interview
               </Link>
               <p className="text-zinc-400 my-3">
-                "Cracking the Coding Interview" is a renowned book by Gayle
-                Laakmann McDowell. It offers a comprehensive collection of 189
-                programming questions and solutions, making it an invaluable
+                &quot;Cracking the Coding Interview&quot; is a renowned book by
+                Gayle Laakmann McDowell. It offers a comprehensive collection of
+                189 programming questions and solutions, making it an invaluable
                 resource for interview preparation. This book covers various
                 coding topics and provides detailed explanations to help you
                 understand the concepts better.
@@ -215,8 +216,8 @@ export default function TechnicalsGuide() {
                 Grokking the Coding Interview
               </Link>
               <p className="text-zinc-400 my-3">
-                "Grokking the Coding Interview" is a book that focuses on
-                problem-solving patterns for coding questions. It helps you
+                &quot;Grokking the Coding Interview&quot; is a book that focuses
+                on problem-solving patterns for coding questions. It helps you
                 understand common patterns and techniques used in technical
                 interviews, making it easier to tackle a wide range of coding
                 challenges.
@@ -275,8 +276,8 @@ export default function TechnicalsGuide() {
               <p className="text-zinc-400 my-3">
                 CodeWars offers a unique approach to coding challenges by using
                 kata, which are small coding exercises that you can complete to
-                improve your skills. It's a fun and interactive way to practice
-                coding.
+                improve your skills. It&apos;s a fun and interactive way to
+                practice coding.
               </p>
             </div>
 
@@ -318,9 +319,10 @@ export default function TechnicalsGuide() {
             During the Technical Interview
           </h2>
           <p className="text-zinc-400 mb-5">
-            The technical interview can be scary and daunting. We've been there!
-            But, we're here to help you out and offer some tips and tricks that
-            we've picked up along the way to help you during the interview.
+            The technical interview can be scary and daunting. We&apos;ve been
+            there! But, we&apos;re here to help you out and offer some tips and
+            tricks that we&apos;ve picked up along the way to help you during
+            the interview.
           </p>
 
           <div className="mb-8">
@@ -332,11 +334,11 @@ export default function TechnicalsGuide() {
               do during a technical interview. It shows that you are engaged and
               interested in the problem that you are solving. It also shows that
               you are able to think critically and ask the right questions to
-              get the information that you need to solve the problem. It's
+              get the information that you need to solve the problem. It&apos;s
               important to ask questions throughout the interview to make sure
               that you are on the right track and that you are solving the
-              problem correctly. It's also important to ask questions to clarify
-              any ambiguities in the problem statement.
+              problem correctly. It&apos;s also important to ask questions to
+              clarify any ambiguities in the problem statement.
               <strong> Do not</strong> make assumptions about the problem
               statement. If you are unsure about something, ask the interviewer.
             </p>
@@ -347,14 +349,14 @@ export default function TechnicalsGuide() {
               2. Communicate, Communicate, and Communicate
             </h3>
             <p className="text-zinc-400 mb-4">
-              It's important to communicate your thought process and what you
-              are thinking to your interviewer. The emphasis of the technical
-              interview is <strong>not always</strong> going to be on solving
-              the problem. It's vital that during the interview you are
-              constantly communicating your thought process and problem solving
-              over anything else. This is because the interviewer wants to see
-              how you think and how you approach problems. If you are able to
-              communicate well,{" "}
+              It&apos;s important to communicate your thought process and what
+              you are thinking to your interviewer. The emphasis of the
+              technical interview is <strong>not always</strong> going to be on
+              solving the problem. It&apos;s vital that during the interview you
+              are constantly communicating your thought process and problem
+              solving over anything else. This is because the interviewer wants
+              to see how you think and how you approach problems. If you are
+              able to communicate well,{" "}
               <strong>
                 you can actually get better help to solve the problem
               </strong>
@@ -367,25 +369,25 @@ export default function TechnicalsGuide() {
               3. Listen to your interviewer and to their suggestions
             </h3>
             <p className="text-zinc-400 mb-4">
-              It's important to listen to your interviewer and to their
+              It&apos;s important to listen to your interviewer and to their
               suggestions. They are there to help you and want you to succeed.
-              If they are giving you suggestions, it's because they want you to
-              succeed and want to help you out. It's also important to listen to
-              your interviewer because they may give you hints or tips that can
-              help you solve the problem.
+              If they are giving you suggestions, it&apos;s because they want
+              you to succeed and want to help you out. It&apos;s also important
+              to listen to your interviewer because they may give you hints or
+              tips that can help you solve the problem.
             </p>
           </div>
 
           <div className="mb-8">
             <h3 className="text-xl font-bold text-white mb-3">
-              4. Don't bluff
+              4. Don&apos;t bluff
             </h3>
             <p className="text-zinc-400 mb-4">
-              If you don't know the answer, take a few minutes to think about
-              it. Say that you have not encountered a similar scenario, but you
-              are going to try to work through a process to solve the problem.
-              Think out loud, ask for some direction.
-              <strong> If you're really stuck</strong>, you can ask to go
+              If you don&apos;t know the answer, take a few minutes to think
+              about it. Say that you have not encountered a similar scenario,
+              but you are going to try to work through a process to solve the
+              problem. Think out loud, ask for some direction.
+              <strong> If you&apos;re really stuck</strong>, you can ask to go
               through examples of the problem. This will help you understand the
               problem better and will help you come up with a solution.
             </p>
@@ -396,9 +398,9 @@ export default function TechnicalsGuide() {
               5. Try a Brute Force Solution
             </h3>
             <p className="text-zinc-400 mb-4">
-              It's okay if you don't immediately see the most optimal solution
-              to the problem, you can always start out with a brute force
-              solution to the problem and then optimize it later.
+              It&apos;s okay if you don&apos;t immediately see the most optimal
+              solution to the problem, you can always start out with a brute
+              force solution to the problem and then optimize it later.
             </p>
           </div>
 
@@ -419,8 +421,8 @@ export default function TechnicalsGuide() {
             <p className="text-zinc-400 mb-4">
               Being on time is crucial. It shows that you are punctual and
               reliable. It also shows that you are respectful of the
-              interviewer's time. If you are running late, make sure to let the
-              interviewer know as soon as possible.
+              interviewer&apos;s time. If you are running late, make sure to let
+              the interviewer know as soon as possible.
             </p>
           </div>
         </section>
@@ -432,10 +434,11 @@ export default function TechnicalsGuide() {
             Technical interviews can be intimidating, but with the right
             preparation and mindset, you can ace them. Remember to practice
             coding problems regularly, study common data structures and
-            algorithms, and work on your problem-solving skills. Don't forget to
-            ask questions, communicate your thought process, and listen to your
-            interviewer's feedback. With dedication and practice, you'll be well
-            on your way to acing your next technical interview!
+            algorithms, and work on your problem-solving skills. Don&apos;t
+            forget to ask questions, communicate your thought process, and
+            listen to your interviewer&apos;s feedback. With dedication and
+            practice, you&apos;ll be well on your way to acing your next
+            technical interview!
           </p>
         </section>
       </div>

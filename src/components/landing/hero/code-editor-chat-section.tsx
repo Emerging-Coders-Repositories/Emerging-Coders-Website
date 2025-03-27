@@ -12,8 +12,8 @@ export default function CodeEditorChatSection() {
           <div className="flex justify-start">
             <div className="bg-zinc-800 rounded-lg rounded-tl-none p-2 text-xs text-white/90 max-w-[85%]">
               You can join by joining our GroupMe and following our Instagram.
-              We're an open community of over 400 members focused on empowering
-              FGLI students in tech.
+              We&apos;re an open community of over 400 members focused on
+              empowering FGLI students in tech.
             </div>
           </div>
           <div className="flex justify-end">

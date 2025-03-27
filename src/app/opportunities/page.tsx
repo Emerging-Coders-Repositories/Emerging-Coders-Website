@@ -9,13 +9,12 @@ export const metadata = {
 
 export default function OpportunitiesPage() {
   return (
-    <div className="min-h-screen text-white mt-24">
+    <div className="min-h-screen text-white mt-12">
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-16">
         <header className="mb-16">
-          <h1 className="text-7xl font-bold mb-6">Opportunities</h1>
-          <p className="text-lg text-zinc-500 max-w-2xl font-mono">
-            Curated list of internships, new graduate positions, and career
-            development programs for FGLI students in technology.
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">Opportunities</h1>
+          <p className="text-lg text-zinc-500 font-mono">
+            Guides and resources from the Emerging Coders team and community.
           </p>
         </header>
 

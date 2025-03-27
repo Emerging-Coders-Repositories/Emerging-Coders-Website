@@ -47,8 +47,8 @@ export default function BlogContributePage() {
                     <h3 className="font-semibold mb-2">Prepare Your Content</h3>
                     <p className="text-zinc-400 font-mono">
                       Write your blog post draft in a Google Doc. Include any
-                      images, code snippets, or other resources you'd like to
-                      use.
+                      images, code snippets, or other resources you&apos;d like
+                      to use.
                     </p>
                   </div>
                 </div>
@@ -61,7 +61,8 @@ export default function BlogContributePage() {
                     <h3 className="font-semibold mb-2">Send Us Your Idea</h3>
                     <p className="text-zinc-400 font-mono">
                       Email us with your blog post idea and a link to your
-                      draft. We'll review it and get back to you with feedback.
+                      draft. We&apos;ll review it and get back to you with
+                      feedback.
                     </p>
                   </div>
                 </div>
@@ -73,8 +74,8 @@ export default function BlogContributePage() {
                   <div>
                     <h3 className="font-semibold mb-2">Review Process</h3>
                     <p className="text-zinc-400 font-mono">
-                      We'll work with you to refine your post and prepare it for
-                      publication on our blog.
+                      We&apos;ll work with you to refine your post and prepare
+                      it for publication on our blog.
                     </p>
                   </div>
                 </div>

@@ -8,7 +8,6 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -61,12 +60,12 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               is perfect to every situation, interest, or path that you may
               embark on during your time at Northwestern but, if you someone
               that is completely new to Computer Science (like many of us were),
-              or you don't have someone to ask questions to, we hope that this
-              guide can help you out with answering some of your questions. Keep
-              in mind also that this guide is mostly geared for those wanting to
-              enter <strong>industry</strong> after graduation. A more detailed
-              version for folks interested in graduate school will be coming
-              soon!
+              or you don&apos;t have someone to ask questions to, we hope that
+              this guide can help you out with answering some of your questions.
+              Keep in mind also that this guide is mostly geared for those
+              wanting to enter <strong>industry</strong> after graduation. A
+              more detailed version for folks interested in graduate school will
+              be coming soon!
               <br />
               <br />
               <strong>NOTE:</strong> This guide was built on the requirements
@@ -90,7 +89,7 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
           </div>
 
           <h2 className="text-2xl font-bold text-white mb-10">
-            Now let's get started!
+            Now let&apos;s get started!
           </h2>
         </section>
         <section className="mb-16">
@@ -110,9 +109,9 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             </h3>
             <p className="text-zinc-400 mb-5">
               In simple terms, Computer science is like a magical world of
-              instructions and thinking for computers. It's all about teaching
-              computers how to do cool stuff. Just like you learn math and
-              languages in school, computer scientists learn how to talk to
+              instructions and thinking for computers. It&apos;s all about
+              teaching computers how to do cool stuff. Just like you learn math
+              and languages in school, computer scientists learn how to talk to
               computers. Imagine you have a really smart robot friend, and you
               want to tell it what to do. Computer science helps you do that.
               You can tell the robot to play your favorite game, draw pictures,
@@ -125,20 +124,20 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               <li>
                 <strong>Coding: </strong> This is like giving instructions to
                 your robot friend. You use special languages (like C, Python, or
-                JavaScript) to write these instructions. It's like creating a
-                recipe for the robot to follow.
+                JavaScript) to write these instructions. It&apos;s like creating
+                a recipe for the robot to follow.
               </li>
               <li>
                 <strong>Algorithms: </strong>Think of this as a plan or a recipe
-                for your robot. It's a step-by-step guide on how to solve a
+                for your robot. It&apos;s a step-by-step guide on how to solve a
                 problem, like finding the best way to get from your house to the
                 park.
               </li>
               <li>
                 <strong>Data: </strong>This is like information that the robot
                 needs to remember. It could be your favorite game scores, your
-                friends' names, or anything else. Computer scientists figure out
-                how to store and use this data.
+                friends&apos; names, or anything else. Computer scientists
+                figure out how to store and use this data.
               </li>
               <li>
                 <strong>Hardware: </strong> These are the physical parts of a
@@ -153,10 +152,11 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             </ul>
             <p className="text-zinc-400">
               Computer science is like a big playground where you can create,
-              explore, and solve puzzles with computers. It's not just about
-              playing games but also about making the world a better place by
-              solving real-world problems. So, if you're curious and love to
-              learn, computer science can be a fantastic adventure for you!
+              explore, and solve puzzles with computers. It&apos;s not just
+              about playing games but also about making the world a better place
+              by solving real-world problems. So, if you&apos;re curious and
+              love to learn, computer science can be a fantastic adventure for
+              you!
             </p>
           </div>
 
@@ -167,21 +167,21 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             <p className="text-zinc-400 mb-5">
               Pursuing a degree in computer science offers not only promising
               career prospects but also the chance to make a meaningful impact
-              on the world through innovation and problem-solving. It's a field
-              that rewards curiosity, adaptability, and a passion for learning.
-              A Computer Science degree is very versatile and the skills that
-              you learn in a CS degree can be applied to a wide variety of
-              fields and industries. You don't have to become a software
-              engineer after graduation, you can become a data scientist, a
-              product manager, a UX designer, a technical writer, a technical
-              recruiter, and so much more!
+              on the world through innovation and problem-solving. It&apos;s a
+              field that rewards curiosity, adaptability, and a passion for
+              learning. A Computer Science degree is very versatile and the
+              skills that you learn in a CS degree can be applied to a wide
+              variety of fields and industries. You don&apos;t have to become a
+              software engineer after graduation, you can become a data
+              scientist, a product manager, a UX designer, a technical writer, a
+              technical recruiter, and so much more!
               <br />
               <br />
-              Of course, if you choose to work in technology, you'll be joining
-              a fast-growing industry with a lot of opportunities for career
-              growth and advancement. The tech industry is also known for it's
-              competitive salaries and benefits, as well as its flexible work
-              arrangements.
+              Of course, if you choose to work in technology, you&apos;ll be
+              joining a fast-growing industry with a lot of opportunities for
+              career growth and advancement. The tech industry is also known for
+              it&apos;s competitive salaries and benefits, as well as its
+              flexible work arrangements.
             </p>
           </div>
         </section>
@@ -196,8 +196,9 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             classes in a variety of different fields and topics in CS from
             systems/hardware, game development, human-computer interaction,
             artificial intelligence, and theory. Depending on your planning and
-            how many credits you come into Northwestern with, it's even possible
-            to double major or minor in another field or even graduate with a{" "}
+            how many credits you come into Northwestern with, it&apos;s even
+            possible to double major or minor in another field or even graduate
+            with a{" "}
             <Link
               href="https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/combined-bs-ba-ms-program.html"
               target="_blank"
@@ -257,8 +258,8 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
             <p className="text-zinc-400 mb-10">
               This is a lot of information! And for the most part, a lot of this
               information you could have just found online through the
-              department website. Let's now break down some of the components of
-              the major and what they mean.
+              department website. Let&apos;s now break down some of the
+              components of the major and what they mean.
             </p>
 
             <h3 className="text-xl font-bold text-white mb-5">
@@ -274,26 +275,27 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               <br />
               <br />
               The McCormick version of Computer Science is more geared towards
-              students who want to learn more about the "engineering" side of
-              Computer Science. This just means that you'll take more
-              engineering-focused classes such as DTC, and EA.
+              students who want to learn more about the &quot;engineering&quot;
+              side of Computer Science. This just means that you&apos;ll take
+              more engineering-focused classes such as DTC, and EA.
               <br />
               <br />
               On the contrary, the Weinberg route in CS is good if you want a
-              more holistic education since you'll have more opportunities to
-              take classes outside of CS such as humanities, social sciences,
-              and other STEM classes. It's also worth noting that a lot of
-              people choose Weinberg CS because it's a lot easier to
-              double-major in CS and another "fun" field such as Creative
-              Writing or Economics.
+              more holistic education since you&apos;ll have more opportunities
+              to take classes outside of CS such as humanities, social sciences,
+              and other STEM classes. It&apos;s also worth noting that a lot of
+              people choose Weinberg CS because it&apos;s a lot easier to
+              double-major in CS and another &quot;fun&quot; field such as
+              Creative Writing or Economics.
               <br />
               <br />
               <strong>
-                It's important to emphasize that between the two schools, there
-                is no difference in terms of job placement. Technology companies
-                do not care if you graduate with a BS or BA in CS, what matters
-                most is if you have the technical skills and background that
-                they are looking for! Not what your degree type is.
+                It&apos;s important to emphasize that between the two schools,
+                there is no difference in terms of job placement. Technology
+                companies do not care if you graduate with a BS or BA in CS,
+                what matters most is if you have the technical skills and
+                background that they are looking for! Not what your degree type
+                is.
               </strong>
             </p>
 
@@ -301,8 +303,8 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               What Order should I Take The Core Classes In?
             </h3>
             <p className="text-zinc-400 mb-6">
-              Before we begin, it's important to note that the CS department
-              already has sample 4-year schedules for both{" "}
+              Before we begin, it&apos;s important to note that the CS
+              department already has sample 4-year schedules for both{" "}
               <Link
                 href="https://www.mccormick.northwestern.edu/computer-science/documents/students/undergraduate/mcc-cs-4-year-plan.pdf"
                 target="_blank"
@@ -319,11 +321,11 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
                 Weinberg
               </Link>{" "}
               students. And while these sample 4-year planners are useful, they
-              don't provide as much context as to why you should take classes in
-              a certain order. Likewise, there's a lot of subjectiveness in
-              terms of what classes you should take first and what classes you
-              should take later. So let's talk through some of the suggestions
-              that we have.
+              don&apos;t provide as much context as to why you should take
+              classes in a certain order. Likewise, there&apos;s a lot of
+              subjectiveness in terms of what classes you should take first and
+              what classes you should take later. So let&apos;s talk through
+              some of the suggestions that we have.
             </p>
 
             <h4 className="text-lg font-bold text-white mb-5">
@@ -420,9 +422,9 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               The Key Takeaways
             </h4>
             <p className="text-zinc-400 mb-10">
-              This recommended study plan is not exhaustive and won't work for
-              everyone (since everyone's paths are different!). But the key
-              things to take away from this is that:
+              This recommended study plan is not exhaustive and won&apos;t work
+              for everyone (since everyone&apos;s paths are different!). But the
+              key things to take away from this is that:
               <br />
               <br />
               If you want to have a solid foundation for recruitment season, you
@@ -432,40 +434,41 @@ export default function NorthwesternComputerScienceUnderlcassmenGuide() {
               give you the foundation to be able to start to understand LeetCode
               style questions a bit better and will help you in your technical
               interviews. Likewise, doing CS 211 after 214 is an optimal choice
-              since you'll learn about common languages such as C and C++ as
-              well as the Unix environment and learn more about Object-Oriented
-              Programming. Additionally, both classes are the most popular
-              pre-requisites for many of the 300-level CS classes. So the
-              earlier you can take them, the more options you'll have during
-              your second year of Computer Science.
+              since you&apos;ll learn about common languages such as C and C++
+              as well as the Unix environment and learn more about
+              Object-Oriented Programming. Additionally, both classes are the
+              most popular pre-requisites for many of the 300-level CS classes.
+              So the earlier you can take them, the more options you&apos;ll
+              have during your second year of Computer Science.
               <br />
               <br />
-              It's very common to pair CS 214 and CS 211 together. And while
-              it's manageable, keep in mind that a lot of the content between
-              the two classes is very different. So it's important to be able to
-              manage your time well and be able to balance the workload between
-              the two classes. But if you switched to CS late, or you're a
-              second-year, it's very common to take CS 214 and CS 211 together.
+              It&apos;s very common to pair CS 214 and CS 211 together. And
+              while it&apos;s manageable, keep in mind that a lot of the content
+              between the two classes is very different. So it&apos;s important
+              to be able to manage your time well and be able to balance the
+              workload between the two classes. But if you switched to CS late,
+              or you&apos;re a second-year, it&apos;s very common to take CS 214
+              and CS 211 together.
               <br />
               <br />
-              Now, you may be wondering what's the reasoning behind putting CS
-              212 so late if you only need 111 to take it. The idea with CS 212
-              so late in our schedules is because CS 212 is an{" "}
-              <strong>extremely</strong> difficult class since it's a discrete
-              maths course. You'll be learning about proofs, induction, and
-              other topics that are very different from the other CS classes
-              since it is very theory focused. CS 212 is by no means impossible
-              to do well in, but you probably want to put it off while you learn
-              some of the other CS topics first because in terms of industry,
-              you'll probably never use the content from CS 212 and{" "}
-              <strong>very few</strong> classes have it as a pre-req.
+              Now, you may be wondering what&apos;s the reasoning behind putting
+              CS 212 so late if you only need 111 to take it. The idea with CS
+              212 so late in our schedules is because CS 212 is an{" "}
+              <strong>extremely</strong> difficult class since it&apos;s a
+              discrete maths course. You&apos;ll be learning about proofs,
+              induction, and other topics that are very different from the other
+              CS classes since it is very theory focused. CS 212 is by no means
+              impossible to do well in, but you probably want to put it off
+              while you learn some of the other CS topics first because in terms
+              of industry, you&apos;ll probably never use the content from CS
+              212 and <strong>very few</strong> classes have it as a pre-req.
             </p>
 
             <h3 className="text-xl font-bold text-white mb-5">
               Other Resources and Tips
             </h3>
             <p className="text-zinc-400 mb-10">
-              If you're still curious to learn about the CS major at
+              If you&apos;re still curious to learn about the CS major at
               Northwestern and want to learn more about the differences between
               McCormick and Weinberg, we actually recently did a workshop going
               over this topic! You can find the link to the Google Drive

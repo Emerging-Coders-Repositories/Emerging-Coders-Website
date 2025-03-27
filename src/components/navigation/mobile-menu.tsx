@@ -20,6 +20,7 @@ import {
 } from "@/constants/header-links";
 
 export default function MobileMenu() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();

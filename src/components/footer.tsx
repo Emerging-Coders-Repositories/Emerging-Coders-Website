@@ -25,7 +25,7 @@ export default function Footer() {
               Emerging Coders
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-gray-400 font-mono max-w-md">
-              Northwestern University's community for First-Generation and
+              Northwestern University&apos;s community for First-Generation and
               Low-Income students in technology. Empowering students through
               mentorship, education, and inclusive innovation.
             </p>
