@@ -16,6 +16,7 @@ import {
   blogPosts,
   opportunityItems,
 } from "@/constants/header-links";
+import MobileMenu from "@/components/navigation/mobile-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -117,10 +118,10 @@ export default function Header() {
     <header className="fixed top-4 z-50 w-full lg:top-2 md:mt-4 h-20">
       <div className="mx-auto !max-w-[1550px] !px-6 md:!px-9]">
         <nav
-          className="rounded-2xl px-2 transition-all duration-300 ease-in-out bg-black"
+          className="rounded-2xl transition-all duration-300 ease-in-out bg-black"
           aria-label="Main navigation"
         >
-          <div className="flex py-0 md:py-2 items-center">
+          <div className="flex w-full justify-between items-center px-4 py-2">
             <div>
               <Link
                 href="/"
@@ -253,8 +254,10 @@ export default function Header() {
                 SPONSORS
               </Link>
             </div>
-            <div className="md:hidden flex-none">{/* <MobileMenu /> */}</div>
-            <div className="hidden md:block flex-none">
+            <div className="md:hidden">
+              <MobileMenu />
+            </div>
+            <div className="hidden md:block">
               <Button className="bg-white hover:bg-white/90 text-black font-semibold transition-colors text-base font-mono py-5">
                 <a href="https://discord.gg/mqRQ7s9CyS">Join EMCO</a>
               </Button>
