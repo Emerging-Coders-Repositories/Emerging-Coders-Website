@@ -259,7 +259,7 @@ export default function Header() {
             </div>
             <div className="hidden md:block">
               <Button className="bg-white hover:bg-white/90 text-black font-semibold transition-colors text-base font-mono py-5">
-                <a href="https://discord.gg/mqRQ7s9CyS">Join EMCO</a>
+                <a href="https://groupme.com/join_group/89417887/c1x6DI3U">Join EMCO</a>
               </Button>
             </div>
           </div>

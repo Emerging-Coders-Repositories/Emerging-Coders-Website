@@ -41,22 +41,22 @@ export const footerSections = [
 export const socialMediaLinks = [
   {
     icon: Instagram,
-    link: "https://www.instagram.com/disc_nu/",
+    link: "https://www.instagram.com/nu.emergingcoders/",
     label: "Instagram",
   },
   {
     icon: Linkedin,
-    link: "https://www.linkedin.com/company/northwestern-develop-innovation-for-social-change-disc/",
+    link: "https://www.linkedin.com/company/nuemerging-coders/",
     label: "LinkedIn",
   },
   {
     icon: Mail,
-    link: "mailto:disc@u.northwestern.edu",
+    link: "mailto:nuemergingcoders@gmail.com",
     label: "Email",
   },
   {
     icon: Github,
-    link: "https://github.com/DISC-NU",
+    link: "https://github.com/Emerging-Coders-Repositories",
     label: "Github",
   },
 ];
