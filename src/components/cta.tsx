@@ -11,7 +11,13 @@ export default function CTA() {
             </h1>
             <div className="mt-10">
               <button className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center mx-auto md:mx-0">
-                JOIN NOW
+              <a
+                  href="https://linktr.ee/nu.emergingcoders"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  JOIN NOW
+                </a>
               </button>
             </div>
           </div>

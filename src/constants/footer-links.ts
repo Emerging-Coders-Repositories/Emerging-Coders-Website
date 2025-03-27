@@ -28,7 +28,10 @@ export const footerSections = [
     links: [
       {
         text: "Newsletter",
-        href: "/newsletter",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSdYuKsulHevdpf0iu-D0d5GauF0hTPjL2cS-Ts93C-luD-aZQ/viewform",
+        target: "_blank",
+        rel: "noopener noreferrer"
+        
       },
       {
         text: "Get Involved",

@@ -257,11 +257,19 @@ export default function Header() {
             <div className="md:hidden">
               <MobileMenu />
             </div>
-            <div className="hidden md:block">
+
+            <div className="hidden md:block"> 
               <Button className="bg-white hover:bg-white/90 text-black font-semibold transition-colors text-base font-mono py-5">
-                <a href="https://groupme.com/join_group/89417887/c1x6DI3U">Join EMCO</a>
+                <a 
+                  href="https://linktr.ee/nu.emergingcoders" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Join EMCO
+                </a>
               </Button>
             </div>
+
           </div>
         </nav>
       </div>
