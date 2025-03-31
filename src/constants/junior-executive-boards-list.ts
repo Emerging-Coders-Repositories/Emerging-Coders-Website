@@ -5,13 +5,13 @@ export const juniorExecutiveMembers2526: ExecMember[] = [];
 export const juniorExecutiveMembers2425: ExecMember[] = [
   {
     role: "Junior Exec Board Member",
-    name: "Acton Healy",
+    name: "Keigo Healy",
     pronouns: "He/Him",
     major: "Computer Science",
     year: "Freshman",
     linkedin: "",
-    image: "https://emergingcoders.org/jeb_2024/Acton.jpeg",
-    email: "actonhealy2028@u.northwestern.edu",
+    image: "https://emergingcoders.org/jeb_2024/keigo.jpeg",
+    email: "keigohealy2028@u.northwestern.edu",
   },
   {
     role: "Junior Exec Board Member",
