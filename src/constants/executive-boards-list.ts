@@ -44,13 +44,13 @@ export const executiveMembers2526: ExecMember[] = [
   },
   {
     role: "Technical Development Chair",
-    name: "Acton Healy",
+    name: "Keigo Healy",
     major: "Computer Science",
     year: "First-Year",
     pronouns: "He/Him",
-    linkedin: "https://www.linkedin.com/in/acton-healy-6a7b3a1b6/",
-    image: "/exec-pictures/acton.jpg",
-    email: "ActonHealy2028@u.northwestern.edu",
+    linkedin: "https://www.linkedin.com/in/keigo-healy-3a456a278/",
+    image: "/exec-pictures/keigo.jpg",
+    email: "KeigoHealy2028@u.northwestern.edu",
   },
   {
     role: "Professional Liaison",
