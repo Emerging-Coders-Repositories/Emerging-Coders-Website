@@ -6,11 +6,11 @@ export const footerSections = [
     links: [
       {
         text: "About Us",
-        href: "#about",
+        href: "/#about",
       },
       {
         text: "Executive Board",
-        href: "#team",
+        href: "/#team",
       },
     ],
   },
@@ -35,7 +35,7 @@ export const footerSections = [
       },
       {
         text: "Get Involved",
-        href: "#about",
+        href: "/#about",
       },
     ],
   },
