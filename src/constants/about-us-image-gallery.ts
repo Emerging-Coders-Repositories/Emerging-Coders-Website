@@ -89,7 +89,7 @@ export const eventImages = [
     alt: "Emerged Coders: Andy Moran",
     description:
       "Emerging Coders alumni Andy Moran, now at Google, giving advice to students",
-    size: "medium-left",
+    size: "small-left",
   },
   {
     id: 2,
@@ -103,6 +103,6 @@ export const eventImages = [
     src: "/event-photos/event-3.jpg",
     alt: "Emerging Coders x WiC Ice Cream Social",
     description: "End of year ice cream social with WiC",
-    size: "small-right",
+    size: "small-left",
   },
 ];
