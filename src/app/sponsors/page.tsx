@@ -27,7 +27,7 @@ export default function SponsorsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link
-              href="/sponsorship_packet.pdf"
+              href="/new_sponsorship_packet.pdf"
               target="_blank"
               className="px-6 py-3 bg-white/90 text-black rounded-md hover:bg-gray-200 transition-colors font-mono"
             >
