@@ -1,6 +1,8 @@
-"use client";
-import { cn } from "@/lib/utils";
-import * as React from "react";
+'use client';
+
+import * as React from 'react';
+
+import { cn } from '@/lib/utils';
 
 interface StaticBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -29,7 +31,7 @@ interface StaticBorderProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export function StaticBorder({
   borderWidth = 1,
-  borderColor = "#000000",
+  borderColor = '#000000',
   gradientAngle = 45,
   className,
   style,
@@ -37,24 +39,26 @@ export function StaticBorder({
 }: StaticBorderProps) {
   // Convert color array to a gradient string
   const gradientColors = Array.isArray(borderColor)
-    ? borderColor.join(", ")
+    ? borderColor.join(', ')
     : borderColor;
 
   return (
     <div
-      style={{
-        "--border-width": `${borderWidth}px`,
-        "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-        "--background-linear-gradient": `linear-gradient(${gradientAngle}deg, ${gradientColors})`,
-        backgroundImage: "var(--background-linear-gradient)",
-        backgroundSize: "100% 100%",
-        mask: "var(--mask-linear-gradient)",
-        WebkitMaskComposite: "xor",
-        maskComposite: "exclude",
-        ...style,
-      } as React.CSSProperties}
+      style={
+        {
+          '--border-width': `${borderWidth}px`,
+          '--mask-linear-gradient': `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+          '--background-linear-gradient': `linear-gradient(${gradientAngle}deg, ${gradientColors})`,
+          backgroundImage: 'var(--background-linear-gradient)',
+          backgroundSize: '100% 100%',
+          mask: 'var(--mask-linear-gradient)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+          ...style,
+        } as React.CSSProperties
+      }
       className={cn(
-        "pointer-events-none absolute inset-0 size-full rounded-[inherit] p-[var(--border-width)]",
+        'pointer-events-none absolute inset-0 size-full rounded-[inherit] p-[var(--border-width)]',
         className
       )}
       {...props}

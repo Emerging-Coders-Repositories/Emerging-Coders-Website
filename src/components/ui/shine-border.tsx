@@ -1,6 +1,8 @@
-"use client";
-import { cn } from "@/lib/utils";
-import * as React from "react";
+'use client';
+
+import * as React from 'react';
+
+import { cn } from '@/lib/utils';
 
 interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -28,7 +30,7 @@ interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
 export function ShineBorder({
   borderWidth = 1,
   duration = 14,
-  shineColor = "#000000",
+  shineColor = '#000000',
   className,
   style,
   ...props
@@ -37,22 +39,22 @@ export function ShineBorder({
     <div
       style={
         {
-          "--border-width": `${borderWidth}px`,
-          "--duration": `${duration}s`,
-          "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-          "--background-radial-gradient": `radial-gradient(transparent,transparent, ${
-            Array.isArray(shineColor) ? shineColor.join(",") : shineColor
+          '--border-width': `${borderWidth}px`,
+          '--duration': `${duration}s`,
+          '--mask-linear-gradient': `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+          '--background-radial-gradient': `radial-gradient(transparent,transparent, ${
+            Array.isArray(shineColor) ? shineColor.join(',') : shineColor
           },transparent,transparent)`,
-          backgroundImage: "var(--background-radial-gradient)",
-          backgroundSize: "300% 300%",
-          mask: "var(--mask-linear-gradient)",
-          WebkitMaskComposite: "xor",
-          maskComposite: "exclude",
+          backgroundImage: 'var(--background-radial-gradient)',
+          backgroundSize: '300% 300%',
+          mask: 'var(--mask-linear-gradient)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
           ...style,
         } as React.CSSProperties
       }
       className={cn(
-        "pointer-events-none absolute inset-0 size-full rounded-[inherit] p-[var(--border-width)] will-change-[background-position] motion-safe:animate-shine",
+        'pointer-events-none absolute inset-0 size-full rounded-[inherit] p-[var(--border-width)] will-change-[background-position] motion-safe:animate-shine',
         className
       )}
       {...props}

@@ -1,23 +1,23 @@
-import type {
-  RosterYear,
-  YearlyBoard,
-  ExecMember,
-  ExecTeam,
-} from "@/types/exec-board-type";
 import {
-  foundingExecutiveMembers,
-  executiveMembers2526,
-  executiveMembers2425,
   ExecutiveBoard20232024,
-} from "@/constants/executive-boards-list";
+  executiveMembers2425,
+  executiveMembers2526,
+  foundingExecutiveMembers,
+} from '@/constants/executive-boards-list';
 import {
   foundingJuniorExecutiveMembers,
   juniorExecutiveMembers2425,
-} from "@/constants/junior-executive-boards-list";
+} from '@/constants/junior-executive-boards-list';
+import type {
+  ExecMember,
+  ExecTeam,
+  RosterYear,
+  YearlyBoard,
+} from '@/types/exec-board-type';
 
 function getLastName(member: ExecMember) {
   const name = member.name;
-  const split = name.split(" ");
+  const split = name.split(' ');
   return split[split.length - 1];
 }
 
@@ -58,7 +58,7 @@ function convertExecBoardToRoster(
   }));
 
   const juniorTeam: ExecTeam = {
-    name: "Junior Executive Board",
+    name: 'Junior Executive Board',
     executive: [],
     general: junior,
   };
@@ -72,25 +72,25 @@ function convertExecBoardToRoster(
 }
 
 const ExecRoster202520256 = convertExecBoardToRoster(
-  "2025-2026",
+  '2025-2026',
   executiveMembers2526,
   []
 );
 
 const ExecRoster20242025 = convertExecBoardToRoster(
-  "2024-2025",
+  '2024-2025',
   executiveMembers2425,
   juniorExecutiveMembers2425
 );
 
 const ExecutiveBoard2023to2024 = convertExecBoardToRoster(
-  "2023-2024",
+  '2023-2024',
   foundingExecutiveMembers,
   foundingJuniorExecutiveMembers
 );
 
 const foundingExecRoster = convertExecBoardToRoster(
-  "2022-2023",
+  '2022-2023',
   foundingExecutiveMembers,
   []
 );
@@ -103,23 +103,23 @@ export const historicalRoster: RosterYear[] = sorted([
 ]);
 
 export const execBoards: Record<string, YearlyBoard> = {
-  "2025-2026": {
-    year: "2025-2026",
+  '2025-2026': {
+    year: '2025-2026',
     executiveBoard: executiveMembers2526,
     juniorExecutiveBoard: [],
   },
-  "2024-2025": {
-    year: "2024-2025",
+  '2024-2025': {
+    year: '2024-2025',
     executiveBoard: executiveMembers2425,
     juniorExecutiveBoard: juniorExecutiveMembers2425,
   },
-  "2023-2024": {
-    year: "2023-2024",
+  '2023-2024': {
+    year: '2023-2024',
     executiveBoard: ExecutiveBoard20232024,
     juniorExecutiveBoard: foundingJuniorExecutiveMembers,
   },
-  "2022-2023": {
-    year: "2022-2023",
+  '2022-2023': {
+    year: '2022-2023',
     executiveBoard: ExecutiveBoard20232024,
     juniorExecutiveBoard: [],
   },
