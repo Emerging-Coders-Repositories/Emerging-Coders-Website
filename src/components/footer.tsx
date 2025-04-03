@@ -1,6 +1,6 @@
 'use client';
 
-import ListservSignup from '@/components/list-serv-signup-form';
+import ListservSignup from '@/components/list-serv-signup';
 import { footerSections, socialMediaLinks } from '@/constants/footer-links';
 import type { FooterSection, SocialMediaLink } from '@/types/footer';
 import Link from 'next/link';

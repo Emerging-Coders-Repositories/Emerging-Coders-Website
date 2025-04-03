@@ -53,7 +53,6 @@ export default function AboutusPhotoGrid() {
     <div className='bg-black py-24 sm:py-32 min-h-screen' id='about'>
       <div className='max-w-[110rem] mx-auto px-8'>
         <div className='flex flex-col items-center justify-center lg:flex-row lg:gap-32'>
-          {/* Text Section */}
           <div className='lg:w-6/12 mb-10 lg:mb-0'>
             <div className='lg:sticky lg:top-8 flex flex-col'>
               <h2 className='text-5xl font-semibold -tracking-4 mb-6 text-white'>
@@ -74,8 +73,6 @@ export default function AboutusPhotoGrid() {
               </p>
             </div>
           </div>
-
-          {/* Image Section */}
           <div className='lg:w-6/12 w-full'>
             {isMobile ? (
               <div className='relative w-full px-4 py-8'>
@@ -99,8 +96,6 @@ export default function AboutusPhotoGrid() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Arrows */}
                   <button
                     className='absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white p-2 rounded-full hover:bg-black/80 z-20'
                     onClick={goToPrevious}
@@ -116,8 +111,6 @@ export default function AboutusPhotoGrid() {
                     <ChevronRight size={24} />
                   </button>
                 </div>
-
-                {/* Dots */}
                 <div className='flex justify-center mt-4 space-x-2'>
                   {images.map((_, index) => (
                     <button
@@ -133,9 +126,9 @@ export default function AboutusPhotoGrid() {
             ) : (
               // Desktop Grid
               <div className='hidden lg:grid grid-cols-4 auto-rows-[200px] gap-4'>
-                {images.map((image) => (
+                {images.map((image, id) => (
                   <div
-                    key={`desktop-${image.id}`}
+                    key={`desktop-${id}`}
                     className={`relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 group ${getImageSize(
                       image.aspectRatio
                     )}`}
