@@ -116,7 +116,7 @@ export default function Header() {
   );
 
   return (
-    <header className='fixed top-4 z-50 w-full lg:top-2 md:mt-4 h-20'>
+    <header className='fixed top-4 z-50 w-full lg:top-2 mt-16 md:mt-8 h-20'>
       <div className='mx-auto !max-w-[1550px] !px-6 md:!px-9]'>
         <nav
           className='rounded-2xl transition-all duration-300 ease-in-out bg-black'

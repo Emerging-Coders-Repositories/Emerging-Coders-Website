@@ -10,7 +10,7 @@ interface ImageProps {
 export const images: ImageProps[] = [
   {
     id: 1,
-    src: '/about-us-photos/photo-1.jpg',
+    src: 'https://pub-3efce5c7466644d99eadaac75c7bc326.r2.dev/about-us-photos/photo-1.jpg',
     alt: 'Leetcode & Chill',
     order: 1,
     aspectRatio: 'landscape',
@@ -58,7 +58,7 @@ export const images: ImageProps[] = [
   },
   {
     id: 8,
-    src: '/about-us-photos/photo-10.jpeg',
+    src: 'https://pub-3efce5c7466644d99eadaac75c7bc326.r2.dev/about-us-photos/photo-10.jpeg',
     alt: 'Junior Executive Board Gingerbread House Competition',
     order: 8,
     aspectRatio: 'landscape',
