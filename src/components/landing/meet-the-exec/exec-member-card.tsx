@@ -1,6 +1,5 @@
 import type { ExecMember } from '@/types/exec-board-type';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function ExecutiveBoardMemberCard({
   member,
