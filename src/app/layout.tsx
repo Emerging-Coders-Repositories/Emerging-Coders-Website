@@ -1,4 +1,4 @@
-import AnnouncementBanner from '@/components/announcement-banner';
+// import AnnouncementBanner from '@/components/announcement-banner';
 import CTA from '@/components/cta';
 import Footer from '@/components/footer';
 import Header from '@/components/navigation/header';
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AnnouncementBanner />
+        {/* <AnnouncementBanner /> */}
         <div className='flex min-h-screen flex-col overflow-hidden'>
           <Header />
           {children}
