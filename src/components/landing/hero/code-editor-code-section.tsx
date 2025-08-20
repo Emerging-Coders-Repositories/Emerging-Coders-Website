@@ -107,7 +107,7 @@ export default function CodeEditorCodeSection() {
         <span className="text-zinc-600 mr-2 sm:mr-4 select-none">19</span>
         <span className="ml-4 sm:ml-8 text-blue-400">console</span>
         <span className="text-white">.log(</span>
-        <span className="text-green-400">{"Welcome to Emerging Coders!"}</span>
+        <span className="text-green-400">{"\"Welcome to Emerging Coders!\""}</span>
         <span className="text-white">);</span>
       </div>
       <div className="flex mb-1">

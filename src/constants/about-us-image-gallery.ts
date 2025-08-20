@@ -51,7 +51,7 @@ export const images: ImageProps[] = [
   {
     id: 7,
     src: "/about-us-photos/photo-8.JPEG",
-    alt: "Emerging Coders x Duoling",
+    alt: "Emerging Coders x Duolingo",
     order: 7,
     aspectRatio: "portrait",
     description: "Winter Quarter 2025",
