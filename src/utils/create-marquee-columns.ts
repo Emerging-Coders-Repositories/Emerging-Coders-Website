@@ -1,5 +1,5 @@
-import type { Testimonial } from "@/types/testimonials-marquee";
-import { testimonials } from "@/constants/testimonial-marquee";
+import { testimonials } from '@/constants/testimonial-marquee';
+import type { Testimonial } from '@/types/testimonials-marquee';
 
 export const createColumns = (): Testimonial[][] => {
   const columns: Testimonial[][] = [[], [], [], [], []];

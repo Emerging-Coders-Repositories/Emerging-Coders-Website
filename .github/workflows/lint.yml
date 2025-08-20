@@ -1,48 +1,65 @@
-name: Deploy to GitHub Pages
-
+name: Lint and Format Check
 on:
+  pull_request:
+    branches: [main]
   push:
-    branches:
-      - main
-
-permissions:
-  contents: write
-
+    branches: [main]
 jobs:
-  build-and-deploy:
+  lint:
+    name: Run Linters and Formatters
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
-          cache: "npm"
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-        env:
-          NODE_ENV: production
-
-      - name: List public directory
-        run: ls -la public/
-
-      - name: List out directory
-        run: ls -la out/
-
-      - name: Add .nojekyll file
+      - name: Check component file extensions
         run: |
-          touch ./out/.nojekyll
-          cp -r public/* out/
+          # Look for TypeScript files with JSX/TSX content but wrong extension
+          for file in $(find src -type f -name "*.ts"); do
+            # Skip specific file patterns
+            if [[ "$file" == *.test.ts ]] || \
+               [[ "$file" == *.spec.ts ]] || \
+               [[ "$file" == */styles.ts ]] || \
+               [[ "$file" =~ [._]styles?.ts$ ]] || \
+               [[ "$file" == */utils/* ]] || \
+               [[ "$file" == */lib/* ]] || \
+               [[ "$file" == */hooks/* ]] || \
+               [[ "$file" == */constants.ts ]] || \
+               [[ "$file" == */types.ts ]]; then
+              continue
+            fi
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: out
-          branch: gh-pages
-          clean: true
+            # Check for TSX syntax (looking for HTML-like tags)
+            # Ignore import statements with curly braces
+            if grep -l "<[A-Za-z][^>]*>" "$file" | grep -v "import.*{.*}" > /dev/null; then
+              INVALID_TS_FILES="$INVALID_TS_FILES$file"$'\n'
+            fi
+          done
+
+          if [ ! -z "$INVALID_TS_FILES" ]; then
+            echo "The following TS files contain JSX/TSX and should use .tsx extension:"
+            echo "$INVALID_TS_FILES"
+            echo "Files with TSX content should use .tsx extension"
+            exit 1
+          fi
+
+      - name: Run Next.js lint
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        run: npm run format:check
+
+      - name: Verify type checking
+        run: npx tsc --noEmit
+
+      - name: Verify import sorting
+        run: npm run check-imports

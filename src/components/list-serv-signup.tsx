@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -22,7 +24,7 @@ export default function ListservSignup() {
   };
 
   const handleConfirm = () => {
-    const mailtoLink = `mailto:listserv@listserv.it.northwestern.edu?subject=&body=SUBSCRIBE disc ${firstName} ${lastName}`;
+    const mailtoLink = `mailto:listserv@listserv.it.northwestern.edu?subject=&body=SUBSCRIBE emergingcoders ${firstName} ${lastName}`;
     window.location.href = mailtoLink;
     setShowDialog(false);
     setFirstName("");
@@ -39,7 +41,7 @@ export default function ListservSignup() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
-            className="col-span-1 bg-white/5 border-white/10 text-white focus-visible:ring-purple-500/30"
+            className="col-span-1"
           />
           <Input
             type="text"
@@ -47,30 +49,28 @@ export default function ListservSignup() {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
-            className="col-span-1 bg-white/5 border-white/10 text-white focus-visible:ring-purple-500/30"
+            className="col-span-1"
           />
         </div>
         <Button
-          type="submit"
-          className="w-full bg-purple-600 hover:bg-purple-500 text-white font-mono"
+          type='submit'
+          className='w-full bg-purple-600 hover:bg-purple-500 text-white font-mono'
         >
           Join Mailing List
         </Button>
       </form>
-      <p className="text-xs text-gray-500">
+      <p className="text-xs text-neutral-500 dark:text-neutral-400">
         This will open your email client with a pre-filled subscription message.
       </p>
 
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="bg-zinc-900 border border-white/10 text-white">
+        <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-white">
-              Important Instructions
-            </DialogTitle>
-            <DialogDescription className="pt-4 space-y-2 text-gray-400">
+            <DialogTitle>Important Instructions</DialogTitle>
+            <DialogDescription className="pt-4 space-y-2">
               <p>
                 Your email client will open with a pre-filled message to
-                subscribe to the mailing list. Please:
+                subscribe to the Emerging Coders mailing list. Please:
               </p>
               <ul className="list-disc pl-4 space-y-1">
                 <li>Do not modify the pre-filled message</li>
@@ -88,16 +88,11 @@ export default function ListservSignup() {
           </DialogHeader>
           <DialogFooter className="gap-2">
             <DialogClose asChild>
-              <Button
-                variant="outline"
-                className="border-white/10 text-white hover:bg-white/10"
-              >
-                Cancel
-              </Button>
+              <Button variant="outline">Cancel</Button>
             </DialogClose>
             <Button
               onClick={handleConfirm}
-              className="bg-purple-600 hover:bg-purple-500 text-white"
+              className="bg-[#40B4B4] hover:bg-[#359595]"
             >
               Open Email
             </Button>

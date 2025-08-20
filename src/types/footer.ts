@@ -1,9 +1,9 @@
-import { LucideIcon } from "lucide-react";
+import { LucideIcon } from 'lucide-react';
 
 export interface FooterLink {
   text: string;
   href: string;
-  target?: "_blank" | "_self" | "_parent" | "_top";
+  target?: '_blank' | '_self' | '_parent' | '_top';
 }
 
 export interface FooterSection {

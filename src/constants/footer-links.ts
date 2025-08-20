@@ -1,41 +1,34 @@
-import { Instagram, Linkedin, Mail, Github } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 export const footerSections = [
   {
-    title: "About",
+    title: 'About',
     links: [
       {
-        text: "About Us",
-        href: "/#about",
+        text: 'About Us',
+        href: '/#about',
       },
       {
-        text: "Executive Board",
-        href: "/#team",
+        text: 'Executive Board',
+        href: '/#team',
       },
     ],
   },
   {
-    title: "Programs",
+    title: 'Programs',
     links: [
       {
-        text: "Projects",
-        href: "/#projects",
+        text: 'Projects',
+        href: '/#projects',
       },
     ],
   },
   {
-    title: "Resources",
+    title: 'Resources',
     links: [
       {
-        text: "Newsletter",
-        href: "https://docs.google.com/forms/d/e/1FAIpQLSdYuKsulHevdpf0iu-D0d5GauF0hTPjL2cS-Ts93C-luD-aZQ/viewform",
-        target: "_blank",
-        rel: "noopener noreferrer"
-        
-      },
-      {
-        text: "Get Involved",
-        href: "/#about",
+        text: 'Get Involved',
+        href: '/#about',
       },
     ],
   },
@@ -44,22 +37,22 @@ export const footerSections = [
 export const socialMediaLinks = [
   {
     icon: Instagram,
-    link: "https://www.instagram.com/nu.emergingcoders/",
-    label: "Instagram",
+    link: 'https://www.instagram.com/nu.emergingcoders/',
+    label: 'Instagram',
   },
   {
     icon: Linkedin,
-    link: "https://www.linkedin.com/company/nuemerging-coders/",
-    label: "LinkedIn",
+    link: 'https://www.linkedin.com/company/nuemerging-coders/',
+    label: 'LinkedIn',
   },
   {
     icon: Mail,
-    link: "mailto:nuemergingcoders@gmail.com",
-    label: "Email",
+    link: 'mailto:nuemergingcoders@gmail.com',
+    label: 'Email',
   },
   {
     icon: Github,
-    link: "https://github.com/Emerging-Coders-Repositories",
-    label: "Github",
+    link: 'https://github.com/Emerging-Coders-Repositories',
+    label: 'Github',
   },
 ];

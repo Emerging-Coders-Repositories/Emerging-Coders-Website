@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="flex items-center justify-center min-h-scree p-4">
-      <div className="space-y-8 text-center w-full">
-        <div className="mb-6">
-          <pre className="text-white whitespace-pre text-[0.6rem] sm:text-xs md:text-sm lg:text-base font-bold mx-auto">
+    <div className='flex items-center justify-center min-h-screen'>
+      <div className='space-y-8 text-center w-full'>
+        <div className='mb-6'>
+          <pre className='text-white whitespace-pre text-[0.6rem] sm:text-xs md:text-sm lg:text-base font-bold mx-auto'>
             {`
 
  ▄         ▄   ▄▄▄▄▄▄▄▄▄   ▄         ▄
@@ -24,9 +24,9 @@ export default function NotFound() {
           </pre>
           <div>
             <pre
-              className="text-white whitespace-pre text-[0.5rem] hidden
+              className='text-white whitespace-pre text-[0.5rem] hidden
               2xl:block xl:text-sm
-            font-bold"
+            font-bold'
             >
               {`
 
@@ -46,12 +46,12 @@ export default function NotFound() {
             </pre>
           </div>
         </div>
-        <p className="text-gray-400 text-sm sm:text-base">
+        <p className='text-gray-400 text-sm sm:text-base'>
           oops! seems like this page doesn&apos;t exist. how did you get here?
         </p>
         <Link
-          href="/"
-          className="inline-block text-white hover:text-[#40B4B4]transition-colors text-sm sm:text-base"
+          href='/'
+          className='inline-block text-white hover:text-[#40B4B4]transition-colors text-sm sm:text-base'
         >
           take me back home
         </Link>

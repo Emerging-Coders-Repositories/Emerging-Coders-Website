@@ -1,5 +1,4 @@
-import { Job } from "@/types/internship";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   Table,
   TableBody,
@@ -7,7 +6,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
+import { Job } from '@/types/internship';
 
 interface JobTableProps {
   jobs: Job[];
@@ -21,45 +21,45 @@ export function JobTable({ jobs, isLoading }: JobTableProps) {
       .map((_, i) => (
         <TableRow
           key={`skeleton-${i}`}
-          className="border-zinc-900 hover:bg-transparent"
+          className='border-zinc-900 hover:bg-transparent'
         >
           <TableCell>
-            <Skeleton className="h-6 w-full bg-zinc-900/70" />
+            <Skeleton className='h-6 w-full bg-zinc-900/70' />
           </TableCell>
-          <TableCell className="hidden sm:table-cell">
-            <Skeleton className="h-6 w-full bg-zinc-900/70" />
+          <TableCell className='hidden sm:table-cell'>
+            <Skeleton className='h-6 w-full bg-zinc-900/70' />
           </TableCell>
-          <TableCell className="hidden md:table-cell">
-            <Skeleton className="h-6 w-32 bg-zinc-900/70" />
+          <TableCell className='hidden md:table-cell'>
+            <Skeleton className='h-6 w-32 bg-zinc-900/70' />
           </TableCell>
-          <TableCell className="hidden md:table-cell">
-            <Skeleton className="h-6 w-24 bg-zinc-900/70" />
+          <TableCell className='hidden md:table-cell'>
+            <Skeleton className='h-6 w-24 bg-zinc-900/70' />
           </TableCell>
           <TableCell>
-            <Skeleton className="h-6 w-20 bg-zinc-900/70" />
+            <Skeleton className='h-6 w-20 bg-zinc-900/70' />
           </TableCell>
         </TableRow>
       ));
   };
 
   return (
-    <div className="border border-zinc-900 rounded-md bg-black overflow-x-auto  sm:mx-0">
+    <div className='border border-zinc-900 rounded-md bg-black overflow-x-auto  sm:mx-0'>
       <Table>
-        <TableHeader className="bg-zinc-900">
-          <TableRow className="border-zinc-800 hover:bg-zinc-900">
-            <TableHead className="w-[120px] sm:w-[180px] text-zinc-300 font-medium">
+        <TableHeader className='bg-zinc-900'>
+          <TableRow className='border-zinc-800 hover:bg-zinc-900'>
+            <TableHead className='w-[120px] sm:w-[180px] text-zinc-300 font-medium'>
               Company
             </TableHead>
-            <TableHead className="hidden sm:table-cell text-zinc-300 font-medium">
+            <TableHead className='hidden sm:table-cell text-zinc-300 font-medium'>
               Position
             </TableHead>
-            <TableHead className="hidden md:table-cell w-[140px] text-zinc-300 font-medium">
+            <TableHead className='hidden md:table-cell w-[140px] text-zinc-300 font-medium'>
               Location
             </TableHead>
-            <TableHead className="hidden md:table-cell w-[100px] text-zinc-300 font-medium">
+            <TableHead className='hidden md:table-cell w-[100px] text-zinc-300 font-medium'>
               Added On
             </TableHead>
-            <TableHead className="w-[60px] sm:w-[80px] text-right text-zinc-300 font-medium">
+            <TableHead className='w-[60px] sm:w-[80px] text-right text-zinc-300 font-medium'>
               Apply
             </TableHead>
           </TableRow>
@@ -68,8 +68,8 @@ export function JobTable({ jobs, isLoading }: JobTableProps) {
           {isLoading ? (
             renderSkeletons()
           ) : jobs.length === 0 ? (
-            <TableRow className="border-zinc-800 hover:bg-zinc-800/50">
-              <TableCell colSpan={5} className="text-center py-8 text-zinc-400">
+            <TableRow className='border-zinc-800 hover:bg-zinc-800/50'>
+              <TableCell colSpan={5} className='text-center py-8 text-zinc-400'>
                 No internships found. Try adjusting your search.
               </TableCell>
             </TableRow>
@@ -78,27 +78,27 @@ export function JobTable({ jobs, isLoading }: JobTableProps) {
               <TableRow
                 key={index}
                 className={`border-zinc-900 ${
-                  index % 2 === 0 ? "bg-black" : "bg-zinc-950"
+                  index % 2 === 0 ? 'bg-black' : 'bg-zinc-950'
                 } hover:bg-zinc-800/30`}
               >
-                <TableCell className="font-medium text-zinc-200">
+                <TableCell className='font-medium text-zinc-200'>
                   {job.company}
                 </TableCell>
-                <TableCell className="hidden sm:table-cell text-zinc-300">
+                <TableCell className='hidden sm:table-cell text-zinc-300'>
                   {job.title}
                 </TableCell>
-                <TableCell className="hidden md:table-cell text-zinc-400">
+                <TableCell className='hidden md:table-cell text-zinc-400'>
                   {job.location}
                 </TableCell>
-                <TableCell className="hidden md:table-cell text-zinc-500">
+                <TableCell className='hidden md:table-cell text-zinc-500'>
                   {job.addedOn}
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className='text-right'>
                   <a
                     href={job.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-purple-400 hover:text-purple-300 hover:underline"
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-purple-400 hover:text-purple-300 hover:underline'
                   >
                     Apply
                   </a>

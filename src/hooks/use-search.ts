@@ -1,8 +1,8 @@
 /* eslint-disable */
+import { useCallback, useMemo, useState } from 'react';
 
-import { useState, useCallback, useMemo } from "react";
-import { debounce } from "@/utils/debounce";
-import { Job } from "@/types/internship";
+import { Job } from '@/types/internship';
+import { debounce } from '@/utils/debounce';
 
 interface UseSearchResult {
   searchInput: string;
@@ -14,8 +14,8 @@ interface UseSearchResult {
  * Custom hook to handle search functionality with debounce
  */
 export function useSearch(jobs: Job[], debounceMs = 300): UseSearchResult {
-  const [searchInput, setSearchInput] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [searchInput, setSearchInput] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
 
   const debouncedSetSearch = useCallback(
     debounce((value: string) => {

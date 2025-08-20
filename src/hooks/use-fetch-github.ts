@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { parseInternshipData } from "@/utils/parse-internships";
-import { Job } from "@/types/internship";
+import { useEffect, useState } from 'react';
+
+import { Job } from '@/types/internship';
+import { parseInternshipData } from '@/utils/parse-internships';
 
 interface UseFetchGithubResult {
   data: Job[];
@@ -41,7 +42,7 @@ export function useFetchGithub(repoPath: string): UseFetchGithubResult {
         const parsedJobs = parseInternshipData(decodedContent);
         setData(parsedJobs);
       } catch (error) {
-        console.error("Error fetching from GitHub:", error);
+        console.error('Error fetching from GitHub:', error);
         setIsError(true);
       } finally {
         setIsLoading(false);
