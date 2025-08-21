@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { ErrorState } from '@/components/opportunities/components/error-state';
 import { JobTable } from '@/components/opportunities/components/jobs-table';
@@ -34,6 +34,10 @@ export default function NewGraduatePositions() {
   const handleRetry = useCallback(() => {
     refetch();
   }, [refetch]);
+
+  useEffect(() => {
+    console.log('jobsList Jobs:', jobsList);
+  }, [jobsList]);
 
   if (isError) {
     return <ErrorState onRetry={handleRetry} />;

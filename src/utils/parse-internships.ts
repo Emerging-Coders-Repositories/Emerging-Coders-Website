@@ -1,45 +1,48 @@
-import { Job } from '@/types/internship';
+import { Job } from "@/types/internship";
 
-/**
- * Parses the README content from SimplifyJobs repo to extract job listings
- *
- * @param content The README.md content as a string
- * @returns Array of parsed job listings
- */
+const norm = (s?: string | null) =>
+  (s ?? "").replace(/\s+/g, " ").trim();
+
 export function parseInternshipData(content: string): Job[] {
-  const regex =
-    /\| ([^|]+?) \| ([^|]+?) \| ([^|]+?) \| <a href="([^"]+?)">.*?<\/a> \| ([^|]+?) \|/g;
-  let match: RegExpExecArray | null;
+  // Parse HTML inside the Markdown string
+  const container = document.createElement("div");
+  container.innerHTML = content;
+
+  const tables = Array.from(container.querySelectorAll("table"));
+  const target = tables.find(t => {
+    const ths = Array.from(t.querySelectorAll("thead th")).map(th => norm(th.textContent).toLowerCase());
+    return ["company", "role", "location", "application", "age"].every(h => ths.includes(h));
+  });
+  if (!target) return [];
+
+  const rows = Array.from(target.querySelectorAll("tbody tr"));
   const jobs: Job[] = [];
-  let lastCompanyName = '';
+  let lastCompany = "";
 
-  while ((match = regex.exec(content)) !== null) {
-    let company = match[1].trim();
+  for (const row of rows) {
+    const tds = row.querySelectorAll("td");
+    if (tds.length < 5) continue;
 
-    if (company.startsWith('**[')) {
-      company = company.replace(/\*\*\[(.*?)\]\(.*?\)\*\*/, '$1').trim();
+    let company = norm(tds[0].querySelector("a")?.textContent || tds[0].textContent);
+    if (!company) company = lastCompany; else lastCompany = company;
+
+    const title = norm(tds[1].textContent);
+
+    const location = norm(tds[2].textContent);
+
+    // Application link: prefer external "apply" link, else Simplify, else first href
+    const anchors = Array.from(tds[3].querySelectorAll<HTMLAnchorElement>("a[href]"));
+    const apply = anchors.find(a =>
+      /apply|greenhouse|lever|workday|myworkdayjobs|careers|jobs|boards\.greenhouse/i.test(a.href)
+    );
+    const simplify = anchors.find(a => /simplify\.jobs/i.test(a.href));
+    const link = norm((apply?.href || simplify?.href || anchors[0]?.href) ?? "");
+
+    const addedOn = norm(tds[4].textContent);
+
+    if (company && title && link) {
+      jobs.push({ company, title, location, link, addedOn });
     }
-
-    company = company.replace(/[^a-zA-Z0-9\s]/g, '');
-
-    if (company === '') {
-      company = lastCompanyName;
-    } else {
-      lastCompanyName = company;
-    }
-
-    const title = match[2].trim().replace(/[^a-zA-Z0-9\s]/g, '');
-    const location = match[3].trim();
-    const link = match[4].trim();
-    const addedOn = match[5].trim();
-
-    jobs.push({
-      company,
-      title,
-      location,
-      link,
-      addedOn,
-    });
   }
 
   return jobs;
