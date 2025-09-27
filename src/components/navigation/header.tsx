@@ -243,6 +243,12 @@ export default function Header() {
                 </NavigationMenuList>
               </NavigationMenu>
               <Link
+                href='/eme'
+                className='text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono'
+              >
+                EME
+              </Link>
+              <Link
                 href='/contact'
                 className='text-white/90 hover:text-white transition-colors px-3 py-2 text-base font-mono'
               >
