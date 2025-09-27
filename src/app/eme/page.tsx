@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { Message, botDummy, userDummy } from "@/constants/eme";
+import { timeStamp } from "console";
 
 export default function emePage() {
   const [messages, setMessages] = useState<Message[]>([userDummy, botDummy, userDummy, botDummy, userDummy, botDummy])
@@ -14,6 +15,18 @@ export default function emePage() {
   const submitPrompt = async (e: React.FormEvent) => {
     if (isLoading || prompt == "") 
       return;
+
+    const msg: Message = {
+      id: Date.now().toString(),
+      text: prompt, 
+      sender: 'user', 
+      timestamp: new Date()
+    }
+
+    setMessages(prev => [...prev, msg])
+    setPrompt("")
+    setIsLoading(true)
+
     //add logic here for submission
   }
 
@@ -26,7 +39,7 @@ export default function emePage() {
         eme is the Emerging Coders chatbot that answers your questions about navigating CS at Northwestern. Answers are based on EMCO GroupMe messages.
       </p>
       
-      <div className="bg-[#202020] py-6 px-10 rounded">
+      <div className="bg-[#202020] py-6 px-10 rounded max-w-[1600px]">
         <div className="w-full min-h-[200px] space-y-3">
           {messages.map((msg, i) => (
             <div
