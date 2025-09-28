@@ -1,33 +1,46 @@
 "use client"
 import { useState, useEffect } from "react";
 import { Message, botDummy, userDummy } from "@/constants/eme";
-import { timeStamp } from "console";
+import { fetchEme } from "./fetch-eme";
 
 export default function emePage() {
   const [messages, setMessages] = useState<Message[]>([userDummy, botDummy, userDummy, botDummy, userDummy, botDummy])
   const [prompt, setPrompt] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, [])
+  // }, [])
 
   const submitPrompt = async (e: React.FormEvent) => {
-    if (isLoading || prompt == "") 
-      return;
+    e.preventDefault();
+    if (isLoading || prompt.trim() === "") return;
 
-    const msg: Message = {
+    const userMsg: Message = {
       id: Date.now().toString(),
-      text: prompt, 
-      sender: 'user', 
-      timestamp: new Date()
-    }
+      text: prompt,
+      sender: "user",
+      timestamp: new Date(),
+    };
 
-    setMessages(prev => [...prev, msg])
+    setMessages(prev => [...prev, userMsg]);
+    setIsLoading(true);
     setPrompt("")
-    setIsLoading(true)
 
-    //add logic here for submission
+    try {
+      const { generation } = await fetchEme(prompt);
+      const botMsg: Message = {
+        id: Date.now().toString(),
+        text: generation,
+        sender: "bot",
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, botMsg]);
+    } catch (error) {
+      console.error("Error retrieving eme output:", error);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -35,8 +48,11 @@ export default function emePage() {
       <h1 className="text-white text-center md:text-left text-5xl md:text-7xl font-bold tracking-tight leading-tight ">
         eme  
       </h1>
-      <p className="mt-5 text-m leading-relaxed text-gray-400 font-mono max-w-md text-center">
-        eme is the Emerging Coders chatbot that answers your questions about navigating CS at Northwestern. Answers are based on EMCO GroupMe messages.
+      <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
+        eme is the EMCO chatbot that answers your questions about navigating CS at Northwestern
+      </p>
+      <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
+        Answers based on historical EMCO GroupMe messages
       </p>
       
       <div className="bg-[#202020] py-6 px-10 rounded max-w-[1600px]">
