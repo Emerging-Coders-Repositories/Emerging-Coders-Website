@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { Message, botDummy, userDummy } from "@/constants/eme";
 import { fetchEme } from "./fetch-eme";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 
 export default function emePage() {
   const [messages, setMessages] = useState<Message[]>([userDummy, botDummy, userDummy, botDummy, userDummy, botDummy])
@@ -49,12 +51,23 @@ export default function emePage() {
         eme  
       </h1>
       <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
-        eme is the EMCO chatbot that answers your questions about navigating CS at Northwestern
+        Ask me something like "should I take CS214 and CS211 at the same time?"
       </p>
-      <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
-        Answers based on historical EMCO GroupMe messages
-      </p>
-      
+      <Popover>
+        <PopoverTrigger asChild className="text-m leading-relaxed text-gray-400 font-mono text-center">
+          <Button>About</Button>
+        </PopoverTrigger>
+        <PopoverContent className="border-gray-800 z-50 bg-black/95 shadow-xl p-4 w-230 outline-none">
+          <div className="z-50 outline-none">
+            <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
+              eme is the EMCO chatbot that answers your questions about navigating CS at Northwestern.
+            </p>
+            <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
+              Answers are based on historical EMCO GroupMe messages.
+            </p>
+          </div>
+        </PopoverContent>
+      </Popover>
       <div className="bg-[#202020] py-6 px-10 rounded max-w-[1600px]">
         <div className="w-full min-h-[200px] space-y-3">
           {messages.map((msg, i) => (
@@ -95,7 +108,7 @@ export default function emePage() {
               />
             <button 
               type="submit"
-              className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center mx-auto md:mx-0 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-white text-black font-bold text-base font-mono py-4 px-6 rounded-md hover:bg-gray-200 transition-colors flex items-center mx-auto md:mx-0 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               disabled={!prompt.trim() || isLoading}
               >
               Ask
