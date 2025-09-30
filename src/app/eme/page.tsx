@@ -1,21 +1,26 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Message, botDummy, userDummy } from "@/constants/eme";
-import { fetchEme } from "./fetch-eme";
+import { fetchEmeResponse, fetchEmeHealth } from "./fetch-eme";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 
 export default function emePage() {
-  const [messages, setMessages] = useState<Message[]>([userDummy, botDummy, userDummy, botDummy, userDummy, botDummy])
+  const [messages, setMessages] = useState<Message[]>([userDummy, botDummy])
   const [prompt, setPrompt] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [isStreaming, setIsStreaming] = useState(false)
 
-  // useEffect(() => {
-
-  // }, [])
+  const isHealthCheck = true;
 
   const submitPrompt = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if(isHealthCheck) {
+      healthCheck();
+      return;
+    }
+
     if (isLoading || prompt.trim() === "") return;
 
     const userMsg: Message = {
@@ -27,21 +32,59 @@ export default function emePage() {
 
     setMessages(prev => [...prev, userMsg]);
     setIsLoading(true);
-    setPrompt("")
+    setPrompt("");
 
     try {
-      const { generation } = await fetchEme(prompt);
+      const stream = await fetchEmeResponse(prompt);
+      const reader = stream.getReader();
+      const decoder = new TextDecoder();
+
+      let botResponse = '';
       const botMsg: Message = {
         id: Date.now().toString(),
-        text: generation,
+        text: '',
         sender: "bot",
         timestamp: new Date(),
       };
+
       setMessages(prev => [...prev, botMsg]);
+      setIsLoading(false);
+      setIsStreaming(true);
+
+      while (true) {
+        const { done, value} = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true});
+        botResponse += chunk;
+
+        // Update message with accumulated text
+        setMessages((prev) =>
+          prev.map((msg) => (msg.id === botMsg.id ? { ...msg, text: botResponse } : msg)),
+        );
+      }
     } catch (error) {
       console.error("Error retrieving eme output:", error);
+
+      const errorMsg: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Sorry, I encountered an error. Please try again.',
+        sender: 'bot',
+        timestamp: new Date(),
+      }
+      setMessages((prev) => [...prev, errorMsg]);
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
+    }
+  }
+
+  const healthCheck = async () => {
+    try {
+      const response = await fetchEmeHealth();
+      console.log("Health is: ", response);
+    } catch(error) {
+      console.error("Error retrieving eme health: ", error);
     }
   }
 
@@ -68,7 +111,7 @@ export default function emePage() {
           </div>
         </PopoverContent>
       </Popover>
-      <div className="bg-[#202020] py-6 px-10 rounded max-w-[1600px]">
+      <div className="bg-[#202020] py-6 px-10 rounded w-3/4">
         <div className="w-full min-h-[200px] space-y-3">
           {messages.map((msg, i) => (
             <div

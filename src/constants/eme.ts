@@ -1,3 +1,5 @@
+export const EME_API_BASE_URL = 'https://eme-yr7i.onrender.com'
+
 export interface Message {
   id: string;
   text: string;
