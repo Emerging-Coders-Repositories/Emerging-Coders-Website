@@ -38,11 +38,12 @@ export function useFetchGithub(repoPath: string): UseFetchGithubResult {
         const readme = await response.json();
         const { content, encoding } = readme; // encoding should be "base64"
 
-        if (encoding !== "base64") throw new Error("Unexpected README encoding");
+        if (encoding !== 'base64')
+          throw new Error('Unexpected README encoding');
 
-        const bytes = Uint8Array.from(atob(content), c => c.charCodeAt(0));
-        const decodedContent = new TextDecoder("utf-8").decode(bytes);
-        
+        const bytes = Uint8Array.from(atob(content), (c) => c.charCodeAt(0));
+        const decodedContent = new TextDecoder('utf-8').decode(bytes);
+
         const parsedJobs = parseInternshipData(decodedContent);
         setData(parsedJobs);
       } catch (error) {
