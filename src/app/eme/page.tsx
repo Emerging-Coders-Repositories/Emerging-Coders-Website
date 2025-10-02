@@ -1,17 +1,18 @@
 "use client"
 import { useState } from "react";
-import { Message, botDummy, userDummy } from "@/constants/eme";
+import { Message, thinkingMessage } from "@/constants/eme";
 import { fetchEmeResponse, fetchEmeHealth } from "./fetch-eme";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
+import { ChatBubble }  from "./chat-bubble";
 
 export default function emePage() {
-  const [messages, setMessages] = useState<Message[]>([userDummy, botDummy])
+  const [messages, setMessages] = useState<Message[]>([])
   const [prompt, setPrompt] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [isStreaming, setIsStreaming] = useState(false)
 
-  const isHealthCheck = true;
+  const isHealthCheck = false;
 
   const submitPrompt = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +39,7 @@ export default function emePage() {
       const stream = await fetchEmeResponse(prompt);
       const reader = stream.getReader();
       const decoder = new TextDecoder();
-
+      
       let botResponse = '';
       const botMsg: Message = {
         id: Date.now().toString(),
@@ -46,15 +47,15 @@ export default function emePage() {
         sender: "bot",
         timestamp: new Date(),
       };
-
+      
+      setIsStreaming(true);
       setMessages(prev => [...prev, botMsg]);
       setIsLoading(false);
-      setIsStreaming(true);
-
+      
       while (true) {
         const { done, value} = await reader.read();
         if (done) break;
-
+        
         const chunk = decoder.decode(value, { stream: true});
         botResponse += chunk;
 
@@ -89,54 +90,56 @@ export default function emePage() {
   }
 
   return (
-    <div className="flex flex-col items-center px-30 py-40 space-y-4">
+    <div className="flex flex-col justify-center items-center px-30 py-40 space-y-4">
       <h1 className="text-white text-center md:text-left text-5xl md:text-7xl font-bold tracking-tight leading-tight ">
         eme  
       </h1>
-      <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
-        Ask me something like "should I take CS214 and CS211 at the same time?"
-      </p>
       <Popover>
         <PopoverTrigger asChild className="text-m leading-relaxed text-gray-400 font-mono text-center">
           <Button>About</Button>
         </PopoverTrigger>
-        <PopoverContent className="border-gray-800 z-50 bg-black/95 shadow-xl p-4 w-230 outline-none">
-          <div className="z-50 outline-none">
+        <PopoverContent
+          className="flex flex-col items-center justify-center w-[clamp(22rem,70vw,40rem)] border-gray-800 z-50 bg-black/95 shadow-xl p-6 outline-none"
+        >
+          <div className="z-50 outline-none flex flex-col space-y-10 w-full">
             <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
-              eme is the EMCO chatbot that answers your questions about navigating CS at Northwestern.
+              eme is the EMCO chatbot that answers your questions about navigating CS at Northwestern. We hope it can be another point of reference for underclass students getting started. 
             </p>
             <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
-              Answers are based on historical EMCO GroupMe messages.
+              Answers are based on historical EMCO GroupMe messages. eme uses {" "}
+              <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" className="underline">
+                RAG
+              </a> 
+              {" "} to pull relevant messages into its context. 
+            </p>
+            <p className="text-m leading-relaxed text-gray-400 font-mono text-center">
+              NOTE: eme can make mistakes. Emerging Coders, its affiliated members and Executive Board do not endorse its messages.
             </p>
           </div>
         </PopoverContent>
       </Popover>
+
       <div className="bg-[#202020] py-6 px-10 rounded w-3/4">
-        <div className="w-full min-h-[200px] space-y-3">
+        <div className="w-full space-y-3">
+          <div className="flex flex-col">
+            {messages.length === 0 && 
+              <p className="text-m leading-relaxed text-gray-400 font-mono text-center py-20">
+                Ask me something like "should I take CS214 and CS211 at the same time?"
+              </p>
+            }
+          </div>
           {messages.map((msg, i) => (
-            <div
-            key={`${msg.id}-${i}`}
-            className={`flex py-1 ${msg.sender === 'bot' ? 'justify-start' : 'justify-end'}`}
-            >
-              <div
-                className={
-                  "rounded-2xl p-3 text-sm md:text-base max-w-[80%] " +
-                  (msg.sender === 'bot'
-                    ? "bg-neutral-950 border-2 border-zinc-800 text-white shadow-sm"
-                    : "bg-white/90 border border-zinc-300 text-black shadow-sm")
-                  }
-                  role="article"
-                aria-label={msg.sender === 'bot' ? 'Bot message' : 'User message'}
-                >
-                <div className="whitespace-pre-wrap leading-relaxed">
-                  {msg.text}
-                </div>
-              </div>
-            </div>
+            <ChatBubble key={msg.id} msg={msg} index={i} />
           ))}
+          {isLoading && 
+            <ChatBubble 
+              msg={thinkingMessage}
+              index={messages.length + 1} 
+            />
+          }
         </div>
 
-        <div className="flex flex-col w-full my-14">
+        <div className="flex flex-col w-full my-6">
           <form 
             onSubmit={submitPrompt}
             className="flex flex-row space-x-4"

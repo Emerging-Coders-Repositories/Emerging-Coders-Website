@@ -6,12 +6,12 @@ export interface UseEmeResult {
   isError: boolean,
 }
 
-export async function fetchEmeResponse(prompt: string): Promise<ReadableStream<Uint8Array>> {
+export async function fetchEmeResponse(message: string): Promise<ReadableStream<Uint8Array>> {
 
   const response = await fetch(`${EME_API_BASE_URL}/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt }),
+    body: JSON.stringify({ message }),
   });
 
   if (!response.ok) throw new Error(`eme responded with status ${response.status}`);
@@ -26,7 +26,7 @@ export async function fetchEmeResponse(prompt: string): Promise<ReadableStream<U
 }
 
 export async function fetchEmeHealth(): Promise<{ status: string}> {
-  const response = await fetch(`${EME_API_BASE_URL}/heath`);
+  const response = await fetch(`${EME_API_BASE_URL}/health`);
   
   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
