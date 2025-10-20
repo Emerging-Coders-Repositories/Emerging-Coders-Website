@@ -41,6 +41,15 @@ export default function SponsorsPage() {
             <div className='flex flex-wrap justify-center items-center gap-12 mb-12'>
               <div className='h-12 w-48 flex items-center justify-center'>
                 <Image
+                  src='/logos/accenture.svg'
+                  alt='Google'
+                  width={140}
+                  height={46}
+                  className='opacity-90 hover:opacity-100 transition-opacity'
+                />
+              </div>
+              <div className='h-12 w-48 flex items-center justify-center'>
+                <Image
                   src='/logos/google.svg'
                   alt='Google'
                   width={140}
