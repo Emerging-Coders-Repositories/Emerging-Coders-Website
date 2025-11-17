@@ -115,14 +115,7 @@ export default function EmeChat() {
               reference for underclass students getting started.
             </p>
             <p className='text-m leading-relaxed text-gray-400 font-mono text-center'>
-              Answers are based on historical EMCO GroupMe messages. eme uses{' '}
-              <a
-                href='https://en.wikipedia.org/wiki/Retrieval-augmented_generation'
-                className='underline'
-              >
-                RAG
-              </a>{' '}
-              to pull relevant messages into its context.
+              Answers are based on historical EMCO GroupMe messages. eme uses RAG to pull relevant messages into its context.
             </p>
             <p className='text-m leading-relaxed text-gray-400 font-mono text-center'>
               NOTE: eme can make mistakes. Emerging Coders, its affiliated

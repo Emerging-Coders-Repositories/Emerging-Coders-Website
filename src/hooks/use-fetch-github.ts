@@ -25,9 +25,22 @@ export function useFetchGithub(repoPath: string): UseFetchGithubResult {
       setIsError(false);
 
       try {
-        const response = await fetch(
-          `https://api.github.com/repos/${repoPath}/contents/README.md`
-        );
+        const githubApiUrl = `https://api.github.com/repos/${repoPath}/contents/README.md`;
+    
+        const repoMetadata = await fetch(githubApiUrl);
+
+        if (!repoMetadata.ok) {
+          throw new Error(
+            `GitHub API responded with status ${repoMetadata.status}`
+          );
+        }
+
+        const json = await repoMetadata.json();
+        if (!("git_url" in json)) {
+          throw new Error("Unexpected metadata format. Metadata received: " + JSON.stringify(json) + ", expected git_url field.");
+        }
+
+        const response = await fetch(json.git_url);
 
         if (!response.ok) {
           throw new Error(

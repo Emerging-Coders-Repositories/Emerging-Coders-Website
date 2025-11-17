@@ -13,12 +13,18 @@ import { usePagination } from '@/hooks/use-pagination';
 import { useSearch } from '@/hooks/use-search';
 
 export default function SoftwareEngineeringInternships() {
+  const getInternshipYear = () => {
+    const now = new Date();
+    const year = now.getFullYear() + (now.getMonth() >= 7 ? 1 : 0);
+    return year;
+  }
+
   const {
     data: jobsList,
     isLoading,
     isError,
     refetch,
-  } = useFetchGithub('SimplifyJobs/Summer2024-Internships');
+  } = useFetchGithub(`SimplifyJobs/Summer${getInternshipYear()}-Internships`);
   const { searchInput, setSearchInput, filteredJobs } = useSearch(jobsList);
   const { currentPage, setCurrentPage, totalPages, paginateItems } =
     usePagination<(typeof filteredJobs)[0]>({
@@ -35,6 +41,7 @@ export default function SoftwareEngineeringInternships() {
   if (isError) {
     return <ErrorState onRetry={handleRetry} />;
   }
+  
 
   return (
     <div className='container mx-auto py-8 sm:py-12 px-2 sm:px-4 md:px-6 mt-16 sm:mt-24 max-w-full sm:max-w-9/12 mb-16 sm:mb-24'>
