@@ -1,6 +1,60 @@
 import type { ExecMember } from '@/types/exec-board-type';
 
-export const juniorExecutiveMembers2526: ExecMember[] = [];
+export const juniorExecutiveMembers2627: ExecMember[] = [];
+
+export const juniorExecutiveMembers2526: ExecMember[] = [
+  {
+    role: 'JEB Member',
+    name: 'Keigo Healy',
+    pronouns: 'He/Him',
+    major: 'Computer Science',
+    year: 'Freshman',
+    linkedin: '',
+    image: '',
+    email: 'keigohealy2028@u.northwestern.edu',
+  },
+  {
+    role: 'JEB Member',
+    name: 'Keigo Healy',
+    pronouns: 'He/Him',
+    major: 'Computer Science',
+    year: 'Freshman',
+    linkedin: '',
+    image: '',
+    email: 'keigohealy2028@u.northwestern.edu',
+  },
+  {
+    role: 'JEB Member',
+    name: 'Keigo Healy',
+    pronouns: 'He/Him',
+    major: 'Computer Science',
+    year: 'Freshman',
+    linkedin: '',
+    image: '',
+    email: 'keigohealy2028@u.northwestern.edu',
+  },
+  {
+    role: 'JEB Member',
+    name: 'Keigo Healy',
+    pronouns: 'He/Him',
+    major: 'Computer Science',
+    year: 'Freshman',
+    linkedin: '',
+    image: '',
+    email: 'keigohealy2028@u.northwestern.edu',
+  },
+  {
+    role: 'JEB Member',
+    name: 'Keigo Healy',
+    pronouns: 'He/Him',
+    major: 'Computer Science',
+    year: 'Freshman',
+    linkedin: '',
+    image: '',
+    email: 'keigohealy2028@u.northwestern.edu',
+  },
+
+];
 
 export const juniorExecutiveMembers2425: ExecMember[] = [
   {

@@ -9,15 +9,18 @@ export default function ExecutiveBoardMemberCard({
   return (
     <div className='flex flex-col items-center text-center transition-transform duration-200 hover:-translate-y-1 text-base'>
       <div className='w-24 h-24 mb-3 overflow-hidden rounded-full'>
-        <img
-          src={member.image}
-          alt={`${member.name}'s photo`}
-          className='w-full h-full object-cover'
-          onError={(e) => {
-            const imgElement = e.target as HTMLImageElement;
-            imgElement.src = 'https://via.placeholder.com/150';
-          }}
-        />
+        {member.image && member.image !== '' && (
+            <img
+              src={member.image}
+              alt={`${member.name}'s photo`}
+              className='w-full h-full object-cover'
+              onError={(e) => {
+                const imgElement = e.target as HTMLImageElement;
+                imgElement.src = 'https://via.placeholder.com/150';
+              }}
+            />
+          )
+        }
       </div>
       <h3 className='text-lg font-bold text-white'>{member.name}</h3>
       <p className='text-sm text-gray-300 mb-1'>{member.role}</p>

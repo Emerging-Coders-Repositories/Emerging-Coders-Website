@@ -7,6 +7,7 @@ import {
 import {
   foundingJuniorExecutiveMembers,
   juniorExecutiveMembers2425,
+  juniorExecutiveMembers2526,
 } from '@/constants/junior-executive-boards-list';
 import type {
   ExecMember,
@@ -74,7 +75,7 @@ function convertExecBoardToRoster(
 const ExecRoster202520256 = convertExecBoardToRoster(
   '2025-2026',
   executiveMembers2526,
-  []
+  juniorExecutiveMembers2526
 );
 
 const ExecRoster20242025 = convertExecBoardToRoster(
