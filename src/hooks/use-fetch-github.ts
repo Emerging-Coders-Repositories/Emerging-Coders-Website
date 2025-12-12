@@ -26,7 +26,7 @@ export function useFetchGithub(repoPath: string): UseFetchGithubResult {
 
       try {
         const githubApiUrl = `https://api.github.com/repos/${repoPath}/contents/README.md`;
-    
+
         const repoMetadata = await fetch(githubApiUrl);
 
         if (!repoMetadata.ok) {
@@ -36,8 +36,12 @@ export function useFetchGithub(repoPath: string): UseFetchGithubResult {
         }
 
         const json = await repoMetadata.json();
-        if (!("git_url" in json)) {
-          throw new Error("Unexpected metadata format. Metadata received: " + JSON.stringify(json) + ", expected git_url field.");
+        if (!('git_url' in json)) {
+          throw new Error(
+            'Unexpected metadata format. Metadata received: ' +
+              JSON.stringify(json) +
+              ', expected git_url field.'
+          );
         }
 
         const response = await fetch(json.git_url);
