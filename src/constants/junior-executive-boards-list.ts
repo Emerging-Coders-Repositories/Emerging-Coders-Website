@@ -9,7 +9,7 @@ export const juniorExecutiveMembers2526: ExecMember[] = [
     pronouns: 'She/Her',
     major: 'Computer Engineering',
     year: 'Sophomore',
-    linkedin: 'www.linkedin.com/in/gabriela-avila15',
+    linkedin: 'https://www.linkedin.com/in/gabriela-avila15',
     image: '/exec-pictures/gabriela_avila.jpg',
     email: 'GabrielaAvila2028@u.northwestern.edu',
   },
