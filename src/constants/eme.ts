@@ -1,4 +1,4 @@
-export const EME_API_BASE_URL = 'https://eme-yr7i.onrender.com';
+export const EME_API_BASE_URL = 'https://eme-production.up.railway.app';
 
 export interface Message {
   id: string;
